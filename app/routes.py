@@ -238,3 +238,146 @@ def tickets_page():
     from fastapi.responses import FileResponse
     from config import BASE_DIR
     return FileResponse(BASE_DIR / 'static' / 'tickets.html')
+
+# ============================================================
+# 页面路由
+# ============================================================
+from config import BASE_DIR
+
+
+@router.get("/monitoring-page")
+def monitoring_page():
+    from fastapi.responses import FileResponse
+    return FileResponse(BASE_DIR / "static" / "monitoring.html")
+
+
+@router.get("/evals-page")
+def evals_page():
+    from fastapi.responses import FileResponse
+    return FileResponse(BASE_DIR / "static" / "evals.html")
+
+
+@router.get("/sessions-page")
+def sessions_page():
+    from fastapi.responses import FileResponse
+    return FileResponse(BASE_DIR / "static" / "sessions.html")
+
+
+# ============================================================
+# 评估接口
+# ============================================================
+@router.get("/run-eval")
+def run_eval_api(with_badcase: int = 0):
+    import json as _json
+    from pathlib import Path as _P
+    from eval.run_eval import load_dataset, run
+    base = _P(__file__).resolve().parent.parent
+    cases = load_dataset(base / "eval" / "dataset.jsonl")
+    if with_badcase:
+        cases.extend(load_dataset(base / "eval" / "badcase.jsonl"))
+    metrics = run(cases)
+    return metrics
+
+
+@router.post("/collect-badcase")
+def collect_badcase_api():
+    from eval.collect_badcase import collect_badcases, merge_into_dataset
+    collected = collect_badcases()
+    merged = merge_into_dataset()
+    return {"collected": collected, "merged": merged}
+
+
+@router.get("/badcase-list")
+def badcase_list_api():
+    import json as _json
+    from pathlib import Path as _P
+    path = _P(__file__).resolve().parent.parent / "eval" / "badcase.jsonl"
+    if not path.exists():
+        return {"items": []}
+    items = []
+    for line in path.read_text(encoding="utf-8").splitlines():
+        if line.strip():
+            try:
+                items.append(_json.loads(line))
+            except _json.JSONDecodeError:
+                pass
+    return {"items": items}
+
+
+@router.get("/badcase-count")
+def badcase_count_api():
+    from pathlib import Path as _P
+    path = _P(__file__).resolve().parent.parent / "eval" / "badcase.jsonl"
+    if not path.exists():
+        return {"count": 0}
+    count = sum(1 for line in path.read_text(encoding="utf-8").splitlines() if line.strip())
+    return {"count": count}
+
+
+# ============================================================
+# 会话回放接口
+# ============================================================
+import sqlite3 as _sqlite3
+
+
+@router.get("/sessions")
+def list_sessions(limit: int = 50):
+    db = Path(settings.SQLITE_PATH)
+    if not db.exists():
+        return {"sessions": []}
+    conn = _sqlite3.connect(str(db))
+    try:
+        rows = conn.execute(
+            "SELECT id, user_id, message, answer, created_at FROM sessions ORDER BY created_at DESC LIMIT ?",
+            (limit,),
+        ).fetchall()
+    finally:
+        conn.close()
+    return {"sessions": [
+        {"id": r[0], "user_id": r[1], "message": r[2], "answer": r[3], "created_at": r[4]}
+        for r in rows
+    ]}
+
+
+@router.get("/sessions/{session_id}")
+def get_session(session_id: str):
+    from fastapi.responses import JSONResponse
+    db = Path(settings.SQLITE_PATH)
+    if not db.exists():
+        return JSONResponse(status_code=404, content={"detail": "no_db"})
+    conn = _sqlite3.connect(str(db))
+    try:
+        s_row = conn.execute(
+            "SELECT id, user_id, message, answer, created_at FROM sessions WHERE id = ?",
+            (session_id,),
+        ).fetchone()
+        if s_row is None:
+            return JSONResponse(status_code=404, content={"detail": "session_not_found"})
+        a_rows = conn.execute(
+            "SELECT question, answer, intent, confidence, created_ticket, trace, usage, created_at FROM audit_log WHERE session_id = ? ORDER BY id ASC",
+            (session_id,),
+        ).fetchall()
+    finally:
+        conn.close()
+
+    import json as _json
+    messages = []
+    audit = {}
+    for r in a_rows:
+        try:
+            trace = _json.loads(r[5]) if r[5] else []
+        except _json.JSONDecodeError:
+            trace = []
+        try:
+            usage = _json.loads(r[6]) if r[6] else {}
+        except _json.JSONDecodeError:
+            usage = {}
+        messages.append({"question": r[0], "answer": r[1], "created_at": r[7]})
+        audit = {"intent": r[2], "confidence": r[3], "created_ticket": bool(r[4]),
+                 "trace": trace, "usage": usage}
+    return {
+        "session": {"id": s_row[0], "user_id": s_row[1], "message": s_row[2],
+                     "answer": s_row[3], "created_at": s_row[4]},
+        "audit": audit,
+        "messages": messages,
+    }

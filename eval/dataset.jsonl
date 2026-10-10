@@ -8,3 +8,10 @@
 {"id": 8, "question": "优惠券能和满减一起用吗", "expected_intent": "promo", "expect_keywords": ["叠加"], "should_ticket": false}
 {"id": 9, "question": "随便聊聊今天天气", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true}
 {"id": 10, "question": "我要投诉，态度太差了", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true}
+{"question": "双11满减规则是什么", "observed_intent": "promo", "confidence": 0.0, "captured_at": "2026-10-09T13:16:03.781226+00:00", "expected_intent": "promo", "expect_keywords": [], "should_ticket": true, "id": 11}
+{"question": "帮我转人工", "observed_intent": "ticket", "confidence": 1.0, "captured_at": "2026-10-09T11:16:38.433911+00:00", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": false, "id": 12}
+{"question": "测试", "observed_intent": "answer", "confidence": 0.0, "captured_at": "2026-10-08T13:55:05.985487+00:00", "expected_intent": "answer", "expect_keywords": [], "should_ticket": true, "id": 13}
+{"question": "差旅报销几天内提交？", "observed_intent": "ticket", "confidence": 0.0, "captured_at": "2026-10-08T13:36:35.568707+00:00", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "id": 14}
+{"question": "string", "observed_intent": "answer", "confidence": 0.0, "captured_at": "2026-10-07T08:59:07.128023+00:00", "expected_intent": "answer", "expect_keywords": [], "should_ticket": true, "id": 15}
+{"question": "随便聊聊天气", "observed_intent": "answer", "confidence": 0.0, "captured_at": "2026-10-06T14:57:13.839467+00:00", "expected_intent": "answer", "expect_keywords": [], "should_ticket": true, "id": 16}
+{"question": "你是", "observed_intent": "answer", "confidence": 0.0, "captured_at": "2026-10-06T12:53:09.349455+00:00", "expected_intent": "answer", "expect_keywords": [], "should_ticket": true, "id": 17}

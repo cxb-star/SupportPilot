@@ -4,3 +4,12 @@
 {"question": "双11 满减规则是什么", "missing_keywords": ["满减"], "confidence": 1.0, "type": "keyword_miss", "source": "run_eval"}
 {"question": "收到的商品有破损，怎么赔", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
 {"question": "退货运费谁承担", "observed_intent": "refund", "expected_intent": "return", "confidence": 1.0, "type": "intent_mismatch", "source": "run_eval"}
+{"question": "双11满减规则是什么", "observed_intent": "promo", "confidence": 0.0, "captured_at": "2026-10-09T13:16:03.781226+00:00", "expected_intent": "promo", "expect_keywords": [], "should_ticket": true}
+{"question": "帮我转人工", "observed_intent": "ticket", "confidence": 1.0, "captured_at": "2026-10-09T11:16:38.433911+00:00", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": false}
+{"question": "订单 12345 能退款吗，买了 3 天", "observed_intent": "refund", "confidence": 0.2, "captured_at": "2026-10-09T10:59:00.237480+00:00", "expected_intent": "refund", "expect_keywords": [], "should_ticket": true}
+{"question": "测试", "observed_intent": "answer", "confidence": 0.0, "captured_at": "2026-10-08T13:55:05.985487+00:00", "expected_intent": "answer", "expect_keywords": [], "should_ticket": true}
+{"question": "差旅报销几天内提交？", "observed_intent": "ticket", "confidence": 0.0, "captured_at": "2026-10-08T13:36:35.568707+00:00", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true}
+{"question": "string", "observed_intent": "answer", "confidence": 0.0, "captured_at": "2026-10-07T08:59:07.128023+00:00", "expected_intent": "answer", "expect_keywords": [], "should_ticket": true}
+{"question": "帮我转人工处理一下", "observed_intent": "ticket", "confidence": 1.0, "captured_at": "2026-10-06T14:57:21.744401+00:00", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": false}
+{"question": "随便聊聊天气", "observed_intent": "answer", "confidence": 0.0, "captured_at": "2026-10-06T14:57:13.839467+00:00", "expected_intent": "answer", "expect_keywords": [], "should_ticket": true}
+{"question": "你是", "observed_intent": "answer", "confidence": 0.0, "captured_at": "2026-10-06T12:53:09.349455+00:00", "expected_intent": "answer", "expect_keywords": [], "should_ticket": true}
