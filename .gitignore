@@ -1,19 +1,25 @@
-# 环境变量（含 key，不能上传）
+# ============================================================
+# 不上传到 GitHub 的内容（运行时/密钥/本地数据）
+# ============================================================
+
+# --- 密钥 ---
+# .env 含 API key，绝不能入库
 .env
 
-# Python 缓存
+# --- 运行时数据（数据库 / 向量库 / 检查点）---
+# 这些是本地跑服务产生的，含你的会话/工单记录与向量索引，
+# 不应进仓库。克隆下来后跑 python -m rag.ingest_main 会自动重建。
+data/
+*.db
+*.db-shm
+*.db-wal
+
+# --- Python 缓存 ---
 __pycache__/
 *.pyc
 .pytest_cache/
 
-# 本地数据（Chroma / SQLite / checkpoint）
-data/
-
-# IDE
-.vscode/
-.idea/
-
-# 临时/调试脚本
+# --- 临时/调试脚本与运行产物 ---
 _patch_*.py
 _smoke_*.py
 _*.py
@@ -21,3 +27,7 @@ job.json
 jobs.json
 runs.json
 pkg.json
+
+# --- IDE ---
+.vscode/
+.idea/
