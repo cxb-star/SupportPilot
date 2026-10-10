@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <title>工单管理</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Segoe UI", "PingFang SC", sans-serif; background: #f5f6fa; color: #1a1a2e; }
+
+    .topbar {
+      background: #fff; border-bottom: 1px solid #e4e7ee;
+      padding: 14px 24px; display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 10;
+    }
+    .topbar h1 { font-size: 16px; font-weight: 600; }
+    .topbar a { font-size: 13px; color: #3b5bdb; text-decoration: none; margin-left: 16px; }
+    .topbar a:hover { text-decoration: underline; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 20px 16px; }
+
+    /* 筛选栏 */
+    .filter-bar {
+      background: #fff; border: 1px solid #e4e7ee; border-radius: 8px;
+      padding: 12px 16px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center;
+      margin-bottom: 16px;
+    }
+    .filter-bar label { font-size: 13px; color: #555; }
+    .filter-bar select {
+      border: 1px solid #d0d5e2; border-radius: 5px; padding: 5px 10px;
+      font-size: 13px; outline: none;
+    }
+    .filter-bar button {
+      border: none; border-radius: 5px; padding: 6px 14px;
+      font-size: 13px; font-weight: 600; cursor: pointer; background: #3b5bdb; color: #fff;
+    }
+    .filter-bar button.secondary { background: #f0f1f5; color: #444; }
+
+    /* 统计卡片 */
+    .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 16px; }
+    .stat-card {
+      background: #fff; border: 1px solid #e4e7ee; border-radius: 8px; padding: 14px;
+    }
+    .stat-card .label { font-size: 12px; color: #888; margin-bottom: 4px; }
+    .stat-card .value { font-size: 22px; font-weight: 700; }
+    .stat-card.urgent .value { color: #c0392b; }
+    .stat-card.open .value { color: #e67e22; }
+    .stat-card.total .value { color: #3b5bdb; }
+    .stat-card.closed .value { color: #27ae60; }
+
+    /* 工单列表 */
+    .ticket-list { display: flex; flex-direction: column; gap: 10px; }
+    .ticket-item {
+      background: #fff; border: 1px solid #e4e7ee; border-radius: 8px;
+      padding: 14px 16px; display: grid;
+      grid-template-columns: 1fr auto auto auto auto;
+      gap: 12px; align-items: center;
+    }
+    .ticket-item.urgent { border-left: 3px solid #c0392b; }
+    .ticket-item.normal { border-left: 3px solid #b0b6c3; }
+    .ticket-info { min-width: 0; }
+    .ticket-no { font-size: 11px; color: #999; font-family: monospace; margin-bottom: 3px; word-break: break-all; }
+    .ticket-question { font-size: 14px; color: #1a1a2e; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 400px; }
+    .ticket-meta { font-size: 12px; color: #888; margin-top: 3px; }
+
+    .chip {
+      display: inline-flex; align-items: center; font-size: 11px; font-weight: 600;
+      padding: 3px 9px; border-radius: 12px; white-space: nowrap;
+    }
+    .chip-intent-refund { background: #e6f7e9; color: #1d7a36; }
+    .chip-intent-return { background: #e6f7e9; color: #1d7a36; }
+    .chip-intent-reship { background: #e6f7e9; color: #1d7a36; }
+    .chip-intent-compensate { background: #fff8e1; color: #b45309; }
+    .chip-intent-promo { background: #eef2ff; color: #3b5bdb; }
+    .chip-intent-ticket { background: #fde8e8; color: #c0392b; }
+    .chip-intent-clarify { background: #fff8e1; color: #b45309; }
+    .chip-priority-urgent { background: #fde8e8; color: #c0392b; }
+    .chip-priority-normal { background: #f5f5f5; color: #666; }
+    .chip-status-open { background: #fff8e1; color: #b45309; }
+    .chip-status-in_progress { background: #eef2ff; color: #3b5bdb; }
+    .chip-status-closed { background: #e6f7e9; color: #1d7a36; }
+    .chip-team { background: #f0f1f5; color: #444; }
+
+    /* 操作按钮 */
+    .ticket-actions { display: flex; gap: 6px; flex-wrap: wrap; }
+    .ticket-actions button {
+      border: none; border-radius: 5px; padding: 5px 12px;
+      font-size: 12px; font-weight: 600; cursor: pointer;
+    }
+    .btn-assign { background: #eef2ff; color: #3b5bdb; }
+    .btn-progress { background: #fff8e1; color: #b45309; }
+    .btn-close { background: #e6f7e9; color: #1d7a36; }
+    .btn-reopen { background: #f5f5f5; color: #666; }
+    .btn-close:disabled, .btn-progress:disabled, .btn-reopen:disabled { opacity: 0.4; cursor: not-allowed; }
+
+    .empty { text-align: center; color: #aaa; padding: 60px 0; font-size: 14px; }
+    .error-msg { color: #c0392b; font-size: 13px; padding: 10px 0; }
+
+    @media (max-width: 700px) {
+      .ticket-item { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .filter-bar { flex-direction: column; align-items: stretch; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <h1>工单管理</h1>
+    <div>
+      <a href="/">&larr; 返回问答</a>
+      <a href="/metrics" target="_blank">监控指标</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- 统计卡片 -->
+    <div class="stats-row" id="stats-row">
+      <div class="stat-card total"><div class="label">全部工单</div><div class="value" id="st-total">-</div></div>
+      <div class="stat-card open"><div class="label">未处理</div><div class="value" id="st-open">-</div></div>
+      <div class="stat-card urgent"><div class="label">紧急未处理</div><div class="value" id="st-urgent">-</div></div>
+      <div class="stat-card closed"><div class="label">已关闭</div><div class="value" id="st-closed">-</div></div>
+    </div>
+
+    <!-- 筛选栏 -->
+    <div class="filter-bar">
+      <label>状态</label>
+      <select id="f-status">
+        <option value="">全部</option>
+        <option value="open">open</option>
+        <option value="in_progress">in_progress</option>
+        <option value="closed">closed</option>
+      </select>
+      <label>团队</label>
+      <select id="f-team">
+        <option value="">全部</option>
+        <option value="aftersales">售后组</option>
+        <option value="quality">质控组</option>
+        <option value="ops">运营组</option>
+        <option value="general">通用组</option>
+      </select>
+      <label>角色</label>
+      <select id="f-role">
+        <option value="operator">operator（只读）</option>
+        <option value="supervisor">supervisor（可操作）</option>
+        <option value="admin">admin（全部权限）</option>
+      </select>
+      <button onclick="loadTickets()">查询</button>
+      <button class="secondary" onclick="location.reload()">刷新页面</button>
+    </div>
+
+    <!-- 工单列表 -->
+    <div class="ticket-list" id="ticket-list">
+      <div class="empty">加载中…</div>
+    </div>
+  </div>
+
+  <script>
+    const TEAM_MAP = { aftersales: '售后组', quality: '质控组', ops: '运营组', general: '通用组' };
+    const INTENT_MAP = { refund: '退款', return: '退货', reship: '补发', compensate: '赔付', promo: '活动', ticket: '转人工', clarify: '需澄清' };
+    const STATUS_MAP = { open: '未处理', in_progress: '处理中', closed: '已关闭' };
+
+    // 当前角色（从筛选栏读取，影响操作按钮是否可点）
+    function getRole() { return document.getElementById('f-role').value; }
+    function canOperate() { return ['supervisor', 'admin'].includes(getRole()); }
+
+    async function loadStats() {
+      try {
+        const r = await fetch('/metrics');
+        const d = await r.json();
+        const t = d.tickets || {};
+        document.getElementById('st-total').textContent = t.total ?? '-';
+        document.getElementById('st-open').textContent = t.open ?? '-';
+        document.getElementById('st-urgent').textContent = t.urgent_open ?? '-';
+        // 已关闭数 = 总数 - open - in_progress，暂显示 open 的反面
+        const openCount = t.open ?? 0;
+        const total = t.total ?? 0;
+        document.getElementById('st-closed').textContent = Math.max(0, total - openCount);
+      } catch { /* ignore */ }
+    }
+
+    async function loadTickets() {
+      const status = document.getElementById('f-status').value;
+      const team = document.getElementById('f-team').value;
+      const params = new URLSearchParams({ limit: '50' });
+      if (status) params.set('status', status);
+      if (team) params.set('team', team);
+
+      const listEl = document.getElementById('ticket-list');
+      listEl.innerHTML = '<div class="empty">加载中…</div>';
+
+      try {
+        const r = await fetch('/tickets?' + params.toString());
+        const d = await r.json();
+        const tickets = d.tickets || [];
+        if (!tickets.length) {
+          listEl.innerHTML = '<div class="empty">暂无工单</div>';
+          return;
+        }
+        listEl.innerHTML = tickets.map(t => renderTicket(t)).join('');
+      } catch (e) {
+        listEl.innerHTML = '<div class="error-msg">加载失败：' + e.message + '</div>';
+      }
+    }
+
+    function renderTicket(t) {
+      const intentCls = 'chip-intent-' + (t.intent || 'clarify');
+      const prioCls = 'chip-priority-' + (t.priority || 'normal');
+      const statusCls = 'chip-status-' + (t.status || 'open');
+      const urgent = t.priority === 'urgent';
+      const canOp = canOperate();
+
+      let buttons = '';
+      if (canOp) {
+        buttons = `
+          <button class="btn-assign" onclick="assignTicket('${t.ticket_no}')">指派</button>
+          ${t.status === 'open' ? `<button class="btn-progress" onclick="transition('${t.ticket_no}','in_progress')">开始处理</button>` : ''}
+          ${t.status !== 'closed' ? `<button class="btn-close" onclick="transition('${t.ticket_no}','closed')">关闭</button>` : ''}
+          ${t.status === 'closed' ? `<button class="btn-reopen" onclick="transition('${t.ticket_no}','open')">重开</button>` : ''}
+        `;
+      } else {
+        buttons = `<span style="font-size:12px;color:#aaa">operator 只读，切换角色可操作</span>`;
+      }
+
+      return `
+        <div class="ticket-item ${urgent ? 'urgent' : 'normal'}">
+          <div class="ticket-info">
+            <div class="ticket-no">${esc(t.ticket_no)} ${t.assigned_to ? '&nbsp;· 处理人: ' + esc(t.assigned_to) : ''}</div>
+            <div class="ticket-question" title="${esc(t.question)}">${esc(t.question)}</div>
+            <div class="ticket-meta">创建时间: ${new Date(t.created_at).toLocaleString()}</div>
+          </div>
+          <span class="chip ${intentCls}">${INTENT_MAP[t.intent] || t.intent}</span>
+          <span class="chip ${prioCls}">${t.priority === 'urgent' ? '紧急' : '普通'}</span>
+          <span class="chip ${statusCls}">${STATUS_MAP[t.status] || t.status}</span>
+          <div class="ticket-actions">${buttons}</div>
+        </div>`;
+    }
+
+    async function transition(ticketNo, newStatus) {
+      const role = getRole();
+      const resp = await fetch(`/tickets/${encodeURIComponent(ticketNo)}/status?role=${role}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ new_status: newStatus })
+      });
+      const d = await resp.json();
+      if (resp.ok) {
+        showToast('工单 ' + ticketNo + ' 已改为 ' + newStatus);
+        loadTickets(); loadStats();
+      } else {
+        showToast('操作失败：' + (d.detail || resp.status), true);
+      }
+    }
+
+    function assignTicket(ticketNo) {
+      const assignee = prompt('输入处理人姓名：');
+      if (!assignee) return;
+      const role = getRole();
+      fetch(`/tickets/${encodeURIComponent(ticketNo)}/status?role=${role}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ new_status: 'in_progress', assignee })
+      }).then(r => r.json()).then(d => {
+        if (d.status || d.ticket_no) {
+          showToast('已指派 ' + assignee + ' 处理 ' + ticketNo);
+          loadTickets();
+        } else {
+          showToast('指派失败：' + (d.detail || '未知错误'), true);
+        }
+      });
+    }
+
+    function showToast(msg, isError) {
+      const el = document.createElement('div');
+      el.textContent = msg;
+      el.style.cssText = `
+        position: fixed; bottom: 20px; right: 20px; padding: 10px 18px;
+        border-radius: 6px; font-size: 13px; z-index: 999;
+        background: ${isError ? '#fde8e8' : '#e6f7e9'}; color: ${isError ? '#c0392b' : '#1d7a36'};
+      `;
+      document.body.appendChild(el);
+      setTimeout(() => el.remove(), 3000);
+    }
+
+    function esc(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+
+    // 初始化
+    loadStats();
+    loadTickets();
+  </script>
+</body>
+</html>

@@ -232,3 +232,9 @@ def rollback(version: str = "v1"):
     # 简单实现：直接打印当前切换，实际应持久化
     log.info("rollback requested target_version=%s", version)
     return {"status": "ok", "rolled_back_to": version, "note": "内存版，重启后失效；生产需接配置中心"}
+
+@router.get('/tickets-page')
+def tickets_page():
+    from fastapi.responses import FileResponse
+    from config import BASE_DIR
+    return FileResponse(BASE_DIR / 'static' / 'tickets.html')
