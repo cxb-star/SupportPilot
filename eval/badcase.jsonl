@@ -1,0 +1,6 @@
+{"question": "签收 10 天发现商品有质量问题，能退吗", "observed_intent": "compensate", "expected_intent": "refund", "confidence": 0.3, "type": "intent_mismatch", "source": "run_eval"}
+{"question": "签收 10 天发现商品有质量问题，能退吗", "missing_keywords": ["质量问题", "退款"], "confidence": 0.3, "type": "keyword_miss", "source": "run_eval"}
+{"question": "签收 10 天发现商品有质量问题，能退吗", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "双11 满减规则是什么", "missing_keywords": ["满减"], "confidence": 1.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "收到的商品有破损，怎么赔", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "退货运费谁承担", "observed_intent": "refund", "expected_intent": "return", "confidence": 1.0, "type": "intent_mismatch", "source": "run_eval"}

@@ -1,0 +1,10 @@
+{"id": 1, "question": "订单 12345 能退款吗，买了 3 天", "expected_intent": "refund", "expect_keywords": ["7 天", "退款"], "should_ticket": false}
+{"id": 2, "question": "签收 10 天发现商品有质量问题，能退吗", "expected_intent": "refund", "expect_keywords": ["质量问题", "退款"], "should_ticket": false}
+{"id": 3, "question": "双11 满减规则是什么", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false}
+{"id": 4, "question": "收到的商品有破损，怎么赔", "expected_intent": "compensate", "expect_keywords": ["破损", "赔付"], "should_ticket": true}
+{"id": 5, "question": "帮我转人工处理一下", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true}
+{"id": 6, "question": "漏发了一个商品，多久能补发", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false}
+{"id": 7, "question": "退货运费谁承担", "expected_intent": "return", "expect_keywords": ["运费"], "should_ticket": false}
+{"id": 8, "question": "优惠券能和满减一起用吗", "expected_intent": "promo", "expect_keywords": ["叠加"], "should_ticket": false}
+{"id": 9, "question": "随便聊聊今天天气", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true}
+{"id": 10, "question": "我要投诉，态度太差了", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true}
