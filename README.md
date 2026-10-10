@@ -1,4 +1,4 @@
-# agent_knowledge_self_built
+﻿# agent_knowledge_self_built
 
 全流程自研企业知识库 Agent：意图判断 → 检索 → 回答 → 工单兜底，含持久化、审计、评估。
 
@@ -42,8 +42,24 @@ cp .env.example .env
 | `CHROMA_PERSIST_DIR` | 向量库路径，默认 `./data/chroma` |
 | `SQLITE_PATH` | 会话/工单/审计数据库，默认 `./data/app.db` |
 | `CONFIDENCE_THRESHOLD` | 低于此值自动建单，默认 `0.5` |
+| `USE_LLM_INTENT` | 意图分类灰度开关：`1` 走 LLM 意图分类（新），默认 `0` 走规则版（可回滚） |
 
 ## 目录结构
+
+## 意图分类：规则版 + LLM 版（灰度可回滚）
+
+主链路入口 `classify_intent` 支持两种实现，由灰度开关控制，生产可一键回滚：
+
+- **规则版（默认）**：关键词/强信号匹配，零 LLM 成本，离线可跑。转人工强信号直接建单。
+- **LLM 版**：调用 LLM 输出 JSON 意图标签（refund/return/reship/compensate/promo/ticket/clarify）
+  + 置信度。输出不在合法标签集、或 LLM 调用失败时，自动回退到规则版，主链路不中断。
+
+```bash
+USE_LLM_INTENT=1 python -m app.main   # 启用 LLM 意图分类
+```
+
+对应的灰度回滚接口：`GET /feature-flags` 查看当前开关，`POST /rollback` 切回 v1（规则版）。
+
 
 ```
 agent/       LangGraph 节点、状态、图构建

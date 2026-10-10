@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <title>评估管理</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root { --bg:#f5f6fa; --card:#fff; --border:#e4e7ee; --text:#1a1a2e; --muted:#6b7280; --primary:#3b5bdb; --danger:#e74c3c; --warning:#f39c12; --success:#27ae60; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:"Segoe UI","PingFang SC",sans-serif; background:var(--bg); color:var(--text); font-size:14px; }
+    .topbar { background:var(--card); border-bottom:1px solid var(--border); padding:14px 24px; display:flex; align-items:center; gap:12px; position:sticky; top:0; z-index:10; }
+    .topbar h1 { font-size:16px; font-weight:600; }
+    .topbar nav { display:flex; gap:14px; margin-left:auto; }
+    .topbar nav a { font-size:13px; color:var(--primary); text-decoration:none; font-weight:500; }
+    .topbar nav a:hover { text-decoration:underline; }
+    .content { max-width:900px; margin:24px auto; padding:0 24px; }
+    .action-bar { display:flex; gap:10px; margin-bottom:20px; align-items:center; }
+    .btn-primary { background:var(--primary); color:#fff; border:none; border-radius:6px; padding:9px 22px; font-size:13px; font-weight:600; cursor:pointer; }
+    .btn-primary:hover { opacity:0.9; }
+    .btn-secondary { background:#f0f1f5; color:var(--text); border:1px solid var(--border); border-radius:6px; padding:9px 16px; font-size:13px; cursor:pointer; }
+    .btn-secondary:hover { background:#e8eaf2; }
+    .hint { font-size:12px; color:var(--muted); }
+    .metrics-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:12px; margin-bottom:24px; }
+    .metric { background:var(--card); border:1px solid var(--border); border-radius:8px; padding:16px; }
+    .metric .label { font-size:12px; color:var(--muted); margin-bottom:6px; }
+    .metric .value { font-size:26px; font-weight:700; }
+    .metric .value.good { color:var(--success); }
+    .metric .value.bad { color:var(--danger); }
+    .metric .value.warn { color:var(--warning); }
+    .section { margin-top:24px; }
+    .section-title { font-size:14px; font-weight:600; color:var(--muted); margin-bottom:10px; display:flex; align-items:center; gap:8px; }
+    .section-title .sub { font-size:11px; font-weight:400; }
+    .badcase-list { background:var(--card); border:1px solid var(--border); border-radius:8px; }
+    .bc-item { padding:12px 16px; border-bottom:1px solid #f0f1f5; font-size:13px; }
+    .bc-item:last-child { border-bottom:none; }
+    .bc-item .bc-q { font-weight:600; margin-bottom:4px; }
+    .bc-item .bc-meta { font-size:11px; color:var(--muted); display:flex; gap:10px; flex-wrap:wrap; }
+    .bc-tag { padding:1px 6px; border-radius:8px; font-size:10px; }
+    .bc-tag.fail { background:#fde8e8; color:var(--danger); }
+    .bc-tag.low { background:#fff3cd; color:#856404; }
+    .empty { text-align:center; color:#bbb; padding:32px; font-size:13px; }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <h1>评估管理</h1>
+    <nav>
+      <a href="/">问答台</a>
+      <a href="/tickets-page">工单管理</a>
+      <a href="/monitoring-page">监控中心</a>
+      <a href="/sessions-page">会话回放</a>
+      <a href="/evals-page">评估管理</a>
+    </nav>
+  </div>
+  <div class="content">
+    <div class="action-bar">
+      <button class="btn-primary" onclick="runEval(false)">运行评估</button>
+      <button class="btn-secondary" onclick="runEval(true)">含 badcase 运行</button>
+      <button class="btn-secondary" onclick="collectBadcase()">回流 badcase</button>
+      <span class="hint" id="run-hint">每次评估结果会自动追加到 badcase.jsonl</span>
+    </div>
+
+    <div class="metrics-grid" id="metrics-grid">
+      <div class="metric"><div class="label">尚未运行评估</div></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">本次评估产生的失败案例 <span class="sub" id="bc-count"></span></div>
+      <div class="badcase-list" id="bc-list">
+        <div class="empty" id="bc-empty">运行评估后显示本次失败案例</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    async function runEval(withBadcase) {
+      const hint = document.getElementById('run-hint');
+      hint.textContent = '评估运行中，请稍候…';
+      try {
+        const r = await fetch('/run-eval?with_badcase=' + (withBadcase ? 1 : 0));
+        const d = await r.json();
+        hint.textContent = '评估完成：' + (d.cases ?? 0) + ' 条用例，' + (d.badcase_count ?? 0) + ' 条 badcase';
+        renderMetrics(d);
+        loadBadcases();
+      } catch (e) {
+        hint.textContent = '评估失败：' + e.message;
+      }
+    }
+    async function collectBadcase() {
+      const hint = document.getElementById('run-hint');
+      try {
+        const r = await fetch('/collect-badcase', { method: 'POST' });
+        const d = await r.json();
+        hint.textContent = '回流完成：新增 ' + (d.collected ?? 0) + ' 条，合并 ' + (d.merged ?? 0) + ' 条到评估集';
+      } catch (e) { hint.textContent = '回流失败：' + e.message; }
+    }
+    function renderMetrics(d) {
+      const grid = document.getElementById('metrics-grid');
+      const intentRate = d.intent_accuracy != null ? Math.round(d.intent_accuracy*100)+'%' : '-';
+      const ansRate = d.answer_keyword_accuracy != null ? Math.round(d.answer_keyword_accuracy*100)+'%' : '-';
+      const fbRate = d.fallback_accuracy != null ? Math.round(d.fallback_accuracy*100)+'%' : '-';
+      const bcCount = d.badcase_count ?? 0;
+      const cls = (v) => v >= 0.8 ? 'good' : v >= 0.5 ? 'warn' : 'bad';
+      grid.innerHTML =
+        '<div class="metric"><div class="label">意图命中率</div><div class="value ' + cls(d.intent_accuracy) + '">' + intentRate + '</div></div>' +
+        '<div class="metric"><div class="label">答案关键词命中</div><div class="value ' + cls(d.answer_keyword_accuracy) + '">' + ansRate + '</div></div>' +
+        '<div class="metric"><div class="label">兜底正确率</div><div class="value ' + cls(d.fallback_accuracy) + '">' + fbRate + '</div></div>' +
+        '<div class="metric"><div class="label">Badcase 数量</div><div class="value ' + (bcCount > 0 ? 'bad' : 'good') + '">' + bcCount + '</div></div>' +
+        '<div class="metric"><div class="label">用例总数</div><div class="value">' + (d.cases ?? '-') + '</div></div>';
+      document.getElementById('bc-count').textContent = '';
+    }
+    async function loadBadcases() {
+      const list = document.getElementById('bc-list');
+      const empty = document.getElementById('bc-empty');
+      try {
+        const r = await fetch('/badcase-list');
+        const d = await r.json();
+        const items = d.items || [];
+        if (!items.length) { list.innerHTML = '<div class="empty">本次评估无 badcase，全部通过 ✓</div>'; return; }
+        list.innerHTML = items.map(b =>
+          '<div class="bc-item">' +
+          '  <div class="bc-q">' + (b.question || b.input || '') + '</div>' +
+          '  <div class="bc-meta">' +
+          '    <span class="bc-tag ' + (b.reason === 'low_confidence' ? 'low' : 'fail') + '">' + (b.reason || 'fail') + '</span>' +
+          '    ' + (b.expected_intent ? '期望意图: ' + b.expected_intent : '') + '  ' +
+          (b.actual_intent ? '实际意图: ' + b.actual_intent : '') +
+          '  </div>' +
+          '</div>'
+        ).join('');
+      } catch { list.innerHTML = '<div class="empty">加载失败</div>'; }
+    }
+    loadBadcases();
+  </script>
+</body>
+</html>

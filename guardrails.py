@@ -1,3 +1,4 @@
+import os
 """工程护栏：角色权限、限流降级、灰度回滚最小实现。
 
 设计目标：
@@ -91,7 +92,13 @@ class FeatureFlags:
     """灰度标志：控制新旧策略切换，支持一键回滚。
     通过 env 变量控制，无需重启改代码。
     """
-    use_llm_intent: bool = False      # True: 用 LLM 做意图分类（新）；False: 规则版（旧/回滚）
+    use_llm_intent: bool = False
+    # 支持 env 覆盖：USE_LLM_INTENT=1 时走 LLM 意图分类，默认 False（规则版，可回滚）
+    _USE_LLM_INTENT_ENV = os.getenv('USE_LLM_INTENT', '0').strip().lower() in {'1','true','yes','on'}
+
+    def __post_init__(self):
+        if self._USE_LLM_INTENT_ENV:
+            self.use_llm_intent = True
     use_history_in_prompt: bool = True  # True: 带多轮历史；False: 关闭（回滚）
     rag_top_k: int = 4
     confidence_threshold: float = 0.5

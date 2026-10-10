@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <title>监控中心</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root { --bg:#f5f6fa; --card:#fff; --border:#e4e7ee; --text:#1a1a2e; --muted:#6b7280; --primary:#3b5bdb; --danger:#e74c3c; --warning:#f39c12; --success:#27ae60; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:"Segoe UI","PingFang SC",sans-serif; background:var(--bg); color:var(--text); font-size:14px; }
+    .topbar { background:var(--card); border-bottom:1px solid var(--border); padding:14px 24px; display:flex; align-items:center; gap:12px; position:sticky; top:0; z-index:10; }
+    .topbar h1 { font-size:16px; font-weight:600; }
+    .topbar nav { display:flex; gap:14px; margin-left:auto; }
+    .topbar nav a { font-size:13px; color:var(--primary); text-decoration:none; font-weight:500; }
+    .topbar nav a:hover { text-decoration:underline; }
+    .content { max-width:900px; margin:24px auto; padding:0 24px; }
+    .section-title { font-size:14px; font-weight:600; color:var(--muted); margin-bottom:12px; margin-top:24px; }
+    .section-title:first-child { margin-top:0; }
+    .card-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:12px; }
+    .metric-card { background:var(--card); border:1px solid var(--border); border-radius:8px; padding:16px; }
+    .metric-card .label { font-size:12px; color:var(--muted); margin-bottom:6px; }
+    .metric-card .value { font-size:28px; font-weight:700; }
+    .metric-card .value.danger { color:var(--danger); }
+    .metric-card .value.warning { color:var(--warning); }
+    .metric-card .value.success { color:var(--success); }
+    .metric-card .sub { font-size:11px; color:#aaa; margin-top:4px; }
+    .alert-list { background:var(--card); border:1px solid var(--border); border-radius:8px; }
+    .alert-item { padding:12px 16px; border-bottom:1px solid #f0f1f5; display:flex; align-items:center; gap:10px; }
+    .alert-item:last-child { border-bottom:none; }
+    .alert-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+    .alert-dot.critical { background:var(--danger); }
+    .alert-dot.warning { background:var(--warning); }
+    .alert-dot.info { background:var(--primary); }
+    .alert-msg { flex:1; font-size:13px; }
+    .alert-time { font-size:11px; color:#aaa; font-family:monospace; }
+    .no-alerts { text-align:center; color:#bbb; padding:32px; }
+    .btn-row { display:flex; gap:8px; margin-bottom:16px; }
+    .btn { background:var(--primary); color:#fff; border:none; border-radius:6px; padding:7px 16px; font-size:13px; font-weight:600; cursor:pointer; }
+    .btn:hover { opacity:0.9; }
+    .btn-secondary { background:var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <h1>监控中心</h1>
+    <nav>
+      <a href="/">问答台</a>
+      <a href="/tickets-page">工单管理</a>
+      <a href="/monitoring-page">监控中心</a>
+      <a href="/sessions-page">会话回放</a>
+      <a href="/evals-page">评估管理</a>
+    </nav>
+  </div>
+  <div class="content">
+    <div class="btn-row">
+      <button class="btn" onclick="loadMetrics()">刷新指标</button>
+      <button class="btn btn-secondary" onclick="runHealthCheck()">运行健康检查</button>
+    </div>
+
+    <div class="section-title">核心指标</div>
+    <div class="card-grid" id="metrics-grid"><div class="metric-card"><div class="label">加载中…</div></div></div>
+
+    <div class="section-title">最近告警</div>
+    <div class="alert-list" id="alert-list"><div class="no-alerts">加载中…</div></div>
+  </div>
+  <script>
+    async function loadMetrics() {
+      const grid = document.getElementById('metrics-grid');
+      try {
+        const r = await fetch('/metrics');
+        const d = await r.json();
+        const tickets = d.tickets || {};
+        const alerts = [
+          { label:'工单总数', value: tickets.total ?? '-', sub: '' },
+          { label:'紧急工单', value: tickets.urgent ?? '-', cls: (tickets.urgent > 0 ? 'danger' : 'success'), sub: tickets.urgent > 0 ? '需立即处理' : '无紧急工单' },
+          { label:'未关闭工单', value: tickets.open ?? '-', cls: (tickets.open > 0 ? 'warning' : 'success'), sub: '' },
+          { label:'LLM 成本 (次)', value: d.llm_cost ?? '-', sub: '' },
+          { label:'平均置信度', value: d.avg_confidence != null ? Math.round(d.avg_confidence*100)+'%' : '-', cls: (d.avg_confidence < 0.5 ? 'danger' : 'success'), sub: '' },
+          { label:'告警总数', value: d.alert_count ?? '-', cls: (d.alert_count > 0 ? 'warning' : 'success'), sub: '' },
+        ];
+        grid.innerHTML = alerts.map(a =>
+          '<div class="metric-card">' +
+          '  <div class="label">' + a.label + '</div>' +
+          '  <div class="value ' + (a.cls||'') + '">' + a.value + '</div>' +
+          '  <div class="sub">' + a.sub + '</div>' +
+          '</div>'
+        ).join('');
+      } catch (e) {
+        grid.innerHTML = '<div class="metric-card"><div class="label">加载失败</div><div class="value danger">' + e.message + '</div></div>';
+      }
+    }
+    async function runHealthCheck() {
+      try {
+        const r = await fetch('/health-check');
+        const d = await r.json();
+        if (d.healthy) alert('健康检查通过 ✓');
+        else alert('健康检查发现问题：\n' + (d.alerts || []).map(a => '· ' + a.message).join('\n'));
+        loadMetrics();
+      } catch (e) { alert('请求失败：' + e.message); }
+    }
+    async function loadAlerts() {
+      const list = document.getElementById('alert-list');
+      try {
+        const r = await fetch('/alerts?limit=20');
+        const d = await r.json();
+        const alerts = d.alerts || [];
+        if (!alerts.length) { list.innerHTML = '<div class="no-alerts">暂无告警 ✓</div>'; return; }
+        list.innerHTML = alerts.map(a => {
+          const levelCls = a.severity === 'critical' ? 'critical' : a.severity === 'warning' ? 'warning' : 'info';
+          return '<div class="alert-item">' +
+            '<div class="alert-dot ' + levelCls + '"></div>' +
+            '<div class="alert-msg">' + (a.message || a.alert_type || '') + '</div>' +
+            '<div class="alert-time">' + (a.created_at ? a.created_at.slice(0,16) : '') + '</div>' +
+            '</div>';
+        }).join('');
+      } catch { list.innerHTML = '<div class="no-alerts">加载告警失败</div>'; }
+    }
+    loadMetrics();
+    loadAlerts();
+  </script>
+</body>
+</html>

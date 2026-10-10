@@ -5,82 +5,83 @@
   <title>SupportPilot 客服护航台</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: "Segoe UI", "PingFang SC", sans-serif; background: #f5f6fa; color: #1a1a2e; }
-    .topbar {
-      background: #fff; border-bottom: 1px solid #e4e7ee;
-      padding: 16px 24px; display: flex; align-items: center; justify-content: space-between;
-      position: sticky; top: 0; z-index: 10;
+    :root {
+      --bg: #f5f6fa; --card: #fff; --border: #e4e7ee;
+      --text: #1a1a2e; --muted: #6b7280; --primary: #3b5bdb;
+      --success: #27ae60; --warning: #f39c12; --danger: #e74c3c;
     }
-    .topbar h1 { font-size: 17px; font-weight: 600; }
-    .topbar .badge { font-size: 11px; padding: 3px 10px; border-radius: 20px; background: #eef2ff; color: #3b5bdb; font-weight: 500; }
-    .main { display: flex; max-width: 960px; margin: 0 auto; padding: 24px 16px; gap: 20px; min-height: calc(100vh - 57px); }
-    .input-panel { flex: 1; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
-    .input-card { background: #fff; border: 1px solid #e4e7ee; border-radius: 10px; padding: 18px; }
-    .input-card label { font-size: 13px; font-weight: 600; color: #555; display: block; margin-bottom: 8px; }
-    textarea { width: 100%; min-height: 80px; border: 1px solid #d0d5e2; border-radius: 7px; padding: 10px 12px; font-size: 14px; font-family: inherit; resize: vertical; outline: none; }
-    textarea:focus { border-color: #3b5bdb; }
-    .btn-row { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
-    button { border: none; border-radius: 7px; padding: 9px 20px; font-size: 14px; font-weight: 600; cursor: pointer; }
-    button:active { opacity: 0.8; }
-    .btn-primary { background: #3b5bdb; color: #fff; }
-    .btn-primary:disabled { background: #b3b9e8; cursor: not-allowed; }
-    .btn-secondary { background: #f0f1f5; color: #444; }
-    .result-panel { flex: 1.4; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
-    .placeholder { background: #fff; border: 1px dashed #d0d5e2; border-radius: 10px; padding: 40px; text-align: center; color: #999; font-size: 14px; flex: 1; display: flex; align-items: center; justify-content: center; }
-    .card { background: #fff; border: 1px solid #e4e7ee; border-radius: 10px; padding: 18px; }
-    .card-title { font-size: 12px; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; }
-    .answer-text { font-size: 15px; line-height: 1.7; white-space: pre-wrap; }
-    .status-row { display: flex; flex-wrap: wrap; gap: 8px; }
-    .chip { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 500; padding: 4px 11px; border-radius: 20px; }
-    .chip-label { color: #888; }
-    .chip-value { font-weight: 600; }
-    .chip-refund { background: #e6f7e9; } .chip-refund .chip-value { color: #1d7a36; }
-    .chip-return { background: #e6f7e9; } .chip-return .chip-value { color: #1d7a36; }
-    .chip-reship { background: #e6f7e9; } .chip-reship .chip-value { color: #1d7a36; }
-    .chip-compensate { background: #fff8e1; } .chip-compensate .chip-value { color: #b45309; }
-    .chip-promo { background: #eef2ff; } .chip-promo .chip-value { color: #3b5bdb; }
-    .chip-ticket { background: #fde8e8; } .chip-ticket .chip-value { color: #c0392b; }
-    .chip-clarify { background: #fff8e1; } .chip-clarify .chip-value { color: #b45309; }
-    .chip-ok { background: #e6f7e9; } .chip-ok .chip-value { color: #1d7a36; }
-    .chip-no { background: #f5f5f5; } .chip-no .chip-value { color: #666; }
-    .chip-mode { background: #eef2ff; } .chip-mode .chip-value { color: #3b5bdb; }
-    .chip-priority-urgent { background: #fde8e8; } .chip-priority-urgent .chip-value { color: #c0392b; }
-    .chip-priority-normal { background: #f5f5f5; } .chip-priority-normal .chip-value { color: #666; }
-    .chip-team { background: #f0f1f5; } .chip-team .chip-value { color: #444; }
-    .conf-bar { display: flex; align-items: center; gap: 10px; }
-    .conf-track { flex: 1; height: 7px; background: #eef0f5; border-radius: 4px; overflow: hidden; }
-    .conf-fill { height: 100%; border-radius: 4px; transition: width: 0.4s; }
-    .conf-fill-high { background: #27ae60; } .conf-fill-mid { background: #f39c12; } .conf-fill-low { background: #e74c3c; }
-    .conf-num { font-size: 13px; font-weight: 700; min-width: 38px; text-align: right; }
-    .source-item { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border: 1px solid #f0f1f5; border-radius: 7px; margin-bottom: 6px; }
-    .source-item:last-child { margin-bottom: 0; }
-    .source-badge { font-size: 11px; font-weight: 700; background: #eef2ff; color: #3b5bdb; padding: 3px 8px; border-radius: 4px; white-space: nowrap; }
-    .source-file { font-size: 13px; color: #444; flex: 1; }
-    .source-score { font-size: 12px; color: #888; font-weight: 600; min-width: 48px; text-align: right; }
-    .trace-list { list-style: none; }
-    .trace-item { display: flex; align-items: flex-start; gap: 10px; padding: 6px 0; position: relative; }
-    .trace-item:not(:last-child)::before { content: ""; position: absolute; left: 7px; top: 20px; bottom: -6px; width: 1px; background: #e4e7ee; }
-    .trace-dot { width: 14px; height: 14px; border-radius: 50%; border: 2px solid #3b5bdb; background: #fff; flex-shrink: 0; margin-top: 2px; }
-    .trace-item.skipped .trace-dot { border-color: #ccc; }
-    .trace-item.fallback .trace-dot { border-color: #e74c3c; background: #fde8e8; }
-    .trace-label { font-size: 13px; color: #444; }
-    .trace-item.skipped .trace-label { color: #aaa; }
-    .trace-item.fallback .trace-label { color: #c0392b; }
-    .trace-item .ts { font-family: monospace; font-size: 11px; color: #bbb; margin-left: 6px; }
-    .session-id { font-size: 11px; color: #aaa; margin-top: 10px; font-family: monospace; word-break: break-all; }
-    .loading { display: flex; align-items: center; gap: 10px; padding: 18px 0; }
-    .spinner { width: 18px; height: 18px; border: 2px solid #e4e7ee; border-top-color: #3b5bdb; border-radius: 50%; animation: spin 0.7s linear infinite; }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    .loading-text { font-size: 14px; color: #888; }
-    @media (max-width: 700px) { .main { flex-direction: column; } }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Segoe UI","PingFang SC",sans-serif; background:var(--bg); color:var(--text); font-size:14px; }
+
+    .topbar {
+      background:var(--card); border-bottom:1px solid var(--border);
+      padding:14px 24px; display:flex; align-items:center; gap:12px;
+      position:sticky; top:0; z-index:10;
+    }
+    .topbar h1 { font-size:16px; font-weight:600; }
+    .badge { font-size:11px; padding:3px 8px; border-radius:10px; background:#f0f1f5; color:var(--muted); }
+    .topbar nav { display:flex; gap:14px; margin-left:auto; }
+    .topbar nav a { font-size:12px; color:var(--primary); text-decoration:none; font-weight:500; }
+    .topbar nav a:hover { text-decoration:underline; }
+
+    .main { display:flex; gap:0; max-width:900px; margin:24px auto; }
+
+    .input-panel { flex:1; }
+    .input-card {
+      background:var(--card); border:1px solid var(--border); border-radius:8px; padding:16px;
+    }
+    .input-card label { font-size:12px; color:var(--muted); display:block; margin-bottom:6px; font-weight:600; }
+    .input-card textarea {
+      width:100%; border:1px solid var(--border); border-radius:6px; padding:10px;
+      font-size:14px; resize:vertical; min-height:80px; outline:none; font-family:inherit;
+    }
+    .input-card textarea:focus { border-color:var(--primary); }
+    .btn-row { display:flex; gap:8px; margin-top:10px; flex-wrap:wrap; }
+    .btn-primary {
+      background:var(--primary); color:#fff; border:none; border-radius:6px;
+      padding:8px 20px; font-size:13px; font-weight:600; cursor:pointer;
+    }
+    .btn-primary:hover { opacity:0.9; }
+    .btn-secondary {
+      background:#f0f1f5; color:var(--text); border:1px solid var(--border); border-radius:6px;
+      padding:8px 14px; font-size:12px; cursor:pointer;
+    }
+    .btn-secondary:hover { background:#e8eaf2; }
+
+    .result-panel { flex:1.2; margin-left:16px; }
+    .result-card {
+      background:var(--card); border:1px solid var(--border); border-radius:8px; padding:16px;
+      min-height:200px; max-height:calc(100vh - 120px); overflow-y:auto;
+    }
+    .placeholder { color:#bbb; font-size:14px; padding:20px; }
+    .result-ans { font-size:14px; line-height:1.7; white-space:pre-wrap; margin-bottom:12px; }
+    .result-meta { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px; }
+    .meta-tag { font-size:11px; padding:2px 8px; border-radius:8px; background:#f0f1f5; color:var(--muted); }
+    .meta-tag.conf-high { background:#d4edda; color:#155724; }
+    .meta-tag.conf-low { background:#fde8e8; color:var(--danger); }
+    .meta-tag.intent { background:#eef2ff; color:var(--primary); }
+    .sources { margin-top:10px; }
+    .sources h4 { font-size:12px; color:var(--muted); margin-bottom:6px; }
+    .source-item { font-size:12px; padding:6px 8px; background:#f8f9fb; border-radius:4px; margin-bottom:4px; color:#555; }
+    .session-id { font-size:11px; color:#aaa; margin-top:10px; font-family:monospace; word-break:break-all; }
+    .loading { display:flex; align-items:center; gap:10px; padding:18px 0; }
+    .spinner { width:18px; height:18px; border:2px solid #e4e7ee; border-top-color:#3b5bdb; border-radius:50%; animation:spin 0.7s linear infinite; }
+    @keyframes spin { to { transform:rotate(360deg); } }
+    .loading-text { font-size:14px; color:#888; }
+    @media (max-width:700px) { .main { flex-direction:column; } .result-panel { margin-left:0; margin-top:16px; } }
   </style>
 </head>
 <body>
   <div class="topbar">
     <h1>SupportPilot 客服护航台</h1>
     <span class="badge" id="mode-badge">连接中…</span>
-    <a href="/tickets-page" style="font-size:12px;color:#3b5bdb;text-decoration:none;margin-left:16px;font-weight:600">工单管理 →</a>
+    <nav>
+      <a href="/" style="font-size:12px;color:#666;text-decoration:none;font-weight:600">问答台</a>
+      <a href="/tickets-page" style="font-size:12px;color:#3b5bdb;text-decoration:none;font-weight:600">工单管理</a>
+      <a href="/monitoring-page" style="font-size:12px;color:#3b5bdb;text-decoration:none;font-weight:600">监控中心</a>
+      <a href="/sessions-page" style="font-size:12px;color:#3b5bdb;text-decoration:none;font-weight:600">会话回放</a>
+      <a href="/evals-page" style="font-size:12px;color:#3b5bdb;text-decoration:none;font-weight:600">评估管理</a>
+    </nav>
   </div>
   <div class="main">
     <div class="input-panel">
@@ -96,13 +97,15 @@
       </div>
     </div>
     <div class="result-panel" id="result-panel">
-      <div class="placeholder">提问后结果将显示在这里</div>
+      <div class="result-card" id="result-card">
+        <div class="placeholder">提问后结果将显示在这里</div>
+      </div>
     </div>
   </div>
   <script>
     const qEl = document.getElementById('q');
     const btn = document.getElementById('ask-btn');
-    const panel = document.getElementById('result-panel');
+    const card = document.getElementById('result-card');
     let currentSessionId = null;
 
     function fill(q) { qEl.value = q; qEl.focus(); }
@@ -111,133 +114,62 @@
       try {
         const r = await fetch('/health');
         const d = await r.json();
-        document.getElementById('mode-badge').textContent = d.llm_configured ? 'LLM: 已配置' : 'Mock 模式';
-      } catch { document.getElementById('mode-badge').textContent = '服务未连接'; }
+        const badge = document.getElementById('mode-badge');
+        badge.textContent = d.llm_configured ? 'LLM 已配置' : 'Mock 模式';
+        badge.style.background = d.llm_configured ? '#d4edda' : '#fde8e8';
+        badge.style.color = d.llm_configured ? '#155724' : '#e74c3c';
+      } catch { document.getElementById('mode-badge').textContent = '连接失败'; }
     }
-    checkMode();
 
     async function ask() {
       const question = qEl.value.trim();
       if (!question) return;
+      card.innerHTML = '<div class="loading"><div class="spinner"></div><div class="loading-text">正在处理…</div></div>';
       btn.disabled = true;
-      panel.innerHTML = '<div class="placeholder"><div class="loading"><div class="spinner"></div><div class="loading-text">Agent 处理中…</div></div></div>';
-      let res;
       try {
-        res = await fetch('/chat', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ question, session_id: currentSessionId })
-        });
+        let res;
+        if (currentSessionId) {
+          res = await fetch('/chat', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ question, session_id: currentSessionId })
+          });
+        } else {
+          res = await fetch('/chat', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ question })
+          });
+        }
+        const d = await res.json();
+        if (d.session_id) currentSessionId = d.session_id;
+        render(d);
       } catch (e) {
-        panel.innerHTML = '<div class="placeholder" style="color:#c0392b">服务未连接：' + e.message + '</div>';
-        btn.disabled = false;
-        return;
-      }
-      let d;
-      try { d = await res.json(); } catch (_) {
-        const raw = await res.text().catch(() => '');
-        panel.innerHTML = '<div class="placeholder" style="color:#c0392b">后端返回状态码 ' + res.status + '，响应不是 JSON。原始内容：' + (raw || '空响应') + '</div>';
-        btn.disabled = false;
-        return;
-      }
-      currentSessionId = d.session_id;
-      try { render(d); } finally { btn.disabled = false; }
+        card.innerHTML = '<div class="placeholder" style="color:#e74c3c">请求失败：' + e.message + '</div>';
+      } finally { btn.disabled = false; }
     }
-
-    function intentChip(intent) {
-      const map = {
-        refund:     ['chip-refund', '退款'],
-        return:     ['chip-return', '退货'],
-        reship:     ['chip-reship', '补发'],
-        compensate: ['chip-compensate', '赔付'],
-        promo:      ['chip-promo', '活动'],
-        ticket:     ['chip-ticket', '转人工'],
-        clarify:    ['chip-clarify', '需澄清'],
-      };
-      const [cls, label] = map[intent] || ['chip-no', intent];
-      return `<span class="chip ${cls}"><span class="chip-label">意图</span><span class="chip-value">${label}</span></span>`;
-    }
-
-    function priorityChip(p) {
-      const cls = p === 'urgent' ? 'chip-priority-urgent' : 'chip-priority-normal';
-      return `<span class="chip ${cls}"><span class="chip-label">优先级</span><span class="chip-value">${p === 'urgent' ? '紧急' : '普通'}</span></span>`;
-    }
-
-    function teamChip(t) {
-      const map = { aftersales: '售后组', quality: '质控组', ops: '运营组', general: '通用组' };
-      return `<span class="chip chip-team"><span class="chip-label">团队</span><span class="chip-value">${map[t] || t}</span></span>`;
-    }
-
-    function ticketChip(created) {
-      const cls = created ? 'chip-ticket' : 'chip-ok';
-      const label = created ? '已建工单' : '未建工单';
-      return `<span class="chip ${cls}"><span class="chip-label">工单</span><span class="chip-value">${label}</span></span>`;
-    }
-
-    function modeChip(mode) {
-      return `<span class="chip chip-mode"><span class="chip-label">模式</span><span class="chip-value">${mode === 'api' ? 'API' : 'Mock'}</span></span>`;
-    }
-
-    function confHtml(conf) {
-      const pct = Math.round(conf * 100);
-      const cls = conf >= 0.7 ? 'conf-fill-high' : conf >= 0.4 ? 'conf-fill-mid' : 'conf-fill-low';
-      const color = conf >= 0.7 ? '#27ae60' : conf >= 0.4 ? '#f39c12' : '#e74c3c';
-      return `<div class="conf-bar"><div class="conf-track"><div class="conf-fill ${cls}" style="width:${pct}%"></div></div><div class="conf-num" style="color:${color}">${pct}%</div></div>`;
-    }
-
-    function sourcesHtml(sources) {
-      if (!sources || !sources.length) return '<div style="font-size:13px;color:#aaa">无来源引用</div>';
-      return sources.map(s => `<div class="source-item"><span class="source-badge">${esc(s.id || '—')}</span><span class="source-file">${esc(s.source || '未知来源')}</span><span class="source-score">${s.score != null ? (s.score * 100).toFixed(0) + '%' : '—'}</span></div>`).join('');
-    }
-
-    function traceHtml(trace) {
-      if (!trace || !trace.length) return '';
-      return '<ul class="trace-list">' + trace.map(t => {
-        const label = t.step || String(t);
-        const ts = t.ts ? `<span class="ts">${new Date(t.ts).toLocaleTimeString()}</span>` : '';
-        const skipped = label.includes('skipped');
-        const fallback = label.includes('fallback') || label.includes('failed');
-        const cls = fallback ? 'fallback' : skipped ? 'skipped' : '';
-        return `<li class="trace-item ${cls}"><div class="trace-dot"></div><span class="trace-label">${esc(label)}${ts}</span></li>`;
-      }).join('') + '</ul>';
-    }
-
-    function esc(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
 
     function render(d) {
-      panel.innerHTML = `
-        <div class="card">
-          <div class="card-title">回答</div>
-          <div class="answer-text">${esc(d.answer)}</div>
-        </div>
-        <div class="card">
-          <div class="card-title">状态</div>
-          <div class="status-row">
-            ${intentChip(d.intent)}
-            ${ticketChip(d.created_ticket)}
-            ${priorityChip(d.ticket_priority)}
-            ${teamChip(d.ticket_team)}
-            ${modeChip(d.mode)}
-          </div>
-          <div style="margin-top:14px">
-            <div style="font-size:12px;color:#888;margin-bottom:6px">置信度</div>
-            ${confHtml(d.confidence)}
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-title">引用来源</div>
-          ${sourcesHtml(d.sources)}
-        </div>
-        <div class="card">
-          <div class="card-title">执行轨迹</div>
-          ${traceHtml(d.trace)}
-        </div>
-        <div class="session-id">session: ${esc(d.session_id)}</div>
-      `;
+      const confClass = d.confidence >= 0.6 ? 'conf-high' : 'conf-low';
+      const confLabel = d.confidence >= 0.6 ? '置信度 ' + Math.round(d.confidence*100) + '%' : '低置信度 ' + Math.round(d.confidence*100) + '%';
+      const sourcesHtml = d.sources && d.sources.length
+        ? '<div class="sources"><h4>参考来源</h4>' + d.sources.map(s => '<div class="source-item">' + (s.doc_title || s.title || s.doc_id || JSON.stringify(s)) + '</div>').join('') + '</div>'
+        : '';
+      const ticketHtml = d.created_ticket
+        ? '<div class="meta-tag" style="background:#fde8e8;color:#e74c3c">已创建工单 → ' + (d.ticket_no || '查看工单管理') + '</div>'
+        : '';
+      card.innerHTML =
+        '<div class="result-meta">' +
+        '  <div class="meta-tag intent">意图：' + d.intent + '</div>' +
+        '  <div class="meta-tag ' + confClass + '">' + confLabel + '</div>' +
+        '  ' + ticketHtml +
+        '</div>' +
+        '<div class="result-ans">' + d.answer + '</div>' +
+        sourcesHtml +
+        '<div class="session-id">session: ' + d.session_id + '</div>';
     }
 
-    qEl.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); ask(); } });
+    checkMode();
   </script>
 </body>
 </html>
-

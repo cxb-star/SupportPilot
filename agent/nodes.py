@@ -12,6 +12,7 @@ from agent.prompts import ANSWER_PROMPT, CLARIFY_PROMPT, INTENT_PROMPT
 from agent.state import AgentState
 from agent.tools import create_ticket
 from config import settings
+
 from llm import LLMUnavailable, complete_structured
 
 # 客服场景意图标签
@@ -30,6 +31,8 @@ _INTENT_TEAM = {
     "ticket": "general",
     "clarify": "general",
 }
+# LLM 意图分类输出的合法标签集合（用于校验，非法标签视为 LLM 失败回退）
+_VALID_INTENTS = set(_INTENTS)
 
 
 def _ts() -> str:
@@ -42,14 +45,8 @@ def _steps(*items: str) -> list[dict]:
         out.append(i if isinstance(i, dict) else {"step": i, "ts": _ts()})
     return out
 
-
-def classify_intent(llm, state: AgentState) -> dict:
-    """客服场景：先做规则预判，再用 LLM 细化（可选）。
-
-    当前版本用规则判断，减少 LLM 调用成本；
-    后续可升级为 LLM 做完整意图分类。
-    """
-    question = state["question"]
+def _classify_intent_by_rules(question: str) -> dict:
+    """规则版意图分类：无 LLM 或灰度回滚时使用。强信号直接 ticket，其余关键词匹配。"""
     q = question.lower()
 
     if any(s in q for s in _TICKET_SIGNALS):
@@ -80,6 +77,66 @@ def classify_intent(llm, state: AgentState) -> dict:
         "trace": _steps("classify_intent", f"intent={intent}(规则)"),
     }
 
+
+def _classify_intent_by_llm(llm, state: AgentState) -> dict | None:
+    """LLM 意图分类：调用 LLM 输出 JSON 意图标签。失败或无效输出返回 None，由调用方回退。"""
+    if llm is None:
+        return None
+    try:
+        result = complete_structured(
+            llm,
+            INTENT_PROMPT.format(question=state["question"]),
+            ctx={"step": "classify_intent", "session_id": state["session_id"]},
+        )
+    except LLMUnavailable:
+        return None
+
+    data = result.data or {}
+    intent = str(data.get("intent", "")).strip().lower()
+    if intent not in _VALID_INTENTS:
+        return None
+    try:
+        confidence = min(1.0, max(0.0, float(data.get("confidence", 0.0) or 0.0)))
+    except (TypeError, ValueError):
+        confidence = 0.0
+
+    # 强"转人工"信号即便 LLM 没识别，也强制 ticket，避免漏建单
+    q = state["question"].lower()
+    if intent != "ticket" and any(s in q for s in _TICKET_SIGNALS):
+        intent = "ticket"
+        confidence = 1.0
+
+    return {
+        "intent": intent,
+        "confidence": confidence,
+        "ticket_team": _INTENT_TEAM.get(intent, "general"),
+        "ticket_priority": "urgent" if intent == "compensate" else "normal",
+        "llm_usage": result.usage,
+        "trace": _steps(
+            "classify_intent",
+            f"intent={intent}(LLM) conf={confidence:.2f} tokens={result.total_tokens}",
+        ),
+    }
+
+
+def classify_intent(llm, state: AgentState) -> dict:
+    """意图分类入口：灰度开关 use_llm_intent=True 时走 LLM，否则走规则版（回滚态）。
+
+    LLM 路径失败/无效时自动回退到规则版，保证主链路不中断。
+    """
+    import guardrails
+    flags = guardrails.FeatureFlags()
+
+    if flags.use_llm_intent:
+        llm_result = _classify_intent_by_llm(llm, state)
+        if llm_result is not None:
+            return llm_result
+        # LLM 失败，回退规则
+        fallback = _classify_intent_by_rules(state["question"])
+        fallback["trace"] = fallback.get("trace", []) + ["classify_llm_fallback:rule"]
+        return fallback
+
+    return _classify_intent_by_rules(state["question"])
 
 def retrieve_docs(retriever, state: AgentState) -> dict:
     """检索客服政策库；clarify / ticket 意图跳过检索。"""
