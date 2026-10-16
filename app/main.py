@@ -2,7 +2,6 @@
 import logging
 
 from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 
 from config import BASE_DIR, settings
@@ -13,13 +12,6 @@ setup_logging(getattr(logging, settings.LOG_LEVEL, logging.INFO))
 init_db(settings.SQLITE_PATH)
 
 app = FastAPI(title="Agent Knowledge Service", version="0.2.0")
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
 
 from app.routes import router
 
