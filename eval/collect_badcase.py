@@ -12,6 +12,7 @@
 import json
 import sqlite3
 from pathlib import Path
+from config import settings
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 BADCASE_FILE = BASE_DIR / "eval" / "badcase.jsonl"
@@ -20,7 +21,7 @@ CONFIDENCE_THRESHOLD = 0.5
 
 def collect_badcases(limit: int = 50) -> int:
     """从 audit_log 拉 badcase，写入 badcase.jsonl，返回新增条数。"""
-    db = BASE_DIR / "data" / "app.db"
+    db = settings.SQLITE_PATH
     if not db.exists():
         print("no audit_log found, skip")
         return 0

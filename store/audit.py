@@ -1,7 +1,7 @@
-import logging
+from logging_config import get_ctx_logger
 
-logger = logging.getLogger("agent_knowledge.audit")
+audit = get_ctx_logger("audit")
 
 
 def record(event: dict) -> None:
-    logger.info("audit_event=%s", event)
+    audit.info("event=%s", event)

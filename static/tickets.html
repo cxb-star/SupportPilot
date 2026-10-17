@@ -5,121 +5,103 @@
   <title>工单管理</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    :root { --bg:#f5f6fa; --card:#fff; --border:#e4e7ee; --text:#1a1a2e; --muted:#6b7280; --primary:#3b5bdb; --danger:#e74c3c; --warning:#f39c12; --success:#27ae60; }
-    * { box-sizing:border-box; margin:0; padding:0; }
-    body { font-family:"Segoe UI","PingFang SC",sans-serif; background:var(--bg); color:var(--text); font-size:14px; }
-    .topbar { background:var(--card); border-bottom:1px solid var(--border); padding:14px 24px; display:flex; align-items:center; gap:12px; position:sticky; top:0; z-index:10; }
-    .topbar h1 { font-size:16px; font-weight:600; }
-    .topbar nav { display:flex; gap:14px; margin-left:auto; }
-    .topbar nav a { font-size:13px; color:var(--primary); text-decoration:none; font-weight:500; }
-    .topbar nav a:hover { text-decoration:underline; }
-    .filters { padding:16px 24px; display:flex; gap:12px; flex-wrap:wrap; align-items:center; max-width:1000px; margin:0 auto; }
-    .filters select, .filters input { border:1px solid var(--border); border-radius:6px; padding:7px 10px; font-size:13px; outline:none; font-family:inherit; }
-    .filters select:focus, .filters input:focus { border-color:var(--primary); }
-    .btn { background:var(--primary); color:#fff; border:none; border-radius:6px; padding:7px 16px; font-size:13px; font-weight:600; cursor:pointer; }
-    .btn:hover { opacity:0.9; }
-    .btn-sm { padding:5px 10px; font-size:12px; }
-    .table-wrap { max-width:1000px; margin:0 auto 24px; padding:0 24px; }
-    table { width:100%; background:var(--card); border:1px solid var(--border); border-radius:8px; border-collapse:separate; border-spacing:0; overflow:hidden; }
-    th { background:#f8f9fb; font-size:12px; color:var(--muted); font-weight:600; text-align:left; padding:10px 14px; border-bottom:1px solid var(--border); }
-    td { padding:10px 14px; border-bottom:1px solid #f0f1f5; font-size:13px; vertical-align:top; }
-    tr:last-child td { border-bottom:none; }
-    .tag { display:inline-block; font-size:11px; padding:2px 8px; border-radius:8px; font-weight:500; }
-    .tag-open { background:#fde8e8; color:var(--danger); }
-    .tag-in_progress { background:#fff3cd; color:#856404; }
-    .tag-closed { background:#d4edda; color:#155724; }
-    .tag-urgent { background:#fde8e8; color:var(--danger); font-weight:700; }
-    .tag-high { background:#fff3cd; color:#856404; }
-    .tag-normal { background:#eef2ff; color:var(--primary); }
-    .tag-low { background:#f0f1f5; color:var(--muted); }
-    .team { font-size:12px; color:var(--muted); }
-    .no-data { text-align:center; color:#bbb; padding:40px; }
+    :root { --bg:#f8fafc;--card:#fff;--border:#e2e8f0;--border-light:#f1f5f9;--text:#0f172a;--text-secondary:#475569;--muted:#94a3b8;--primary:#4f46e5;--primary-light:#eef2ff;--success:#16a34a;--success-bg:#f0fdf4;--success-border:#bbf7d0;--warning:#d97706;--warning-bg:#fffbeb;--warning-border:#fde68a;--danger:#dc2626;--danger-bg:#fef2f2;--shadow-sm:0 1px 2px rgba(0,0,0,0.05);--shadow:0 1px 3px rgba(0,0,0,0.1);--radius:8px;--radius-lg:12px; }
+    *{box-sizing:border-box;margin:0;padding:0} body{font-family:"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.6}
+    .topbar{background:var(--card);border-bottom:1px solid var(--border);padding:0 24px;height:52px;display:flex;align-items:center;gap:16px;position:sticky;top:0;z-index:100;box-shadow:var(--shadow-sm)} .topbar-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)} .topbar-logo{width:28px;height:28px;background:linear-gradient(135deg,var(--primary),#7c3aed);border-radius:7px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700;flex-shrink:0} .topbar-title{font-size:15px;font-weight:700} .topbar-nav{display:flex;gap:2px;margin-left:auto} .topbar-nav a{font-size:13px;color:var(--text-secondary);text-decoration:none;font-weight:500;padding:6px 12px;border-radius:6px;transition:all .15s} .topbar-nav a:hover{background:var(--primary-light);color:var(--primary)} .topbar-nav a.active{background:var(--primary);color:#fff}
+    .page{max-width:1200px;margin:0 auto;padding:24px} .page-header{margin-bottom:20px} .page-header h2{font-size:18px;font-weight:700} .page-header p{font-size:13px;color:var(--muted);margin-top:2px}
+    .filters{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:20px} .filters select,.filters input{border:1px solid var(--border);border-radius:6px;padding:7px 10px;font-size:13px;outline:none;font-family:inherit;background:var(--card);color:var(--text)} .filters select:focus,.filters input:focus{border-color:var(--primary);box-shadow:0 0 0 3px var(--primary-light)} .filters input{width:160px}
+    .btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;border:none;transition:all .15s;text-decoration:none} .btn-primary{background:var(--primary);color:#fff}.btn-primary:hover{background:#4338ca} .btn-secondary{background:var(--bg);color:var(--text-secondary);border:1px solid var(--border)}.btn-secondary:hover{background:var(--border-light)} .btn-sm{padding:5px 10px;font-size:12px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden} .card-header{padding:14px 18px;border-bottom:1px solid var(--border-light);display:flex;align-items:center;justify-content:space-between} .card-header h3{font-size:13px;font-weight:600;color:var(--text-secondary)} .card-body{padding:0}
+    table{width:100%;border-collapse:collapse} th{background:var(--bg);font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;text-align:left;padding:10px 14px;border-bottom:1px solid var(--border)} td{padding:12px 14px;border-bottom:1px solid var(--border-light);font-size:13px;vertical-align:middle} tr:hover td{background:var(--border-light)} tr:last-child td{border-bottom:none}
+    .tag{display:inline-flex;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap} .tag-open{background:var(--danger-bg);color:var(--danger)} .tag-in_progress{background:var(--warning-bg);color:var(--warning)} .tag-closed{background:var(--success-bg);color:var(--success)} .tag-urgent{background:var(--danger-bg);color:var(--danger);font-weight:700} .tag-normal{background:var(--primary-light);color:var(--primary)}
+    .team{font-size:12px;color:var(--text-secondary)} .empty{text-align:center;color:var(--muted);padding:48px;font-size:13px}
+    .actions{display:flex;gap:6px;flex-wrap:wrap}
+    .summary-bar{display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap} .summary-stat{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:12px 18px;display:flex;flex-direction:column;gap:2px} .summary-stat .ss-val{font-size:22px;font-weight:800;color:var(--text)} .summary-stat .ss-label{font-size:11px;color:var(--muted);font-weight:500} .summary-stat .ss-val.danger{color:var(--danger)} .summary-stat .ss-val.warning{color:var(--warning)} .summary-stat .ss-val.success{color:var(--success)}
+    @media(max-width:700px){th,td{padding:8px 10px;font-size:12px}.actions{flex-direction:column}}
   </style>
 </head>
 <body>
   <div class="topbar">
-    <h1>工单管理</h1>
-    <nav>
+    <a class="topbar-brand" href="/"><div class="topbar-logo">S</div><span class="topbar-title">SupportPilot</span></a>
+    <nav class="topbar-nav">
       <a href="/">问答台</a>
-      <a href="/tickets-page">工单管理</a>
+      <a href="/tickets-page" class="active">工单管理</a>
       <a href="/monitoring-page">监控中心</a>
       <a href="/sessions-page">会话回放</a>
       <a href="/evals-page">评估管理</a>
     </nav>
   </div>
-  <div class="filters">
-    <select id="f-status">
-      <option value="">全部状态</option>
-      <option value="open">open</option>
-      <option value="in_progress">in_progress</option>
-      <option value="closed">closed</option>
-    </select>
-    <select id="f-team">
-      <option value="">全部团队</option>
-      <option value="general">general</option>
-      <option value="refund">refund</option>
-      <option value="logistics">logistics</option>
-      <option value="technical">technical</option>
-    </select>
-    <input id="f-no" placeholder="工单号…" style="width:140px" />
-    <button class="btn" onclick="loadTickets()">查询</button>
-    <button class="btn" onclick="document.getElementById('f-status').value='';document.getElementById('f-team').value='';document.getElementById('f-no').value='';loadTickets()" style="background:var(--muted)">重置</button>
-  </div>
-  <div class="table-wrap">
-    <table id="ticket-table">
-      <thead>
-        <tr><th>工单号</th><th>问题摘要</th><th>状态</th><th>优先级</th><th>团队</th><th>负责人</th><th>创建时间</th><th>操作</th></tr>
-      </thead>
-      <tbody id="ticket-body"><tr><td colspan="8" class="no-data">加载中…</td></tr></tbody>
-    </table>
+  <div class="page">
+    <div class="page-header"><h2>工单管理</h2><p>查看、筛选和跟进客服工单状态</p></div>
+    <div class="summary-bar" id="summary-bar">
+      <div class="summary-stat"><span class="ss-val" id="s-total">-</span><span class="ss-label">总工单</span></div>
+      <div class="summary-stat"><span class="ss-val warning" id="s-open">-</span><span class="ss-label">待处理</span></div>
+      <div class="summary-stat"><span class="ss-val danger" id="s-urgent">-</span><span class="ss-label">紧急</span></div>
+      <div class="summary-stat"><span class="ss-val success" id="s-closed">-</span><span class="ss-label">已关闭</span></div>
+    </div>
+    <div class="filters">
+      <select id="f-status"><option value="">全部状态</option><option value="open">待处理</option><option value="in_progress">处理中</option><option value="closed">已关闭</option></select>
+      <select id="f-team"><option value="">全部团队</option><option value="aftersales">售后</option><option value="quality">质量</option><option value="ops">运营</option><option value="general">通用</option></select>
+      <input id="f-no" placeholder="工单号搜索…" />
+      <button class="btn btn-primary" onclick="loadTickets()">查询</button>
+      <button class="btn btn-secondary" onclick="resetFilters()">重置</button>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>工单号</th><th>问题摘要</th><th>意图</th><th>状态</th><th>优先级</th><th>团队</th><th>负责人</th><th>创建时间</th><th>操作</th></tr></thead>
+            <tbody id="ticket-body"><tr><td colspan="9" class="empty">加载中…</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
   </div>
   <script>
-    async function loadTickets() {
-      const status = document.getElementById('f-status').value;
-      const team = document.getElementById('f-team').value;
-      const no = document.getElementById('f-no').value.trim();
-      const tbody = document.getElementById('ticket-body');
-      try {
-        let url = '/tickets?limit=100';
-        if (status) url += '&status=' + status;
-        if (team) url += '&team=' + team;
-        const r = await fetch(url);
-        const d = await r.json();
-        let tickets = d.tickets || [];
-        if (no) tickets = tickets.filter(t => t.ticket_no && t.ticket_no.toLowerCase().includes(no.toLowerCase()));
-        if (!tickets.length) { tbody.innerHTML = '<tr><td colspan="8" class="no-data">暂无工单</td></tr>'; return; }
-        tbody.innerHTML = tickets.map(t => {
-          const stCls = t.status === 'open' ? 'tag-open' : t.status === 'in_progress' ? 'tag-in_progress' : 'tag-closed';
-          const prCls = t.priority === 'urgent' ? 'tag-urgent' : t.priority === 'high' ? 'tag-high' : t.priority === 'low' ? 'tag-low' : 'tag-normal';
-          const nextActions = t.status === 'open'
-            ? ['<button class="btn btn-sm" onclick="setStatus(\'' + t.ticket_no + '\',\'in_progress\')">开始处理</button>', '<button class="btn btn-sm" style="background:var(--success)" onclick="setStatus(\'' + t.ticket_no + '\',\'closed\')">关闭</button>']
-            : ['<button class="btn btn-sm" style="background:var(--success)" onclick="setStatus(\'' + t.ticket_no + '\',\'closed\')">关闭</button>'];
-          return '<tr>' +
-            '<td style="font-family:monospace;font-size:12px">' + t.ticket_no + '</td>' +
-            '<td style="max-width:200px">' + (t.question || t.title || '') + '</td>' +
-            '<td><span class="tag ' + stCls + '">' + t.status + '</span></td>' +
-            '<td><span class="tag ' + prCls + '">' + (t.priority || '-') + '</span></td>' +
-            '<td class="team">' + (t.team || '-') + '</td>' +
-            '<td class="team">' + (t.assignee || '未指派') + '</td>' +
-            '<td class="team">' + (t.created_at ? t.created_at.slice(0,16) : '-') + '</td>' +
-            '<td>' + nextActions.join(' ') + '</td>' +
-            '</tr>';
+    async function loadTickets(){
+      const status=document.getElementById('f-status').value,team=document.getElementById('f-team').value,no=document.getElementById('f-no').value.trim();
+      const tbody=document.getElementById('ticket-body');
+      try{
+        let url='/tickets?limit=200';
+        if(status)url+='&status='+status;if(team)url+='&team='+team;
+        const r=await fetch(url),d=await r.json();let tickets=d.tickets||[];
+        if(no)tickets=tickets.filter(t=>t.ticket_no&&t.ticket_no.toLowerCase().includes(no.toLowerCase()));
+        // summary
+        const total=tickets.length,open=tickets.filter(t=>t.status==='open').length,urgent=tickets.filter(t=>t.priority==='urgent'&&t.status!=='closed').length,closed=tickets.filter(t=>t.status==='closed').length;
+        document.getElementById('s-total').textContent=total;
+        document.getElementById('s-open').textContent=open;
+        document.getElementById('s-urgent').textContent=urgent;
+        document.getElementById('s-closed').textContent=closed;
+        if(!tickets.length){tbody.innerHTML='<tr><td colspan="9" class="empty">暂无工单</td></tr>';return;}
+        tbody.innerHTML=tickets.map(t=>{
+          const stCls=t.status==='open'?'tag-open':t.status==='in_progress'?'tag-in_progress':'tag-closed';
+          const prCls=t.priority==='urgent'?'tag-urgent':'tag-normal';
+          const actions=t.status!=='closed'?
+            '<div class="actions">'+
+              (t.status==='open'?<button class="btn btn-sm btn-primary" onclick="setStatus(\\\\\,\\\"in_progress\\\")">开始</button>:'')+
+              <button class="btn btn-sm btn-secondary" onclick="setStatus(\\\\\\",\\\"closed\\\")">关闭</button>+
+            '</div>':'<span style="font-size:12px;color:var(--muted)">—</span>';
+          return '<tr>'+
+            '<td style="font-family:monospace;font-size:12px;color:var(--primary)">'+escHtml(t.ticket_no)+'</td>'+
+            '<td style="max-width:220px">'+escHtml(t.question||'')+'</td>'+
+            '<td><span class="tag tag-muted">'+escHtml(t.intent||'-')+'</span></td>'+
+            '<td><span class="tag '+stCls+'">'+escHtml(t.status||'-')+'</span></td>'+
+            '<td><span class="tag '+prCls+'">'+escHtml(t.priority||'-')+'</span></td>'+
+            '<td class="team">'+escHtml(t.team||'-')+'</td>'+
+            '<td class="team">'+escHtml(t.assignee||'未指派')+'</td>'+
+            '<td class="team">'+(t.created_at?t.created_at.slice(0,16):'-')+'</td>'+
+            '<td>'+actions+'</td></tr>';
         }).join('');
-      } catch (e) {
-        tbody.innerHTML = '<tr><td colspan="8" class="no-data" style="color:var(--danger)">加载失败：' + e.message + '</td></tr>';
-      }
+      }catch(e){tbody.innerHTML='<tr><td colspan="9" class="empty" style="color:var(--danger)">加载失败：'+escHtml(e.message)+'</td></tr>';}
     }
-    async function setStatus(no, newStatus) {
-      try {
-        const r = await fetch('/tickets/' + no + '/status', {
-          method: 'POST',
-          headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify({ new_status: newStatus })
-        });
-        if (!r.ok) { const d = await r.json(); alert(d.detail || '操作失败'); return; }
+    async function setStatus(no,newStatus){
+      try{const r=await fetch('/tickets/'+no+'/status',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({new_status:newStatus})});
+        if(!r.ok){const d=await r.json();alert(d.detail||'操作失败');return;}
         loadTickets();
-      } catch (e) { alert('请求失败：' + e.message); }
+      }catch(e){alert('请求失败：'+e.message);}
     }
+    function resetFilters(){document.getElementById('f-status').value='';document.getElementById('f-team').value='';document.getElementById('f-no').value='';loadTickets();}
+    function escHtml(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
     loadTickets();
   </script>
 </body>

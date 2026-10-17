@@ -3,6 +3,7 @@ import sqlite3
 from datetime import datetime, timezone
 
 from logging_config import get_ctx_logger
+from store.audit import record
 
 log = get_ctx_logger("agent_knowledge.tickets")
 
@@ -40,6 +41,7 @@ def create_ticket(
     intent: str = "general",
     priority: str | None = None,
     team: str | None = None,
+    session_id: str | None = None,
 ) -> dict:
     """在 SQLite 中创建持久化工单，含优先级与团队，返回含真实 id 的 dict。"""
     from pathlib import Path
@@ -61,7 +63,9 @@ def create_ticket(
             priority TEXT NOT NULL DEFAULT 'normal',
             team TEXT NOT NULL DEFAULT 'general',
             status TEXT NOT NULL DEFAULT 'open',
-            created_at TEXT NOT NULL
+            created_at TEXT NOT NULL,
+            assigned_to TEXT,
+            updated_at TEXT
         )
         """
     )
@@ -76,6 +80,17 @@ def create_ticket(
     )
     row_id = cur.lastrowid
     conn.commit()
+    rec = {
+        "event": "ticket_created",
+        "ticket_no": ticket_no,
+        "user_id": user_id,
+        "intent": intent,
+        "priority": priority,
+        "team": team,
+    }
+    if session_id:
+        rec["session_id"] = session_id
+    record(rec)
     conn.close()
     log.info(
         "ticket_created row_id=%s ticket_no=%s user_id=%s intent=%s priority=%s team=%s",
@@ -163,7 +178,7 @@ def get_ticket(db_path, ticket_no: str) -> dict | None:
     return dict(zip(cols, row))
 
 
-def transition_ticket(db_path, ticket_no: str, new_status: str, assignee: str | None = None) -> dict:
+def transition_ticket(db_path, ticket_no: str, new_status: str, assignee: str | None = None, user_id: str | None = None) -> dict:
     """工单状态流转：open->in_progress/closed, in_progress->closed/open。
 
     非法流转（如 closed->open）会抛 ValueError，由调用方决定如何兜底。
@@ -176,6 +191,15 @@ def transition_ticket(db_path, ticket_no: str, new_status: str, assignee: str | 
     db_path.parent.mkdir(parents=True, exist_ok=True)
     conn = sqlite3.connect(str(db_path))
     try:
+        # 保证表存在（兼容全新空库）
+        conn.execute(
+            "CREATE TABLE IF NOT EXISTS tickets ("
+            "id INTEGER PRIMARY KEY AUTOINCREMENT, "
+            "ticket_no TEXT UNIQUE NOT NULL, user_id TEXT NOT NULL, "
+            "question TEXT NOT NULL, intent TEXT, priority TEXT NOT NULL DEFAULT 'normal', "
+            "team TEXT NOT NULL DEFAULT 'general', status TEXT NOT NULL DEFAULT 'open', "
+            "created_at TEXT NOT NULL, assigned_to TEXT, updated_at TEXT)"
+        )
         # 保证 assigned_to 列存在（兼容旧库）
         existing = {r[1] for r in conn.execute("PRAGMA table_info(tickets)").fetchall()}
         if "assigned_to" not in existing:
@@ -201,6 +225,16 @@ def transition_ticket(db_path, ticket_no: str, new_status: str, assignee: str | 
                 (new_status, now, ticket_no),
             )
         conn.commit()
+        rec = {
+            "event": "ticket_transition",
+            "ticket_no": ticket_no,
+            "from": current,
+            "to": new_status,
+            "assignee": assignee,
+        }
+        if user_id:
+            rec["user_id"] = user_id
+        record(rec)
         log.info(
             "ticket_transition ticket_no=%s %s -> %s assignee=%s",
             ticket_no,

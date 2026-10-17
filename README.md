@@ -103,6 +103,32 @@ python -m app.main                 # 启动，访问 http://127.0.0.1:8000
 | `USE_LLM_INTENT` | `1` 走 LLM 意图分类，默认 `0` 规则版 |
 | `SQLITE_PATH` / `CHROMA_PERSIST_DIR` | 默认 `./data/app.db` / `./data/chroma` |
 
+
+### 灰度回滚（运行时切换，无需重启）
+
+意图分类默认走规则版（`USE_LLM_INTENT=0`），线上可以先用小流量 LLM 版验证效果，
+有问题随时回滚。开关写进进程级共享存储，所有后续请求立即生效。
+
+**查看当前状态：**
+```bash
+curl http://127.0.0.1:8000/feature-flags
+```
+
+**回滚到 v1（规则版意图，关闭多轮历史）：**
+```bash
+curl -X POST "http://127.0.0.1:8000/rollback?version=v1&role=admin"
+# 返回 {"status":"ok","rolled_back_to":"v1","use_llm_intent":false,...}
+```
+
+**切换到 v2（LLM 意图分类）：**
+```bash
+curl -X POST "http://127.0.0.1:8000/rollback?version=v2&role=admin"
+# 返回 {"status":"ok","rolled_back_to":"v2","use_llm_intent":true,...}
+```
+
+> 注意：运行时 flag 存在进程内存中，重启后失效，回到 `.env` 的初始值。
+> 生产环境应将 flag 持久化到配置中心或数据库。
+
 ### 测试与评估（无需真实 LLM）
 
 ```bash

@@ -49,6 +49,8 @@ class _CtxLogger:
     def _log(self, level: int, msg: str, *args, **kwargs) -> None:
         ctx = kwargs.pop("ctx", None)
         exc = kwargs.pop("exc_info", None)
+        if exc is True:
+            exc = sys.exc_info()
         record = self._logger.makeRecord(
             self._logger.name, level, "__main__", 0, msg, args, exc
         )

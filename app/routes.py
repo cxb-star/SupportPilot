@@ -5,14 +5,14 @@ from pathlib import Path
 import sqlite3
 
 from fastapi import APIRouter
-from pydantic import BaseModel
+from pydantic import BaseModel, Field, constr
 
 from agent.graph import AgentContext, build_graph, get_checkpointer
 from agent.state import init_state
 from config import settings
 from logging_config import get_ctx_logger
 from store.session import save_audit, save_session, load_history
-from guardrails import get_rate_limiter, user_has_permission, FeatureFlags
+from guardrails import get_rate_limiter, user_has_permission, FeatureFlags, set_feature_flag
 
 log = get_ctx_logger("routes")
 
@@ -53,8 +53,8 @@ router.include_router(monitoring_router, tags=["monitoring"])
 
 
 class ChatRequest(BaseModel):
-    question: str
-    user_id: str = "demo-user"
+    question: str = Field(min_length=1, max_length=500)
+    user_id: str = Field(default="demo-user", pattern=r"^[a-zA-Z0-9_-]+$")
     session_id: str | None = None
     role: str = "operator"
 
@@ -202,7 +202,7 @@ def set_ticket_status(ticket_no: str, req: TicketStatusRequest, role: str = "ope
     except sqlite3.Error as exc:
         # 数据库层错误（缺列等）：不应再裸露成 500，返回 500 但带可读 detail
         log.exception("ticket_transition_db_error ticket_no=%s", ticket_no)
-        return JSONResponse(status_code=500, content={"detail": f"db_error: {exc}"})
+        return JSONResponse(status_code=500, content={"detail": "internal_server_error"})
     return updated
 
 # ============================================================
@@ -218,20 +218,37 @@ def get_flags():
         "use_history_in_prompt": flags.use_history_in_prompt,
         "rag_top_k": flags.rag_top_k,
         "confidence_threshold": flags.confidence_threshold,
-        "active_version": flags.active_version,
     }
 
 
 @router.post("/rollback")
-def rollback(version: str = "v1"):
-    """灰度回滚接口：将 active_version 切到 v1（规则版意图 + 关闭多轮历史）。
+def rollback(version: str = "v1", role: str = ""):
+    """灰度回滚接口：将 active_version 切到 v1/v2，同时切换 LLM 意图分类。
 
-    实际生产里这里应该写 Redis 或配置中心，这里是内存版 demo。
+    v1 -> use_llm_intent=False，v2 -> use_llm_intent=True。
+    运行时写入共享 flag 存储，所有后续请求立即生效，无需重启。
     """
-    from guardrails import FeatureFlags
-    # 简单实现：直接打印当前切换，实际应持久化
-    log.info("rollback requested target_version=%s", version)
-    return {"status": "ok", "rolled_back_to": version, "note": "内存版，重启后失效；生产需接配置中心"}
+    if not user_has_permission(role, "rollback"):
+        from fastapi.responses import JSONResponse
+        return JSONResponse(
+            status_code=403,
+            content={'detail': f"permission_denied: role '{role}' cannot rollback"},
+        )
+    if version == "v1":
+        set_feature_flag("use_llm_intent", False)
+        set_feature_flag("use_history_in_prompt", False)
+        set_feature_flag("active_version", "v1")
+    else:
+        set_feature_flag("use_llm_intent", True)
+        set_feature_flag("active_version", version)
+    log.info("rollback applied version=%s", version)
+    flags = FeatureFlags()
+    return {
+        "status": "ok",
+        "rolled_back_to": version,
+        "use_llm_intent": flags.use_llm_intent,
+        "active_version": flags.active_version,
+    }
 
 @router.get('/tickets-page')
 def tickets_page():

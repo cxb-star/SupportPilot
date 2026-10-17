@@ -48,7 +48,9 @@ def init_db(path: str | Path) -> None:
             priority TEXT NOT NULL DEFAULT 'normal',
             team TEXT NOT NULL DEFAULT 'general',
             status TEXT NOT NULL DEFAULT 'open',
-            created_at TEXT NOT NULL
+            created_at TEXT NOT NULL,
+            assigned_to TEXT,
+            updated_at TEXT
         )
         """
     )

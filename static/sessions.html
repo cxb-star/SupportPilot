@@ -5,181 +5,116 @@
   <title>会话回放</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    :root {
-      --bg: #f5f6fa; --card: #fff; --border: #e4e7ee;
-      --text: #1a1a2e; --muted: #6b7280; --primary: #3b5bdb;
-      --success: #27ae60; --warning: #f39c12; --danger: #e74c3c;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: "Segoe UI","PingFang SC",sans-serif; background:var(--bg); color:var(--text); font-size:14px; }
-
-    .topbar {
-      background:var(--card); border-bottom:1px solid var(--border);
-      padding:14px 24px; display:flex; align-items:center; gap:12px;
-      position:sticky; top:0; z-index:10;
-    }
-    .topbar h1 { font-size:16px; font-weight:600; }
-    .topbar nav { display:flex; gap:14px; margin-left:auto; }
-    .topbar nav a { font-size:13px; color:var(--primary); text-decoration:none; font-weight:500; }
-    .topbar nav a:hover { text-decoration:underline; }
-
-    .layout { display:flex; max-width:1200px; margin:0 auto; gap:0; min-height:calc(100vh - 57px); }
-
-    .session-list { width:340px; flex-shrink:0; border-right:1px solid var(--border); background:var(--card); overflow-y:auto; max-height:calc(100vh - 57px); }
-    .session-list-header {
-      padding:12px 16px; border-bottom:1px solid var(--border);
-      position:sticky; top:0; background:var(--card); z-index:2;
-    }
-    .session-list-header h2 { font-size:13px; font-weight:600; color:var(--muted); margin-bottom:8px; }
-    .search-box {
-      width:100%; border:1px solid var(--border); border-radius:6px;
-      padding:7px 10px; font-size:13px; outline:none; font-family:inherit;
-    }
-    .search-box:focus { border-color:var(--primary); }
-
-    .session-item {
-      padding:12px 16px; border-bottom:1px solid #f0f1f5; cursor:pointer;
-      transition:background 0.12s;
-    }
-    .session-item:hover { background:#f8f9fb; }
-    .session-item.active { background:#eef2ff; border-left:3px solid var(--primary); }
-    .session-item .s-q { font-size:13px; font-weight:600; color:var(--text); margin-bottom:4px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-    .session-item .s-meta { font-size:11px; color:var(--muted); display:flex; gap:8px; flex-wrap:wrap; }
-    .s-tag { font-size:10px; padding:1px 6px; border-radius:8px; background:#f0f1f5; color:#555; }
-    .s-tag.ticket { background:#fde8e8; color:var(--danger); }
-
-    .replay-panel { flex:1; padding:20px; overflow-y:auto; max-height:calc(100vh - 57px); }
-    .replay-empty { text-align:center; color:#bbb; padding:60px 0; font-size:14px; }
-    .replay-msg { display:flex; gap:10px; margin-bottom:16px; }
-    .replay-msg.user { justify-content:flex-end; }
-    .msg-bubble {
-      max-width:65%; padding:10px 14px; border-radius:10px; font-size:14px; line-height:1.6;
-      white-space:pre-wrap; word-break:break-word;
-    }
-    .replay-msg.user .msg-bubble { background:var(--primary); color:#fff; border-bottom-right-radius:3px; }
-    .replay-msg.assistant .msg-bubble { background:#f0f1f5; color:var(--text); border-bottom-left-radius:3px; }
-    .msg-meta { font-size:11px; color:var(--muted); margin-top:4px; }
-    .replay-msg.assistant .msg-meta { text-align:right; }
-
-    .audit-toggle {
-      background:none; border:1px solid var(--border); border-radius:6px;
-      padding:5px 12px; font-size:12px; cursor:pointer; color:var(--muted); margin-top:8px;
-    }
-    .audit-toggle:hover { border-color:var(--primary); color:var(--primary); }
-    .audit-detail {
-      background:#f8f9fb; border:1px solid var(--border); border-radius:6px;
-      padding:10px 14px; margin-top:8px; font-size:12px; display:none;
-    }
-    .audit-detail.show { display:block; }
-    .audit-detail table { width:100%; border-collapse:collapse; }
-    .audit-detail td { padding:4px 0; border-bottom:1px solid #eef0f5; vertical-align:top; }
-    .audit-detail td:first-child { color:var(--muted); width:100px; font-weight:600; }
-    .audit-detail td:last-child { font-family:monospace; font-size:11px; word-break:break-all; }
-
-    @media (max-width:700px) {
-      .layout { flex-direction:column; }
-      .session-list { width:100%; max-height:300px; border-right:none; border-bottom:1px solid var(--border); }
-      .replay-panel { max-height:none; }
-    }
+    :root { --bg:#f8fafc;--card:#fff;--border:#e2e8f0;--border-light:#f1f5f9;--text:#0f172a;--text-secondary:#475569;--muted:#94a3b8;--primary:#4f46e5;--primary-light:#eef2ff;--success:#16a34a;--success-bg:#f0fdf4;--warning:#d97706;--warning-bg:#fffbeb;--danger:#dc2626;--danger-bg:#fef2f2;--shadow-sm:0 1px 2px rgba(0,0,0,0.05);--shadow:0 1px 3px rgba(0,0,0,0.1);--radius:8px;--radius-lg:12px; }
+    *{box-sizing:border-box;margin:0;padding:0} body{font-family:"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.6}
+    .topbar{background:var(--card);border-bottom:1px solid var(--border);padding:0 24px;height:52px;display:flex;align-items:center;gap:16px;position:sticky;top:0;z-index:100;box-shadow:var(--shadow-sm)} .topbar-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)} .topbar-logo{width:28px;height:28px;background:linear-gradient(135deg,var(--primary),#7c3aed);border-radius:7px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700;flex-shrink:0} .topbar-title{font-size:15px;font-weight:700} .topbar-nav{display:flex;gap:2px;margin-left:auto} .topbar-nav a{font-size:13px;color:var(--text-secondary);text-decoration:none;font-weight:500;padding:6px 12px;border-radius:6px;transition:all .15s} .topbar-nav a:hover{background:var(--primary-light);color:var(--primary)} .topbar-nav a.active{background:var(--primary);color:#fff}
+    .layout{display:grid;grid-template-columns:320px 1fr;min-height:calc(100vh - 52px)}
+    @media(max-width:800px){.layout{grid-template-columns:1fr}}
+    .side{border-right:1px solid var(--border);background:var(--card);overflow-y:auto;max-height:calc(100vh - 52px);display:flex;flex-direction:column}
+    .side-header{padding:14px 16px;border-bottom:1px solid var(--border-light);flex-shrink:0} .side-header h3{font-size:13px;font-weight:600;color:var(--text-secondary);margin-bottom:8px}
+    .search-box{width:100%;border:1px solid var(--border);border-radius:6px;padding:8px 10px;font-size:13px;outline:none;font-family:inherit;background:var(--bg)} .search-box:focus{border-color:var(--primary);box-shadow:0 0 0 3px var(--primary-light)}
+    .session-list{flex:1;overflow-y:auto}
+    .session-item{padding:14px 16px;border-bottom:1px solid var(--border-light);cursor:pointer;transition:background .12s} .session-item:hover{background:var(--border-light)} .session-item.active{background:var(--primary-light);border-left:3px solid var(--primary)}
+    .si-q{font-size:13px;font-weight:600;color:var(--text);margin-bottom:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .si-meta{display:flex;gap:6px;flex-wrap:wrap}
+    .si-tag{font-size:10px;padding:1px 6px;border-radius:20px;font-weight:600} .si-tag.intent{background:var(--primary-light);color:var(--primary)} .si-tag.ticket{background:var(--danger-bg);color:var(--danger)} .si-tag.time{background:var(--border-light);color:var(--muted)}
+    .main{overflow-y:auto;max-height:calc(100vh - 52px);padding:24px}
+    .msg{margin-bottom:16px;display:flex;gap:10px} .msg.user{flex-direction:row-reverse}
+    .bubble{max-width:75%;padding:12px 16px;border-radius:12px;font-size:14px;line-height:1.7;white-space:pre-wrap;word-break:break-word}
+    .msg.user .bubble{background:var(--primary);color:#fff;border-bottom-right-radius:4px}
+    .msg.assistant .bubble{background:var(--card);border:1px solid var(--border);color:var(--text);border-bottom-left-radius:4px;box-shadow:var(--shadow-sm)}
+    .msg-meta{font-size:11px;color:var(--muted);margin-top:4px} .msg.user .msg-meta{text-align:right}
+    .audit-toggle{background:none;border:1px solid var(--border);border-radius:6px;padding:6px 14px;font-size:12px;cursor:pointer;color:var(--text-secondary);margin-top:8px;transition:all .15s} .audit-toggle:hover{border-color:var(--primary);color:var(--primary)}
+    .audit-detail{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:14px;margin-top:8px;font-size:12px;display:none} .audit-detail.show{display:block}
+    .audit-detail table{width:100%;border-collapse:collapse} .audit-detail td{padding:6px 0;border-bottom:1px solid var(--border-light);vertical-align:top} .audit-detail td:first-child{color:var(--muted);width:90px;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.05em} .audit-detail td:last-child{font-family:monospace;word-break:break-all}
+    .empty{text-align:center;color:var(--muted);padding:60px 20px;font-size:13px}
+    .welcome{text-align:center;padding:60px 20px} .welcome h3{font-size:16px;font-weight:600;color:var(--text-secondary);margin-bottom:8px} .welcome p{font-size:13px;color:var(--muted)}
   </style>
 </head>
 <body>
   <div class="topbar">
-    <h1>会话回放</h1>
-    <nav>
-      <a href="/">问答台</a>
-      <a href="/tickets-page">工单管理</a>
-      <a href="/monitoring-page">监控中心</a>
-      <a href="/sessions-page">会话回放</a>
-      <a href="/evals-page">评估管理</a>
+    <a class="topbar-brand" href="/"><div class="topbar-logo">S</div><span class="topbar-title">SupportPilot</span></a>
+    <nav class="topbar-nav">
+      <a href="/">问答台</a><a href="/tickets-page">工单管理</a><a href="/monitoring-page">监控中心</a><a href="/sessions-page" class="active">会话回放</a><a href="/evals-page">评估管理</a>
     </nav>
   </div>
-
   <div class="layout">
-    <div class="session-list">
-      <div class="session-list-header">
-        <h2>最近会话</h2>
+    <div class="side">
+      <div class="side-header">
+        <h3>最近会话</h3>
         <input class="search-box" id="search" placeholder="搜索问题关键词…" oninput="filterSessions()" />
       </div>
-      <div id="session-items"><div class="replay-empty">加载中…</div></div>
+      <div class="session-list" id="session-list"><div class="empty">加载中…</div></div>
     </div>
-    <div class="replay-panel" id="replay-panel">
-      <div class="replay-empty">从左侧选择一个会话查看回放</div>
+    <div class="main" id="main-panel">
+      <div class="welcome"><h3>选择会话进行回放</h3><p>从左侧列表选择一个会话，查看完整对话记录与审计信息</p></div>
     </div>
   </div>
   <script>
-    let allSessions = [];
-    let currentSession = null;
-
-    async function loadSessions() {
-      try {
-        const r = await fetch('/sessions');
-        const d = await r.json();
-        allSessions = d.sessions || [];
+    let allSessions=[],currentId=null;
+    async function loadSessions(){
+      try{
+        const r=await fetch('/sessions?limit=100'),d=await r.json();
+        allSessions=(d.sessions||[]).sort((a,b)=>(b.created_at||'').localeCompare(a.created_at||''));
         renderList(allSessions);
-      } catch {
-        document.getElementById('session-items').innerHTML = '<div class="replay-empty">加载失败</div>';
-      }
+      }catch(e){document.getElementById('session-list').innerHTML='<div class="empty">加载失败</div>';}
     }
-
-    function filterSessions() {
-      const q = document.getElementById('search').value.toLowerCase();
-      const filtered = allSessions.filter(s => !q || s.message.toLowerCase().includes(q));
-      renderList(filtered);
+    function filterSessions(){
+      const q=document.getElementById('search').value.toLowerCase();
+      renderList(allSessions.filter(s=>!q||s.message.toLowerCase().includes(q)));
     }
-
-    function renderList(sessions) {
-      const el = document.getElementById('session-items');
-      if (!sessions.length) { el.innerHTML = '<div class="replay-empty">暂无会话</div>'; return; }
-      el.innerHTML = sessions.map(s =>
-        '<div class="session-item ' + (s.id === currentSession ? 'active' : '') + '" onclick="showReplay(\'' + s.id + '\')">' +
-        '  <div class="s-q">' + escAttr(s.message) + '</div>' +
-        '  <div class="s-meta">' +
-        '    <span class="s-tag">' + (s.user_id || '') + '</span>' +
-        '    <span class="s-tag">' + (s.created_at ? s.created_at.slice(0,16) : '') + '</span>' +
-        '  </div>' +
-        '</div>'
-      ).join('');
+    function renderList(sessions){
+      const el=document.getElementById('session-list');
+      if(!sessions.length){el.innerHTML='<div class="empty">暂无会话</div>';return;}
+      el.innerHTML=sessions.map(s=><div class="session-item" onclick="showSession(\\\\\")">
+        <div class="si-q"></div>
+        <div class="si-meta">
+          <span class="si-tag time"></span>
+          <span class="si-tag"></span>
+        </div>
+      </div>).join('');
     }
-
-    async function showReplay(sessionId) {
-      currentSession = sessionId;
-      renderList(allSessions);
-      const panel = document.getElementById('replay-panel');
-      panel.innerHTML = '<div class="replay-empty">加载中…</div>';
-      try {
-        const r = await fetch('/sessions/' + sessionId);
-        const d = await r.json();
-        const msgs = d.messages || [];
-        const audit = d.audit || {};
-        let html = '';
-        msgs.forEach(m => {
-          html += '<div class="replay-msg user"><div class="msg-bubble">' + escHtml(m.question || m.message) + '</div></div>';
-          html += '<div class="replay-msg assistant"><div class="msg-bubble">' + escHtml(m.answer) +
-            (m.created_at ? '<div class="msg-meta">' + m.created_at.slice(0,16) + '</div>' : '') +
-            '</div></div>';
+    async function showSession(sid){
+      currentId=sid;renderList(allSessions);
+      const panel=document.getElementById('main-panel');
+      panel.innerHTML='<div class="empty">加载中…</div>';
+      try{
+        const r=await fetch('/sessions/'+sid),d=await r.json();
+        const msg=d.messages||[],audit=d.audit||{};
+        let html='';
+        // header info
+        html+=<div style="margin-bottom:16px;padding:14px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm)">
+          <div style="font-size:12px;color:var(--muted);margin-bottom:6px;font-weight:600;text-transform:uppercase;letter-spacing:.05em">会话信息</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <span class="si-tag intent">意图: </span>
+            <span class="si-tag ticket">置信度: </span>
+            <span class="si-tag"></span>
+          </div>
+          <div style="font-size:11px;color:var(--muted);margin-top:8px;font-family:monospace">session: </div>
+        </div>;
+        if(!msg.length){html+='<div class="empty">该会话暂无消息</div>';}
+        msg.forEach(m=>{
+          html+=<div class="msg user"><div class="bubble"></div></div>;
+          html+=<div class="msg assistant"><div class="bubble"></div><div class="msg-meta"></div></div>;
         });
-        html += '<button class="audit-toggle" onclick="toggleAudit(this)">审计详情</button>';
-        html += '<div class="audit-detail" id="audit-detail">' +
-          '<table>' +
-          '<tr><td>意图</td><td>' + (audit.intent || '-') + '</td></tr>' +
-          '<tr><td>置信度</td><td>' + (audit.confidence != null ? audit.confidence : '-') + '</td></tr>' +
-          '<tr><td>创建工单</td><td>' + (audit.created_ticket ? '是' : '否') + '</td></tr>' +
-          '<tr><td>Trace</td><td style="white-space:pre-wrap;max-height:200px;overflow:auto">' + escHtml(JSON.stringify(audit.trace || [], null, 2)) + '</td></tr>' +
-          '</table></div>';
-        panel.innerHTML = html;
-      } catch (e) { panel.innerHTML = '<div class="replay-empty" style="color:var(--danger)">加载失败：' + e.message + '</div>'; }
+        html+=<button class="audit-toggle" onclick="toggleAudit(this)">查看完整 Trace</button>;
+        html+=<div class="audit-detail" id="audit-detail"><table>;
+        html+=<tr><td>意图</td><td></td></tr>;
+        html+=<tr><td>置信度</td><td></td></tr>;
+        html+=<tr><td>创建工单</td><td></td></tr>;
+        const trace=audit.trace||[];
+        html+=<tr><td>Trace</td><td style="white-space:pre-wrap;max-height:200px;overflow:auto;font-size:11px"></td></tr>;
+        const usage=audit.usage||{};
+        if(Object.keys(usage).length){
+          html+=<tr><td>Token 用量</td><td style="font-family:monospace;font-size:11px">prompt:  completion:  total:  cost: \{(usage.cost_usd||0).toFixed(6)}</td></tr>;
+        }
+        html+=</table></div>;
+        panel.innerHTML=html;
+      }catch(e){panel.innerHTML=<div class="empty" style="color:var(--danger)">加载失败：</div>;}
     }
-
-    function toggleAudit(btn) {
-      const el = document.getElementById('audit-detail');
-      el.classList.toggle('show');
-      btn.textContent = el.classList.contains('show') ? '隐藏审计详情' : '审计详情';
-    }
-
-    function escHtml(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
-    function escAttr(s) { return String(s||'').replace(/'/g,'&#39;').replace(/"/g,'&quot;'); }
-
+    function toggleAudit(btn){const el=document.getElementById('audit-detail');el.classList.toggle('show');btn.textContent=el.classList.contains('show')?'隐藏 Trace':'查看完整 Trace';}
+    function escHtml(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+    function escAttr(s){return String(s||'').replace(/'/g,'&#39;').replace(/"/g,'&quot;')}
     loadSessions();
   </script>
 </body>

@@ -5,118 +5,90 @@
   <title>监控中心</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    :root { --bg:#f5f6fa; --card:#fff; --border:#e4e7ee; --text:#1a1a2e; --muted:#6b7280; --primary:#3b5bdb; --danger:#e74c3c; --warning:#f39c12; --success:#27ae60; }
-    * { box-sizing:border-box; margin:0; padding:0; }
-    body { font-family:"Segoe UI","PingFang SC",sans-serif; background:var(--bg); color:var(--text); font-size:14px; }
-    .topbar { background:var(--card); border-bottom:1px solid var(--border); padding:14px 24px; display:flex; align-items:center; gap:12px; position:sticky; top:0; z-index:10; }
-    .topbar h1 { font-size:16px; font-weight:600; }
-    .topbar nav { display:flex; gap:14px; margin-left:auto; }
-    .topbar nav a { font-size:13px; color:var(--primary); text-decoration:none; font-weight:500; }
-    .topbar nav a:hover { text-decoration:underline; }
-    .content { max-width:900px; margin:24px auto; padding:0 24px; }
-    .section-title { font-size:14px; font-weight:600; color:var(--muted); margin-bottom:12px; margin-top:24px; }
-    .section-title:first-child { margin-top:0; }
-    .card-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:12px; }
-    .metric-card { background:var(--card); border:1px solid var(--border); border-radius:8px; padding:16px; }
-    .metric-card .label { font-size:12px; color:var(--muted); margin-bottom:6px; }
-    .metric-card .value { font-size:28px; font-weight:700; }
-    .metric-card .value.danger { color:var(--danger); }
-    .metric-card .value.warning { color:var(--warning); }
-    .metric-card .value.success { color:var(--success); }
-    .metric-card .sub { font-size:11px; color:#aaa; margin-top:4px; }
-    .alert-list { background:var(--card); border:1px solid var(--border); border-radius:8px; }
-    .alert-item { padding:12px 16px; border-bottom:1px solid #f0f1f5; display:flex; align-items:center; gap:10px; }
-    .alert-item:last-child { border-bottom:none; }
-    .alert-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
-    .alert-dot.critical { background:var(--danger); }
-    .alert-dot.warning { background:var(--warning); }
-    .alert-dot.info { background:var(--primary); }
-    .alert-msg { flex:1; font-size:13px; }
-    .alert-time { font-size:11px; color:#aaa; font-family:monospace; }
-    .no-alerts { text-align:center; color:#bbb; padding:32px; }
-    .btn-row { display:flex; gap:8px; margin-bottom:16px; }
-    .btn { background:var(--primary); color:#fff; border:none; border-radius:6px; padding:7px 16px; font-size:13px; font-weight:600; cursor:pointer; }
-    .btn:hover { opacity:0.9; }
-    .btn-secondary { background:var(--muted); }
+    :root { --bg:#f8fafc;--card:#fff;--border:#e2e8f0;--border-light:#f1f5f9;--text:#0f172a;--text-secondary:#475569;--muted:#94a3b8;--primary:#4f46e5;--primary-light:#eef2ff;--success:#16a34a;--success-bg:#f0fdf4;--warning:#d97706;--warning-bg:#fffbeb;--danger:#dc2626;--danger-bg:#fef2f2;--shadow-sm:0 1px 2px rgba(0,0,0,0.05);--shadow:0 1px 3px rgba(0,0,0,0.1);--radius:8px;--radius-lg:12px; }
+    *{box-sizing:border-box;margin:0;padding:0} body{font-family:"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.6}
+    .topbar{background:var(--card);border-bottom:1px solid var(--border);padding:0 24px;height:52px;display:flex;align-items:center;gap:16px;position:sticky;top:0;z-index:100;box-shadow:var(--shadow-sm)} .topbar-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)} .topbar-logo{width:28px;height:28px;background:linear-gradient(135deg,var(--primary),#7c3aed);border-radius:7px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700;flex-shrink:0} .topbar-title{font-size:15px;font-weight:700} .topbar-nav{display:flex;gap:2px;margin-left:auto} .topbar-nav a{font-size:13px;color:var(--text-secondary);text-decoration:none;font-weight:500;padding:6px 12px;border-radius:6px;transition:all .15s} .topbar-nav a:hover{background:var(--primary-light);color:var(--primary)} .topbar-nav a.active{background:var(--primary);color:#fff}
+    .page{max-width:1000px;margin:0 auto;padding:24px} .page-header{margin-bottom:20px} .page-header h2{font-size:18px;font-weight:700} .page-header p{font-size:13px;color:var(--muted);margin-top:2px}
+    .btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;border:none;transition:all .15s;text-decoration:none} .btn-primary{background:var(--primary);color:#fff}.btn-primary:hover{background:#4338ca} .btn-secondary{background:var(--bg);color:var(--text-secondary);border:1px solid var(--border)}.btn-secondary:hover{background:var(--border-light)}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden} .card-header{padding:14px 18px;border-bottom:1px solid var(--border-light)} .card-header h3{font-size:13px;font-weight:600;color:var(--text-secondary)} .card-body{padding:18px}
+    .metric-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px;margin-bottom:24px}
+    .metric-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px;box-shadow:var(--shadow-sm);transition:box-shadow .15s} .metric-card:hover{box-shadow:var(--shadow)} .mc-label{font-size:12px;color:var(--muted);font-weight:500;margin-bottom:8px} .mc-value{font-size:30px;font-weight:800;letter-spacing:-0.02em;line-height:1} .mc-sub{font-size:11px;color:var(--muted);margin-top:6px}
+    .mc-value.success{color:var(--success)}.mc-value.warning{color:var(--warning)}.mc-value.danger{color:var(--danger)}.mc-value.primary{color:var(--primary)}
+    .alert-list{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm)} .alert-item{padding:14px 18px;border-bottom:1px solid var(--border-light);display:flex;align-items:flex-start;gap:12px} .alert-item:last-child{border-bottom:none} .alert-dot{width:8px;height:8px;border-radius:50%;margin-top:6px;flex-shrink:0} .alert-dot.critical{background:var(--danger)}.alert-dot.warning{background:var(--warning)}.alert-dot.info{background:var(--primary)} .alert-msg{flex:1;font-size:13px;line-height:1.5} .alert-type{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px} .alert-time{font-size:11px;color:var(--muted);font-family:monospace;white-space:nowrap;margin-top:2px}
+    .empty{text-align:center;color:var(--muted);padding:32px;font-size:13px}
+    .action-bar{display:flex;gap:10px;margin-bottom:20px}
+    .config-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-top:12px}
+    .config-item{display:flex;justify-content:space-between;padding:10px 14px;background:var(--bg);border-radius:6px;font-size:13px} .config-item .ck{color:var(--muted);font-weight:500} .config-item .cv{font-weight:600;font-family:monospace;font-size:12px}
   </style>
 </head>
 <body>
   <div class="topbar">
-    <h1>监控中心</h1>
-    <nav>
-      <a href="/">问答台</a>
-      <a href="/tickets-page">工单管理</a>
-      <a href="/monitoring-page">监控中心</a>
-      <a href="/sessions-page">会话回放</a>
-      <a href="/evals-page">评估管理</a>
+    <a class="topbar-brand" href="/"><div class="topbar-logo">S</div><span class="topbar-title">SupportPilot</span></a>
+    <nav class="topbar-nav">
+      <a href="/">问答台</a><a href="/tickets-page">工单管理</a><a href="/monitoring-page" class="active">监控中心</a><a href="/sessions-page">会话回放</a><a href="/evals-page">评估管理</a>
     </nav>
   </div>
-  <div class="content">
-    <div class="btn-row">
-      <button class="btn" onclick="loadMetrics()">刷新指标</button>
+  <div class="page">
+    <div class="page-header"><h2>监控中心</h2><p>实时系统指标 · 告警记录 · 健康检查</p></div>
+    <div class="action-bar">
+      <button class="btn btn-primary" onclick="loadAll()">刷新数据</button>
       <button class="btn btn-secondary" onclick="runHealthCheck()">运行健康检查</button>
     </div>
-
-    <div class="section-title">核心指标</div>
-    <div class="card-grid" id="metrics-grid"><div class="metric-card"><div class="label">加载中…</div></div></div>
-
-    <div class="section-title">最近告警</div>
-    <div class="alert-list" id="alert-list"><div class="no-alerts">加载中…</div></div>
+    <div class="metric-grid" id="metric-grid">
+      <div class="metric-card"><div class="mc-label">工单总数</div><div class="mc-value primary" id="m-tickets-total">-</div></div>
+      <div class="metric-card"><div class="mc-label">待处理</div><div class="mc-value warning" id="m-tickets-open">-</div><div class="mc-sub">需人工跟进</div></div>
+      <div class="metric-card"><div class="mc-label">紧急工单</div><div class="mc-value danger" id="m-tickets-urgent">-</div><div class="mc-sub">质量/投诉类</div></div>
+      <div class="metric-card"><div class="mc-label">平均置信度</div><div class="mc-value" id="m-confidence">-</div><div class="mc-sub">最近 100 条</div></div>
+      <div class="metric-card"><div class="mc-label">LLM 调用次数</div><div class="mc-value" id="m-llm-calls">-</div></div>
+      <div class="metric-card"><div class="mc-label">LLM 累计成本</div><div class="mc-value" id="m-llm-cost">-</div></div>
+      <div class="metric-card"><div class="mc-label">告警总数</div><div class="mc-value" id="m-alerts">-</div></div>
+    </div>
+    <div class="card" style="margin-bottom:20px">
+      <div class="card-header"><h3>系统配置</h3></div>
+      <div class="card-body"><div class="config-grid" id="config-grid"><div class="empty">加载中…</div></div></div>
+    </div>
+    <div class="card">
+      <div class="card-header"><h3>告警记录</h3></div>
+      <div id="alert-list"><div class="empty">加载中…</div></div>
+    </div>
   </div>
   <script>
-    async function loadMetrics() {
-      const grid = document.getElementById('metrics-grid');
-      try {
-        const r = await fetch('/metrics');
-        const d = await r.json();
-        const tickets = d.tickets || {};
-        const alerts = [
-          { label:'工单总数', value: tickets.total ?? '-', sub: '' },
-          { label:'紧急工单', value: tickets.urgent ?? '-', cls: (tickets.urgent > 0 ? 'danger' : 'success'), sub: tickets.urgent > 0 ? '需立即处理' : '无紧急工单' },
-          { label:'未关闭工单', value: tickets.open ?? '-', cls: (tickets.open > 0 ? 'warning' : 'success'), sub: '' },
-          { label:'LLM 成本 (次)', value: d.llm_cost ?? '-', sub: '' },
-          { label:'平均置信度', value: d.avg_confidence != null ? Math.round(d.avg_confidence*100)+'%' : '-', cls: (d.avg_confidence < 0.5 ? 'danger' : 'success'), sub: '' },
-          { label:'告警总数', value: d.alert_count ?? '-', cls: (d.alert_count > 0 ? 'warning' : 'success'), sub: '' },
-        ];
-        grid.innerHTML = alerts.map(a =>
-          '<div class="metric-card">' +
-          '  <div class="label">' + a.label + '</div>' +
-          '  <div class="value ' + (a.cls||'') + '">' + a.value + '</div>' +
-          '  <div class="sub">' + a.sub + '</div>' +
-          '</div>'
-        ).join('');
-      } catch (e) {
-        grid.innerHTML = '<div class="metric-card"><div class="label">加载失败</div><div class="value danger">' + e.message + '</div></div>';
-      }
+    async function loadAll(){await Promise.all([loadMetrics(),loadAlerts()]);}
+    async function loadMetrics(){
+      try{
+        const r=await fetch('/metrics'),d=await r.json();
+        const t=d.tickets||{};
+        document.getElementById('m-tickets-total').textContent=d.status==='ok'?t.total??'-':'无数据';
+        document.getElementById('m-tickets-open').textContent=t.open??'-';
+        document.getElementById('m-tickets-urgent').textContent=t.urgent_open??'-';
+        const c=d.audit&&d.audit.avg_confidence_last_100!=null?Math.round(d.audit.avg_confidence_last_100*100)+'%':'-';
+        const ce=document.getElementById('m-confidence');ce.textContent=c;ce.className='mc-value '+(d.audit&&d.audit.avg_confidence_last_100>=0.6?'success':d.audit&&d.audit.avg_confidence_last_100>=0.4?'warning':'danger');
+        const l=d.llm||{};
+        document.getElementById('m-llm-calls').textContent=l.calls_last_100??'-';
+        const costEl=document.getElementById('m-llm-cost');
+        costEl.textContent=d.llm&&d.llm.total_cost_usd_last_100!=null?'\$'+Number(d.llm.total_cost_usd_last_100).toFixed(4):'-';
+        costEl.className='mc-value '+(d.llm&&d.llm.total_cost_usd_last_100>1?'danger':d.llm&&d.llm.total_cost_usd_last_100>0.5?'warning':'success');
+        document.getElementById('m-alerts').textContent=d.alert_count??'-';
+        // config
+        const flags=r=>[{k:'use_llm_intent',v:r.use_llm_intent},{k:'use_history_in_prompt',v:r.use_history_in_prompt},{k:'rag_top_k',v:r.rag_top_k},{k:'confidence_threshold',v:r.confidence_threshold},{k:'active_version',v:r.active_version}];
+        try{const fr=await fetch('/feature-flags'),fd=await fr.json();document.getElementById('config-grid').innerHTML=flags(fd).map(x=>'<div class="config-item"><span class="ck">'+x.k+'</span><span class="cv">'+String(x.v)+'</span></div>').join('');}catch{}
+      }catch(e){document.getElementById('metric-grid').innerHTML='<div class="empty" style="color:var(--danger)">加载失败：'+escHtml(e.message)+'</div>';}
     }
-    async function runHealthCheck() {
-      try {
-        const r = await fetch('/health-check');
-        const d = await r.json();
-        if (d.healthy) alert('健康检查通过 ✓');
-        else alert('健康检查发现问题：\n' + (d.alerts || []).map(a => '· ' + a.message).join('\n'));
-        loadMetrics();
-      } catch (e) { alert('请求失败：' + e.message); }
-    }
-    async function loadAlerts() {
-      const list = document.getElementById('alert-list');
-      try {
-        const r = await fetch('/alerts?limit=20');
-        const d = await r.json();
-        const alerts = d.alerts || [];
-        if (!alerts.length) { list.innerHTML = '<div class="no-alerts">暂无告警 ✓</div>'; return; }
-        list.innerHTML = alerts.map(a => {
-          const levelCls = a.severity === 'critical' ? 'critical' : a.severity === 'warning' ? 'warning' : 'info';
-          return '<div class="alert-item">' +
-            '<div class="alert-dot ' + levelCls + '"></div>' +
-            '<div class="alert-msg">' + (a.message || a.alert_type || '') + '</div>' +
-            '<div class="alert-time">' + (a.created_at ? a.created_at.slice(0,16) : '') + '</div>' +
-            '</div>';
+    async function loadAlerts(){
+      try{
+        const r=await fetch('/alerts?limit=20'),d=await r.json(),als=d.alerts||[];
+        if(!als.length){document.getElementById('alert-list').innerHTML='<div class="empty">暂无告警 ✓</div>';return;}
+        document.getElementById('alert-list').innerHTML=als.map(a=>{
+          const lc=a.severity==='critical'?'critical':a.severity==='warning'?'warning':'info';
+          return '<div class="alert-item"><div class="alert-dot '+lc+'"></div><div><div class="alert-type">'+escHtml(a.alert_type||'')+'</div><div class="alert-msg">'+escHtml(a.message||'')+'</div><div class="alert-time">'+(a.created_at?a.created_at.slice(0,16):'')</div></div></div>';
         }).join('');
-      } catch { list.innerHTML = '<div class="no-alerts">加载告警失败</div>'; }
+      }catch{document.getElementById('alert-list').innerHTML='<div class="empty">加载失败</div>';}
     }
-    loadMetrics();
-    loadAlerts();
+    async function runHealthCheck(){
+      try{const r=await fetch('/health'),d=await r.json();const msg='LLM: '+(d.llm_configured?'已配置':'未配置')+' | Embedding: '+(d.embedding_configured?'已配置':'hash 兜底')+' | 阈值: '+d.confidence_threshold;alert(msg);}catch(e){alert('请求失败：'+e.message);}
+    }
+    function escHtml(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+    loadAll();
   </script>
 </body>
 </html>

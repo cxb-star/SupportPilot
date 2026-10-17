@@ -6,169 +6,130 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     :root {
-      --bg: #f5f6fa; --card: #fff; --border: #e4e7ee;
-      --text: #1a1a2e; --muted: #6b7280; --primary: #3b5bdb;
-      --success: #27ae60; --warning: #f39c12; --danger: #e74c3c;
+      --bg:#f8fafc;--card:#fff;--border:#e2e8f0;--border-light:#f1f5f9;
+      --text:#0f172a;--text-secondary:#475569;--muted:#94a3b8;
+      --primary:#4f46e5;--primary-light:#eef2ff;--primary-border:#c7d2fe;
+      --success:#16a34a;--success-bg:#f0fdf4;--success-border:#bbf7d0;
+      --warning:#d97706;--warning-bg:#fffbeb;--danger:#dc2626;--danger-bg:#fef2f2;
+      --shadow-sm:0 1px 2px rgba(0,0,0,0.05);--shadow:0 1px 3px rgba(0,0,0,0.1),0 1px 2px rgba(0,0,0,0.06);
+      --radius:8px;--radius-lg:12px;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: "Segoe UI","PingFang SC",sans-serif; background:var(--bg); color:var(--text); font-size:14px; }
-
-    .topbar {
-      background:var(--card); border-bottom:1px solid var(--border);
-      padding:14px 24px; display:flex; align-items:center; gap:12px;
-      position:sticky; top:0; z-index:10;
-    }
-    .topbar h1 { font-size:16px; font-weight:600; }
-    .badge { font-size:11px; padding:3px 8px; border-radius:10px; background:#f0f1f5; color:var(--muted); }
-    .topbar nav { display:flex; gap:14px; margin-left:auto; }
-    .topbar nav a { font-size:12px; color:var(--primary); text-decoration:none; font-weight:500; }
-    .topbar nav a:hover { text-decoration:underline; }
-
-    .main { display:flex; gap:0; max-width:900px; margin:24px auto; }
-
-    .input-panel { flex:1; }
-    .input-card {
-      background:var(--card); border:1px solid var(--border); border-radius:8px; padding:16px;
-    }
-    .input-card label { font-size:12px; color:var(--muted); display:block; margin-bottom:6px; font-weight:600; }
-    .input-card textarea {
-      width:100%; border:1px solid var(--border); border-radius:6px; padding:10px;
-      font-size:14px; resize:vertical; min-height:80px; outline:none; font-family:inherit;
-    }
-    .input-card textarea:focus { border-color:var(--primary); }
-    .btn-row { display:flex; gap:8px; margin-top:10px; flex-wrap:wrap; }
-    .btn-primary {
-      background:var(--primary); color:#fff; border:none; border-radius:6px;
-      padding:8px 20px; font-size:13px; font-weight:600; cursor:pointer;
-    }
-    .btn-primary:hover { opacity:0.9; }
-    .btn-secondary {
-      background:#f0f1f5; color:var(--text); border:1px solid var(--border); border-radius:6px;
-      padding:8px 14px; font-size:12px; cursor:pointer;
-    }
-    .btn-secondary:hover { background:#e8eaf2; }
-
-    .result-panel { flex:1.2; margin-left:16px; }
-    .result-card {
-      background:var(--card); border:1px solid var(--border); border-radius:8px; padding:16px;
-      min-height:200px; max-height:calc(100vh - 120px); overflow-y:auto;
-    }
-    .placeholder { color:#bbb; font-size:14px; padding:20px; }
-    .result-ans { font-size:14px; line-height:1.7; white-space:pre-wrap; margin-bottom:12px; }
-    .result-meta { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px; }
-    .meta-tag { font-size:11px; padding:2px 8px; border-radius:8px; background:#f0f1f5; color:var(--muted); }
-    .meta-tag.conf-high { background:#d4edda; color:#155724; }
-    .meta-tag.conf-low { background:#fde8e8; color:var(--danger); }
-    .meta-tag.intent { background:#eef2ff; color:var(--primary); }
-    .sources { margin-top:10px; }
-    .sources h4 { font-size:12px; color:var(--muted); margin-bottom:6px; }
-    .source-item { font-size:12px; padding:6px 8px; background:#f8f9fb; border-radius:4px; margin-bottom:4px; color:#555; }
-    .session-id { font-size:11px; color:#aaa; margin-top:10px; font-family:monospace; word-break:break-all; }
-    .loading { display:flex; align-items:center; gap:10px; padding:18px 0; }
-    .spinner { width:18px; height:18px; border:2px solid #e4e7ee; border-top-color:#3b5bdb; border-radius:50%; animation:spin 0.7s linear infinite; }
-    @keyframes spin { to { transform:rotate(360deg); } }
-    .loading-text { font-size:14px; color:#888; }
-    @media (max-width:700px) { .main { flex-direction:column; } .result-panel { margin-left:0; margin-top:16px; } }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.6}
+    .topbar{background:var(--card);border-bottom:1px solid var(--border);padding:0 24px;height:52px;display:flex;align-items:center;gap:16px;position:sticky;top:0;z-index:100;box-shadow:var(--shadow-sm)}
+    .topbar-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}
+    .topbar-logo{width:28px;height:28px;background:linear-gradient(135deg,var(--primary),#7c3aed);border-radius:7px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700;flex-shrink:0}
+    .topbar-title{font-size:15px;font-weight:700;letter-spacing:-0.01em}
+    .topbar-nav{display:flex;gap:2px;margin-left:auto}
+    .topbar-nav a{font-size:13px;color:var(--text-secondary);text-decoration:none;font-weight:500;padding:6px 12px;border-radius:6px;transition:all 0.15s}
+    .topbar-nav a:hover{background:var(--primary-light);color:var(--primary)}
+    .topbar-nav a.active{background:var(--primary);color:#fff}
+    .badge{font-size:11px;padding:2px 8px;border-radius:20px;font-weight:600}
+    .page{max-width:1100px;margin:0 auto;padding:24px}
+    .layout{display:grid;grid-template-columns:1fr 1.4fr;gap:20px;align-items:start}
+    @media(max-width:800px){.layout{grid-template-columns:1fr}}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden}
+    .card-header{padding:14px 18px;border-bottom:1px solid var(--border-light);display:flex;align-items:center;justify-content:space-between}
+    .card-header h3{font-size:13px;font-weight:600;color:var(--text-secondary)}
+    .card-body{padding:18px}
+    .btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;border:none;transition:all 0.15s}
+    .btn-primary{background:var(--primary);color:#fff}.btn-primary:hover{background:#4338ca;transform:translateY(-1px);box-shadow:var(--shadow)}
+    .btn-secondary{background:var(--bg);color:var(--text-secondary);border:1px solid var(--border)}.btn-secondary:hover{background:var(--border-light)}
+    .btn-sm{padding:5px 10px;font-size:12px}
+    .input{width:100%;border:1px solid var(--border);border-radius:6px;padding:10px 12px;font-size:14px;outline:none;font-family:inherit;transition:border-color .15s,box-shadow .15s;background:var(--card)}
+    .input:focus{border-color:var(--primary);box-shadow:0 0 0 3px var(--primary-light)}
+    textarea.input{resize:vertical;min-height:90px}
+    .tag{display:inline-flex;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap}
+    .tag-primary{background:var(--primary-light);color:var(--primary)}
+    .tag-success{background:var(--success-bg);color:var(--success)}
+    .tag-danger{background:var(--danger-bg);color:var(--danger)}
+    .tag-muted{background:var(--border-light);color:var(--muted)}
+    .tag-warning{background:var(--warning-bg);color:var(--warning)}
+    .empty{text-align:center;padding:48px 20px;color:var(--muted);font-size:13px}
+    .spinner{width:18px;height:18px;border:2px solid var(--border);border-top-color:var(--primary);border-radius:50%;animation:spin .8s linear infinite;display:inline-block;flex-shrink:0}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .loading-row{display:flex;align-items:center;gap:10px;padding:24px;color:var(--muted);font-size:13px}
+    .result-meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+    .result-answer{font-size:14px;line-height:1.8;white-space:pre-wrap;color:var(--text);margin-bottom:14px;padding:14px;background:var(--bg);border-radius:var(--radius);border:1px solid var(--border-light)}
+    .sources h4{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+    .source-item{font-size:12px;padding:6px 10px;background:var(--bg);border:1px solid var(--border-light);border-radius:6px;margin-bottom:4px;color:var(--text-secondary);word-break:break-all}
+    .session-id{font-size:11px;color:var(--muted);margin-top:12px;font-family:monospace}
+    .quick-btns{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+    .preview{font-size:12px;color:var(--muted);padding:8px 12px;background:var(--bg);border-radius:6px;margin-bottom:12px;line-height:1.5}
   </style>
 </head>
 <body>
   <div class="topbar">
-    <h1>SupportPilot 客服护航台</h1>
-    <span class="badge" id="mode-badge">连接中…</span>
-    <nav>
-      <a href="/" style="font-size:12px;color:#666;text-decoration:none;font-weight:600">问答台</a>
-      <a href="/tickets-page" style="font-size:12px;color:#3b5bdb;text-decoration:none;font-weight:600">工单管理</a>
-      <a href="/monitoring-page" style="font-size:12px;color:#3b5bdb;text-decoration:none;font-weight:600">监控中心</a>
-      <a href="/sessions-page" style="font-size:12px;color:#3b5bdb;text-decoration:none;font-weight:600">会话回放</a>
-      <a href="/evals-page" style="font-size:12px;color:#3b5bdb;text-decoration:none;font-weight:600">评估管理</a>
+    <a class="topbar-brand" href="/">
+      <div class="topbar-logo">S</div>
+      <span class="topbar-title">SupportPilot 客服护航台</span>
+    </a>
+    <span class="badge" id="mode-badge" style="background:var(--border-light);color:var(--muted)">连接中…</span>
+    <nav class="topbar-nav">
+      <a href="/" class="active">问答台</a>
+      <a href="/tickets-page">工单管理</a>
+      <a href="/monitoring-page">监控中心</a>
+      <a href="/sessions-page">会话回放</a>
+      <a href="/evals-page">评估管理</a>
     </nav>
   </div>
-  <div class="main">
-    <div class="input-panel">
-      <div class="input-card">
-        <label>问题</label>
-        <textarea id="q">订单 12345 能退款吗，买了 3 天</textarea>
-        <div class="btn-row">
-          <button class="btn-primary" id="ask-btn" onclick="ask()">提问</button>
-          <button class="btn-secondary" onclick="fill('收到的商品有破损，怎么赔')">破损示例</button>
-          <button class="btn-secondary" onclick="fill('双11 满减规则是什么')">活动示例</button>
-          <button class="btn-secondary" onclick="fill('帮我转人工')">转人工示例</button>
+  <div class="page">
+    <div class="page-header">
+      <h2>智能问答</h2>
+      <p>基于企业知识库的客服一线支撑 Agent，自动分类意图 · 检索政策 · 兜底建单</p>
+    </div>
+    <div class="layout">
+      <div>
+        <div class="card">
+          <div class="card-header"><h3>输入问题</h3></div>
+          <div class="card-body">
+            <textarea class="input" id="q" placeholder="请输入您的问题…">订单12345能退款吗，买了3天</textarea>
+            <div class="quick-btns">
+              <button class="btn btn-secondary btn-sm" onclick="fill(收到的商品有破损，怎么赔)">破损赔付</button>
+              <button class="btn btn-secondary btn-sm" onclick="fill(双11满减规则是什么)">活动规则</button>
+              <button class="btn btn-secondary btn-sm" onclick="fill(帮我转人工)">转人工</button>
+              <button class="btn btn-secondary btn-sm" onclick="fill(差旅报销几天内提交)">报销政策</button>
+            </div>
+            <div style="margin-top:14px;display:flex;gap:8px">
+              <button class="btn btn-primary" id="ask-btn" onclick="ask()" style="flex:1">提问</button>
+            </div>
+          </div>
+        </div>
+        <div class="card" style="margin-top:16px">
+          <div class="card-header"><h3>使用说明</h3></div>
+          <div class="card-body" style="font-size:12px;color:var(--text-secondary);line-height:1.8">
+            <p>• 问题将自动识别意图（退款/退货/补发/赔付/活动/转人工）</p>
+            <p>• 检索知识库后生成引用答案，低置信度自动建单</p>
+            <p>• 同一会话ID保持上下文，支持多轮追问</p>
+            <p>• 清空 API Key 后自动降级为 Mock 模式</p>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="result-panel" id="result-panel">
-      <div class="result-card" id="result-card">
-        <div class="placeholder">提问后结果将显示在这里</div>
+      <div>
+        <div class="card" id="result-card">
+          <div class="card-header"><h3>回答结果</h3></div>
+          <div class="card-body">
+            <div class="empty" id="result-empty">提问后结果将显示在这里</div>
+            <div id="result-content" style="display:none"></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
   <script>
-    const qEl = document.getElementById('q');
-    const btn = document.getElementById('ask-btn');
-    const card = document.getElementById('result-card');
-    let currentSessionId = null;
-
-    function fill(q) { qEl.value = q; qEl.focus(); }
-
-    async function checkMode() {
-      try {
-        const r = await fetch('/health');
-        const d = await r.json();
-        const badge = document.getElementById('mode-badge');
-        badge.textContent = d.llm_configured ? 'LLM 已配置' : 'Mock 模式';
-        badge.style.background = d.llm_configured ? '#d4edda' : '#fde8e8';
-        badge.style.color = d.llm_configured ? '#155724' : '#e74c3c';
-      } catch { document.getElementById('mode-badge').textContent = '连接失败'; }
-    }
-
-    async function ask() {
-      const question = qEl.value.trim();
-      if (!question) return;
-      card.innerHTML = '<div class="loading"><div class="spinner"></div><div class="loading-text">正在处理…</div></div>';
-      btn.disabled = true;
-      try {
-        let res;
-        if (currentSessionId) {
-          res = await fetch('/chat', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({ question, session_id: currentSessionId })
-          });
-        } else {
-          res = await fetch('/chat', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({ question })
-          });
-        }
-        const d = await res.json();
-        if (d.session_id) currentSessionId = d.session_id;
-        render(d);
-      } catch (e) {
-        card.innerHTML = '<div class="placeholder" style="color:#e74c3c">请求失败：' + e.message + '</div>';
-      } finally { btn.disabled = false; }
-    }
-
-    function render(d) {
-      const confClass = d.confidence >= 0.6 ? 'conf-high' : 'conf-low';
-      const confLabel = d.confidence >= 0.6 ? '置信度 ' + Math.round(d.confidence*100) + '%' : '低置信度 ' + Math.round(d.confidence*100) + '%';
-      const sourcesHtml = d.sources && d.sources.length
-        ? '<div class="sources"><h4>参考来源</h4>' + d.sources.map(s => '<div class="source-item">' + (s.doc_title || s.title || s.doc_id || JSON.stringify(s)) + '</div>').join('') + '</div>'
-        : '';
-      const ticketHtml = d.created_ticket
-        ? '<div class="meta-tag" style="background:#fde8e8;color:#e74c3c">已创建工单 → ' + (d.ticket_no || '查看工单管理') + '</div>'
-        : '';
-      card.innerHTML =
-        '<div class="result-meta">' +
-        '  <div class="meta-tag intent">意图：' + d.intent + '</div>' +
-        '  <div class="meta-tag ' + confClass + '">' + confLabel + '</div>' +
-        '  ' + ticketHtml +
-        '</div>' +
-        '<div class="result-ans">' + d.answer + '</div>' +
-        sourcesHtml +
-        '<div class="session-id">session: ' + d.session_id + '</div>';
-    }
-
+    const qEl=document.getElementById('q'),btn=document.getElementById('ask-btn'),empty=document.getElementById('result-empty'),content=document.getElementById('result-content');
+    let sessionId=null;
+    function fill(q){qEl.value=q;qEl.focus()}
+    async function checkMode(){try{const r=await fetch('/health'),d=await r.json();const b=document.getElementById('mode-badge');b.textContent=d.llm_configured?'LLM 在线':'Mock 模式';b.style.background=d.llm_configured?'var(--success-bg)':'var(--danger-bg)';b.style.color=d.llm_configured?'var(--success)':'var(--danger)';}catch{document.getElementById('mode-badge').textContent='连接失败';}}
+    async function ask(){const question=qEl.value.trim();if(!question)return;btn.disabled=true;empty.style.display='none';content.style.display='block';content.innerHTML='<div class="loading-row"><div class="spinner"></div><span>正在处理…</span></div>';try{const body=sessionId?{question,session_id:sessionId}:{question};const r=await fetch('/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});const d=await r.json();if(d.session_id)sessionId=d.session_id;render(d);}catch(e){content.innerHTML='<div class="empty" style="color:var(--danger)">请求失败：'+escHtml(e.message)+'</div>';}finally{btn.disabled=false;}}
+    function escHtml(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+    function render(d){const confPct=Math.round(d.confidence*100);const confTag=d.confidence>=0.6?'tag-success':d.confidence>=0.5?'tag-warning':'tag-danger';const confLabel=d.confidence>=0.6?'置信 '+confPct+'%':d.confidence>=0.5?'偏低 '+confPct+'%':'低 '+confPct+'%';const ticketHtml=d.created_ticket?'<span class="tag tag-danger">已建工单 '+escHtml(d.ticket_no||'')+'</span>':'';const sourcesHtml=d.sources&&d.sources.length?'<div class="sources" style="margin-top:14px"><h4>参考来源</h4>'+d.sources.map(s=>'<div class="source-item">'+escHtml(s.source||s.doc_title||s.title||JSON.stringify(s))+'</div>').join('')+'</div>':'';content.innerHTML='<div class="result-meta">'+
+      '<span class="tag tag-primary">'+escHtml(d.intent||'')+'</span>'+
+      '<span class="tag '+confTag+'">'+confLabel+'</span>'+
+      ticketHtml+'</div>'+
+      '<div class="result-answer">'+escHtml(d.answer||'')+'</div>'+
+      sourcesHtml+
+      '<div class="session-id">session: '+escHtml(d.session_id||'')+'</div>';}
     checkMode();
   </script>
 </body>

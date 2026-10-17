@@ -105,4 +105,3 @@ def test_flag_off_uses_rules_only(tmp_path, monkeypatch):
     r = g.invoke(init_state("收到的商品有破损，怎么赔", "s4", "u4"))
     # 规则版：compensate；LLM 意图路径若被误触发：clarify。断言规则结果。
     assert r["intent"] == "compensate"
-    assert r["intent"] == "compensate"

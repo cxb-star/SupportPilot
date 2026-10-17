@@ -1,0 +1,88 @@
+任务三：端到端验证回滚生效 — 失败处理规范
+================================================
+
+一、失败场景清单与处理策略
+---------------------------
+
+场景A：POST /rollback 返回非 200（端点本身故障）
+  处理方式：停止任务，报任务二未完成，不尝试继续验证。
+  原因：状态未写入，后续 chat 请求的结果无意义。
+
+场景B：GET /feature-flags 返回的 use_llm_intent 与 rollback 写入值不一致
+  处理方式：报任务二失败，不继续。
+  原因：状态写入没有真正生效，任务三没有验证对象。
+
+场景C：POST /chat 返回的 intent 不是预期值（不是 "promo"）
+  子情况 C1：intent == "refund"（LLM 版结果）
+    处理方式：回滚未生效，检查任务一（set_feature_flag）是否正确写入了内存桶。
+  子情况 C2：intent == "ticket" 或 "clarify"
+    处理方式：探针问题选错，规则版和 LLM 版对该问题的分类相同，换一个探针重试。
+  子情况 C3：抛出异常（链路报错）
+    处理方式：排查异常堆栈，确认是否因任务一的改动引入了回归。
+
+场景D：trace 中没有 "规则" 字样
+  处理方式：说明走的是 LLM 分类路径，即使 intent 碰巧对，也不能证明回滚生效。
+  修复方向：检查 FeatureFlags.__post_init__ 是否正确优先读取内存桶。
+
+场景E：LLM API Key 未配置（mode=mock）
+  处理方式：不算失败，mock 模式下 classify_intent 仍走规则版，任务仍可验证。
+  注意：此时 LLM 路径本身不可达，无法做"LLM vs 规则"对照，但不影响回滚验证。
+
+场景F：Chroma 为空，retrieve_docs 返回空列表
+  处理方式：不算失败。classify_intent 独立于检索步骤，intent 字段仍由分类节点决定。
+  注意：答案会走 clarify 路径，但验证目标是 intent 字段，不是 answer 字段。
+
+场景G：并发请求导致状态被其他请求覆盖（内存桶非线程安全）
+  处理方式：任务三为单用户单请求验证，不涉及并发。若生产需要并发安全，
+           应在任务二阶段改用 threading.Lock 保护内存桶，或换文件/DB 存储。
+           当前不视为任务三失败，但属于已知风险点，应在交付时注明。
+
+
+二、失败判定总则
+---------------
+
+满足以下任一条件，任务三判定为失败：
+  1. 核心断言 intent != "promo"，且原因不是探针选错（即场景 C1/C3）
+  2. trace 中没有 "规则" 字样（场景 D）
+  3. rollback 端点返回非 200（场景 A）
+  4. feature-flags 状态与 rollback 写入值不一致（场景 B）
+
+以下情况不算失败，应记录并更换探针重试：
+  1. intent 为 ticket/clarify（探针命中了错误关键词，场景 C2）
+  2. LLM API Key 未配置（场景 E，mock 模式仍可验证）
+
+
+三、诊断决策树（排查时使用）
+-----------------------------
+
+intent 不是 "promo"？
+  ├─ trace 含 "LLM" 字样？→ 回滚未生效，查任务一
+  ├─ trace 含 "规则" 字样，但 intent 是 ticket/clarify？→ 探针选错，换一个
+  ├─ 链路抛异常？→ 查异常堆栈，确认是否引入回归
+  └─ trace 含 "规则" 且 intent 是 promo？→ 验证通过
+
+
+四、本次验证使用的探针问题及预期结果
+-------------------------------------
+
+探针问题："双11满减规则是什么"
+规则版预期：intent=promo，trace 含 "intent=promo(规则)"
+LLM 版预期：intent 可能是 refund 或 promo（取决于 LLM 输出）
+
+对比逻辑：
+  rollback 前（LLM 已开）→ 期望看到 LLM 版意图（如 refund）
+  rollback 后（v1 回滚）→ 期望看到 promo，证明切换到了规则版
+
+若 LLM 版也对"双11满减规则是什么"返回 promo，则探针失去区分能力，
+需换另一个问题重新设计对照实验。
+
+
+五、完成标准（通过条件）
+-------------------------
+
+同时满足以下三点，任务三才算完成：
+  1. POST /rollback?version=v1 返回 200，且 active_version=="v1"
+  2. GET /feature-flags 返回 use_llm_intent==False
+  3. POST /chat 返回 intent=="promo"，且 trace 中含 "规则" 字样
+
+任意一点不满足，任务未完成。

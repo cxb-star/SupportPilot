@@ -256,6 +256,7 @@ def ticket_if_needed(db_path, state: AgentState) -> dict:
         intent=intent,
         priority=ticket_priority,
         team=ticket_team,
+        session_id=state["session_id"],
     )
     return {
         "created_ticket": True,

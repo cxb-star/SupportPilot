@@ -3,12 +3,17 @@ import os
 
 设计目标：
 - 不改 agent 核心节点，只在 API 层加护栏
-- 权限：按角色限制“谁能改工单状态”
+- 权限：按角色限制"谁能改工单状态"
 - 限流：按 user_id 做简单令牌桶（内存版，够用）
 - 灰度：通过 env 控制新旧 prompt/策略开关，支持一键回滚
+
+运行时状态：use_llm_intent 等开关通过 set_feature_flag() 写入模块级
+_runtime_flags 字典，每次新建 FeatureFlags() 时先查此字典再 fallback
+到环境变量，保证同一进程内所有请求共享最新开关状态。
 """
 import time
 import threading
+import copy
 from dataclasses import dataclass, field
 from typing import Optional
 
@@ -87,19 +92,63 @@ def get_rate_limiter() -> RateLimiter:
 # 3. 灰度开关（prompt / 策略版本）
 # ============================================================
 
+# 模块级共享存储；每次新建 FeatureFlags() 实例时先查这里，
+# 未设置的键 fallback 到 env / dataclass 默认值。
+_runtime_flags: dict[str, object] = {}
+_flags_lock = threading.Lock()
+
+
+def set_feature_flag(name: str, value: object) -> None:
+    """运行时写入灰度开关，所有后续新建的 FeatureFlags() 实例立即生效。
+
+    调用示例：
+        set_feature_flag("use_llm_intent", True)
+        set_feature_flag("active_version", "v1")
+
+    线程安全：写操作持有互斥锁。
+    """
+    with _flags_lock:
+        _runtime_flags[name] = value
+
+
+def get_feature_flags_snapshot() -> dict[str, object]:
+    """返回当前运行时 flag 的深拷贝，供外部消费或序列化。"""
+    with _flags_lock:
+        return copy.deepcopy(_runtime_flags)
+
+
+def reset_feature_flags() -> None:
+    """清除所有运行时覆盖，回归到 env / dataclass 默认值。"""
+    with _flags_lock:
+        _runtime_flags.clear()
+
+
 @dataclass
 class FeatureFlags:
     """灰度标志：控制新旧策略切换，支持一键回滚。
-    通过 env 变量控制，无需重启改代码。
+
+    优先级：运行时存储 > 环境变量 > dataclass 默认值。
+    每次新建实例都重新读取，因此 set_feature_flag() 的变更对所有请求立即可见。
     """
     use_llm_intent: bool = False
-    # 支持 env 覆盖：USE_LLM_INTENT=1 时走 LLM 意图分类，默认 False（规则版，可回滚）
-    _USE_LLM_INTENT_ENV = os.getenv('USE_LLM_INTENT', '0').strip().lower() in {'1','true','yes','on'}
-
-    def __post_init__(self):
-        if self._USE_LLM_INTENT_ENV:
-            self.use_llm_intent = True
-    use_history_in_prompt: bool = True  # True: 带多轮历史；False: 关闭（回滚）
+    use_history_in_prompt: bool = True
     rag_top_k: int = 4
     confidence_threshold: float = 0.5
-    active_version: str = "v2"        # 当前灰度版本标签，写进 trace 便于审计
+    active_version: str = "v2"
+
+    def __post_init__(self):
+        with _flags_lock:
+            stored = copy.copy(_runtime_flags)
+        # 运行时设置优先于 env 和默认值
+        if "use_llm_intent" in stored:
+            self.use_llm_intent = bool(stored["use_llm_intent"])
+        elif os.getenv("USE_LLM_INTENT", "0").strip().lower() in {"1", "true", "yes", "on"}:
+            self.use_llm_intent = True
+        if "rag_top_k" in stored:
+            self.rag_top_k = int(stored["rag_top_k"])
+        if "confidence_threshold" in stored:
+            self.confidence_threshold = float(stored["confidence_threshold"])
+        if "active_version" in stored:
+            self.active_version = str(stored["active_version"])
+        if "use_history_in_prompt" in stored:
+            self.use_history_in_prompt = bool(stored["use_history_in_prompt"])
