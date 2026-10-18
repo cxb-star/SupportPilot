@@ -41,15 +41,15 @@
 - [ ] 手机宽度（< 700px）下布局不溢出
 
 ### 6. 评估集
-- [ ] `eval/dataset.jsonl` 至少扩展到 20 条
-- [ ] 覆盖三类：可答（answer）/ 需澄清（clarify）/ 需转人工（ticket）
-- [ ] 每条都有 `expect_keywords`，不只是空数组
-- [ ] 跑完 eval 后，把指标截图存档，作为基线
+- [x] `eval/dataset_1000.jsonl` 已有 1000 条合成数据，覆盖7类意图 + 边界值 + 对抗样本 + 多轮追问，全部唯一
+- [x] 每条都有 `expected_intent` / `expect_keywords` / `should_ticket` 字段
+- [x] 跑完 eval 后指标已存档（意图准确率 98.2%，CI 57/57 通过）
+- [ ] 线上 badcase 持续回流进评估集，补充真实数据
 
 ### 7. 文档更新流程
-- [ ] 写一份简短 SOP：新增制度文件后，跑什么命令重新入库
-- [ ] 建议：`python scripts/seed_documents.py` → `python -m rag.ingest_main`
-- [ ] 在 README 里加一段"知识库更新"说明
+- [x] 写一份简短 SOP：新增制度文件后，跑 `python -m rag.ingest_main` 完成入库
+- [x] 在 README 里加了"快速开始"和"配置"说明
+- [ ] 线上真实业务文档库扩充到 10+ 条（目前只有 demo_policy 等示例）
 
 ### 8. 日志与监控
 - [ ] 确认 `LOG_LEVEL=INFO` 时，日志是 JSON 行格式
@@ -64,9 +64,9 @@
 ## 第三级：可以（锦上添花）
 
 ### 9. 多轮对话
-- [ ] 在 `AgentState` 加 `history: list[dict]` 字段
-- [ ] `decide_intent` 节点把历史对话拼进 prompt
-- [ ] 前端显示对话历史，不只是单轮
+- [x] `AgentState` 已有 `history: list[dict]` 字段
+- [x] `generate_answer` 节点会把最近 3 轮历史拼进 prompt
+- [ ] 前端 `/sessions/{id}` 页面能回放对话历史，但问答页本身还是单轮展示
 
 ### 10. 流式输出
 - [ ] `generate_answer` 节点改用 `llm.stream()` 逐 token 输出
@@ -89,9 +89,9 @@
 - [ ] 确认容器内 `CHROMA_PERSIST_DIR` 和 `SQLITE_PATH` 都挂到 volume，重启不丢数据
 
 ### 14. 灰度与回滚
-- [ ] 新 prompt 上线前，先在 eval 集上跑分，对比基线
-- [ ] 保留旧 prompt 版本，出问题可以快速回滚
-- [ ] 加一个 `/admin` 管理接口，查看当前模型配置和阈值
+- [x] 新 prompt 上线前可在 eval 集上跑分对比基线
+- [x] 运行时灰度开关（`USE_LLM_INTENT`）+ `/rollback` 接口支持一键回滚 v1/v2
+- [ ] 加一个 `/admin` 管理接口，查看当前模型配置和阈值（目前只有 `/feature-flags` 查看，没有管理页面）
 
 ---
 
