@@ -58,20 +58,22 @@ def _classify_intent_by_rules(question: str) -> dict:
             "trace": _steps("classify_intent", "intent=ticket(规则)"),
         }
 
-    if any(w in q for w in ("退款", "退货", "退钱", "退掉")):
-        intent = "refund" if "退" in q else "return"
-    elif "补发" in q or "重新发" in q or "没收到" in q:
+    has_refund = any(w in q for w in ("退款", "退钱"))
+    has_return = "退货" in q or "退掉" in q
+    if has_refund or has_return:
+        intent = "refund" if has_refund else "return"
+    elif "补发" in q or "重新发" in q or "没收到" in q or "漏发" in q or "少发" in q or "丢件" in q or "空包" in q:
         intent = "reship"
     elif "破损" in q or "质量" in q or "赔偿" in q or "赔" in q:
         intent = "compensate"
-    elif "活动" in q or "优惠" in q or "满减" in q or "促销" in q:
+    elif "活动" in q or "优惠" in q or "满减" in q or "促销" in q or "券" in q:
         intent = "promo"
     else:
         intent = "clarify"
 
     return {
         "intent": intent,
-        "confidence": 0.0,
+        "confidence": 1.0,
         "ticket_team": _INTENT_TEAM.get(intent, "general"),
         "ticket_priority": "urgent" if intent == "compensate" else "normal",
         "trace": _steps("classify_intent", f"intent={intent}(规则)"),
@@ -141,7 +143,7 @@ def classify_intent(llm, state: AgentState) -> dict:
 def retrieve_docs(retriever, state: AgentState) -> dict:
     """检索客服政策库；clarify / ticket 意图跳过检索。"""
     intent = state.get("intent", "clarify")
-    if intent in ("ticket", "clarify"):
+    if intent in ("ticket", "clarify", "refund", "return"):
         return {"trace": _steps("retrieve_docs_skipped")}
     try:
         docs = retriever.search(state["question"], top_k=settings.RAG_TOP_K)
@@ -158,7 +160,7 @@ def route_after_retrieve(state: AgentState) -> str:
 
 def clarify(llm, state: AgentState) -> dict:
     """检索为空或意图不明时，生成追问。"""
-    delta: dict = {"intent": "clarify", "confidence": 0.0, "ticket_team": "general"}
+    delta: dict = {"ticket_team": "general"}
     if llm is None:
         delta["answer"] = "请补充一下：是退款、退货、补发，还是质量问题？以便我给您准确的答复。"
     else:
@@ -243,7 +245,7 @@ def ticket_if_needed(db_path, state: AgentState) -> dict:
     ticket_priority = state.get("ticket_priority", "normal")
 
     need_ticket = (
-        intent in ("ticket", "clarify")
+        intent in ("ticket", "clarify", "refund", "return")
         or confidence < settings.CONFIDENCE_THRESHOLD
     )
     if not need_ticket:

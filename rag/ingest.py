@@ -60,12 +60,19 @@ def chunk_text(
     return chunks
 
 
+POLICY_STEMS = frozenset({
+    "refund_policy", "return_policy", "reship_policy",
+    "compensation", "promo_faq", "faq",
+})
+
+
 def ingest_documents(docs_dir: str | Path) -> list[dict]:
     docs_dir = Path(docs_dir)
     items = []
     for path in sorted(docs_dir.glob("*.txt")):
         text = path.read_text(encoding="utf-8")
         chunks = chunk_text(text, source=path.name, stem=path.stem)
+        doc_type = "policy" if path.stem in POLICY_STEMS else "debug"
         for chunk in chunks:
             items.append(
                 {
@@ -73,6 +80,7 @@ def ingest_documents(docs_dir: str | Path) -> list[dict]:
                     "source": chunk.source,
                     "content": chunk.content,
                     "char_count": len(chunk.content),
+                    "doc_type": doc_type,
                 }
             )
     return items

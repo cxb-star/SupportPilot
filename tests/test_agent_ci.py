@@ -1,4 +1,5 @@
-"""CI 专用测试：验证客服 7 类意图主链路 + 工单/历史/trace，无需真实 LLM。"""
+# -*- coding: utf-8 -*-
+"""CI tests for agent intent classification."""
 import json
 import sqlite3
 from pathlib import Path
@@ -11,7 +12,6 @@ from config import settings
 
 
 class FakeRetriever:
-    """返回客服政策库 mock 数据，完全绕开 Chroma。"""
     def search(self, q, top_k=4):
         return [
             {"id": "refund_policy-0", "content": "签收后 7 天内，商品完好未拆封，可申请全额退款。",
@@ -34,12 +34,14 @@ def test_intent_refund(tmp_path):
     g = build_graph(_make_ctx(tmp_path))
     r = g.invoke(init_state("订单12345能退款吗，买了3天", "s1", "u1"))
     assert r["intent"] == "refund"
+    assert r["created_ticket"] is True
 
 
 def test_intent_promo(tmp_path):
     g = build_graph(_make_ctx(tmp_path))
     r = g.invoke(init_state("双11满减规则是什么", "s2", "u2"))
     assert r["intent"] == "promo"
+    assert r["created_ticket"] is False
 
 
 def test_intent_compensate_urgent(tmp_path):
@@ -53,6 +55,13 @@ def test_intent_ticket_signal(tmp_path):
     g = build_graph(_make_ctx(tmp_path))
     r = g.invoke(init_state("帮我转人工处理一下", "s4", "u4"))
     assert r["intent"] == "ticket"
+    assert r["created_ticket"] is True
+
+
+def test_intent_return(tmp_path):
+    g = build_graph(_make_ctx(tmp_path))
+    r = g.invoke(init_state("我要退货，商品尺码不对", "s_ret", "u_ret"))
+    assert r["intent"] == "return"
     assert r["created_ticket"] is True
 
 

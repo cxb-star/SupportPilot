@@ -1,0 +1,1000 @@
+{"id": 1, "question": "41天前买的衣服，现在尺寸不合适要退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 2, "question": "预售 鞋子，买错了，58天了能退吗", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "refund"}
+{"id": 3, "question": "在线等我想退款，买了39天家居，未拆封", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 4, "question": "可以吗订单46421签收52天电子产品未拆封能退款吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 5, "question": "鞋子签收6天不喜欢，是否退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 6, "question": "图书破损，签收35天了可以退钱吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 7, "question": "怎么我想退款，买了46天衣服，未拆封", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 8, "question": "30天前买的食品，现在与描述不符要退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 9, "question": "在线等我想退款，买了42天数码，未拆封", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 10, "question": "家居签收60天颜色不对，能不能退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 11, "question": "日用品签收18天不喜欢，是否退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 12, "question": "电子产品签收10天颜色不对，是否退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 13, "question": "电子产品发货太慢，签收24天了可以退钱吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 14, "question": "怎么办我想退款，买了51天图书，洗过", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 15, "question": "鞋子签收36天尺寸不合适，是否退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 16, "question": "定制 化妆品，与描述不符，1天了能退吗", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "refund"}
+{"id": 17, "question": "想我想退款，买了39天电子产品，已拆封", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 18, "question": "怎么订单41385签收32天鞋子未拆封能退款吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 19, "question": "玩具破损，签收6天了可以退钱吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 20, "question": "要我想退款，买了17天数码，包装破损", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 21, "question": "在线等订单69177签收26天食品洗过能退款吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 22, "question": "要订单10942签收22天数码未拆封能退款吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 23, "question": "定制 食品，破损，58天了能退吗", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "refund"}
+{"id": 24, "question": "要订单71993签收9天数码洗过能退款吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 25, "question": "43天前买的食品，现在买错了要退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 26, "question": "预售 衣服，买错了，42天了能退吗", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "refund"}
+{"id": 27, "question": "怎么图书与描述不符，部分退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 28, "question": "鞋子签收56天质量问题，能不能退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 29, "question": "请问我想退款，买了32天日用品，已使用", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 30, "question": "化妆品买错了，签收60天了可以退钱吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 31, "question": "可以吗衣服质量问题，原路退回", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "refund"}
+{"id": 32, "question": "想衣服破损，原路退回", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "refund"}
+{"id": 33, "question": "定制 鞋子，颜色不对，16天了能退吗", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "refund"}
+{"id": 34, "question": "要我想退款，买了37天食品，包装破损", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 35, "question": "定制 化妆品，发货太慢，26天了能退吗", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "refund"}
+{"id": 36, "question": "家居颜色不对，签收7天了可以退钱吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 37, "question": "在线等电子产品发货太慢，原路退回", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "refund"}
+{"id": 38, "question": "怎么我想退款，买了36天鞋子，吊牌在", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 39, "question": "怎么订单76244签收39天食品已拆封能退款吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 40, "question": "41天前买的化妆品，现在质量问题要退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 41, "question": "能订单19862签收29天图书包装破损能退款吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 42, "question": "怎么办数码与描述不符，部分退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 43, "question": "要食品颜色不对，原路退回", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "refund"}
+{"id": 44, "question": "27天前买的电子产品，现在颜色不对要退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 45, "question": "怎么图书颜色不对，部分退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 46, "question": "紧急订单55830签收3天日用品已使用能退款吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 47, "question": "定制 图书，不喜欢，43天了能退吗", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "refund"}
+{"id": 48, "question": "请问我想退款，买了26天家居，洗过", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 49, "question": "预售 数码，买错了，3天了能退吗", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "refund"}
+{"id": 50, "question": "衣服签收13天买错了，如何退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 51, "question": "食品签收5天不喜欢，如何退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 52, "question": "21天前买的化妆品，现在与描述不符要退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 53, "question": "数码尺寸不合适，签收58天了可以退钱吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 54, "question": "数码签收28天不喜欢，是否退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 55, "question": "怎么电子产品破损，全额退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 56, "question": "化妆品签收49天颜色不对，能不能退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 57, "question": "玩具买错了，签收40天了可以退钱吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 58, "question": "定制 衣服，破损，42天了能退吗", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "refund"}
+{"id": 59, "question": "定制 玩具，与描述不符，16天了能退吗", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "refund"}
+{"id": 60, "question": "在线等我想退款，买了53天家居，洗过", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 61, "question": "要我想退款，买了49天化妆品，已拆封", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 62, "question": "食品签收16天不喜欢，能不能退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 63, "question": "怎么办订单63424签收45天日用品已拆封能退款吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 64, "question": "怎么办图书质量问题，部分退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 65, "question": "紧急订单38760签收25天家居已使用能退款吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 66, "question": "预售 图书，与描述不符，25天了能退吗", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "refund"}
+{"id": 67, "question": "怎么办我想退款，买了37天衣服，洗过", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 68, "question": "可以吗我想退款，买了25天日用品，吊牌在", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 69, "question": "在线等订单16826签收54天玩具未拆封能退款吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 70, "question": "衣服质量问题，签收50天了可以退钱吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 71, "question": "预售 鞋子，颜色不对，31天了能退吗", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "refund"}
+{"id": 72, "question": "预售 鞋子，与描述不符，48天了能退吗", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "refund"}
+{"id": 73, "question": "44天前买的图书，现在颜色不对要退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 74, "question": "请问我想退款，买了50天数码，吊牌在", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 75, "question": "5天前买的食品，现在质量问题要退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 76, "question": "想电子产品买错了，原路退回", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "refund"}
+{"id": 77, "question": "怎么办玩具发货太慢，全额退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 78, "question": "要订单70910签收60天化妆品未拆封能退款吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 79, "question": "定制 电子产品，发货太慢，32天了能退吗", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "refund"}
+{"id": 80, "question": "家居签收45天质量问题，能不能退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 81, "question": "日用品发货太慢，签收32天了可以退钱吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 82, "question": "26天前买的日用品，现在尺寸不合适要退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 83, "question": "36天前买的食品，现在发货太慢要退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 84, "question": "13天前买的鞋子，现在与描述不符要退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 85, "question": "数码尺寸不合适，签收38天了可以退钱吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 86, "question": "家居与描述不符，签收20天了可以退钱吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 87, "question": "鞋子质量问题，签收41天了可以退钱吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 88, "question": "4天前买的玩具，现在破损要退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 89, "question": "怎么电子产品与描述不符，原路退回", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "refund"}
+{"id": 90, "question": "在线等数码颜色不对，部分退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 91, "question": "38天前买的化妆品，现在质量问题要退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 92, "question": "日用品签收6天与描述不符，能不能退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 93, "question": "请问玩具尺寸不合适，原路退回", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "refund"}
+{"id": 94, "question": "日用品尺寸不合适，签收30天了可以退钱吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 95, "question": "请问订单31747签收59天电子产品吊牌在能退款吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 96, "question": "怎么订单75597签收30天化妆品洗过能退款吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 97, "question": "怎么图书不喜欢，原路退回", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "refund"}
+{"id": 98, "question": "预售 数码，质量问题，56天了能退吗", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "refund"}
+{"id": 99, "question": "怎么办我想退款，买了42天化妆品，已使用", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 100, "question": "27天前买的食品，现在破损要退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 101, "question": "能衣服发货太慢，全额退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 102, "question": "怎么办衣服发货太慢，原路退回", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "refund"}
+{"id": 103, "question": "玩具签收32天质量问题，如何退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 104, "question": "玩具破损，签收57天了可以退钱吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 105, "question": "20天前买的衣服，现在买错了要退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 106, "question": "玩具尺寸不合适，签收54天了可以退钱吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 107, "question": "要我想退款，买了30天电子产品，包装破损", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 108, "question": "定制 食品，尺寸不合适，50天了能退吗", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "refund"}
+{"id": 109, "question": "要玩具不喜欢，全额退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 110, "question": "紧急订单59968签收50天衣服已使用能退款吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 111, "question": "9天前买的数码，现在不喜欢要退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 112, "question": "紧急订单44737签收10天电子产品已使用能退款吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 113, "question": "可以吗订单92155签收55天家居吊牌在能退款吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 114, "question": "40天前买的日用品，现在尺寸不合适要退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 115, "question": "怎么我想退款，买了56天玩具，未拆封", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 116, "question": "图书与描述不符，签收23天了可以退钱吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 117, "question": "6天前买的图书，现在颜色不对要退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 118, "question": "化妆品签收17天质量问题，如何退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 119, "question": "怎么化妆品买错了，部分退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 120, "question": "可以吗日用品买错了，全额退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 121, "question": "请问化妆品质量问题，部分退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 122, "question": "要数码不喜欢，原路退回", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "refund"}
+{"id": 123, "question": "请问我想退款，买了47天电子产品，洗过", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 124, "question": "可以吗鞋子尺寸不合适，全额退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 125, "question": "想家居尺寸不合适，原路退回", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "refund"}
+{"id": 126, "question": "想我想退款，买了22天玩具，未拆封", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 127, "question": "6天前买的衣服，现在尺寸不合适要退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 128, "question": "可以吗订单24201签收44天数码吊牌在能退款吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 129, "question": "食品签收40天颜色不对，是否退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 130, "question": "预售 衣服，质量问题，8天了能退吗", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "refund"}
+{"id": 131, "question": "9天前买的玩具，现在不喜欢要退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 132, "question": "数码签收7天买错了，如何退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 133, "question": "食品签收29天破损，如何退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 134, "question": "能鞋子发货太慢，全额退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 135, "question": "能我想退款，买了22天电子产品，已拆封", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 136, "question": "怎么订单28964签收50天数码已拆封能退款吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 137, "question": "电子产品质量问题，签收43天了可以退钱吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 138, "question": "电子产品签收17天买错了，如何退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 139, "question": "紧急家居破损，原路退回", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "refund"}
+{"id": 140, "question": "紧急家居尺寸不合适，部分退款", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 141, "question": "鞋子发货太慢，签收26天了可以退钱吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "refund"}
+{"id": 142, "question": "买错了，内衣签收20天要退货", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 143, "question": "不想要了，家居签收14天要退货", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 144, "question": "买错了，衣服签收22天要退货", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 145, "question": "买错了，定制签收26天要退货", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 146, "question": "退货运费谁承担", "expected_intent": "return", "expect_keywords": ["退货", "运费"], "should_ticket": true, "source": "return"}
+{"id": 147, "question": "4件鞋子要退，怎么操作", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "return"}
+{"id": 148, "question": "家居洗过能退货吗", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 149, "question": "2件内衣要退，怎么操作", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "return"}
+{"id": 150, "question": "尺寸不对，衣服签收15天要退货", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 151, "question": "刚收到，要退内衣", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "return"}
+{"id": 152, "question": "10件衣服要退，怎么操作", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "return"}
+{"id": 153, "question": "7天内退货化妆品穿过可以吗", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 154, "question": "数码退货条件是什么", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 155, "question": "刚收到，要退家居", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "return"}
+{"id": 156, "question": "衣服尺寸不对，想退", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "return"}
+{"id": 157, "question": "衣服质量问题，申请退", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "return"}
+{"id": 158, "question": "不想要了，数码签收3天要退货", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 159, "question": "三天前买的，要退化妆品", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "return"}
+{"id": 160, "question": "数码吊牌剪了能退货吗", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 161, "question": "质量问题，家居签收10天要退货", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 162, "question": "8件定制要退，怎么操作", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "return"}
+{"id": 163, "question": "内衣买错了，想退", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "return"}
+{"id": 164, "question": "质量问题，数码签收18天要退货", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 165, "question": "6件内衣要退，怎么操作", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "return"}
+{"id": 166, "question": "衣服退货地址是什么", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 167, "question": "定制类内衣可以无理由退货吗", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 168, "question": "退货超时还有多久", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 169, "question": "退货超时还来得及", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 170, "question": "定制类家居可以无理由退货吗", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 171, "question": "定制类食品可以无理由退货吗", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 172, "question": "退货运费多少", "expected_intent": "return", "expect_keywords": ["退货", "运费"], "should_ticket": true, "source": "return"}
+{"id": 173, "question": "三天前买的，要退鞋子", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "return"}
+{"id": 174, "question": "三天前买的，要退衣服", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "return"}
+{"id": 175, "question": "退货运费要钱吗", "expected_intent": "return", "expect_keywords": ["退货", "运费"], "should_ticket": true, "source": "return"}
+{"id": 176, "question": "衣服质量问题，要退", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "return"}
+{"id": 177, "question": "家居未拆封能退货吗", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 178, "question": "鞋子穿过能退货吗", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 179, "question": "生鲜退货条件是什么", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 180, "question": "数码质量问题，想退", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "return"}
+{"id": 181, "question": "30天内退货鞋子已拆封可以吗", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 182, "question": "内衣类鞋子可以无理由退货吗", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 183, "question": "家居不想要了，要退", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "return"}
+{"id": 184, "question": "退货运费怎么算", "expected_intent": "return", "expect_keywords": ["退货", "运费"], "should_ticket": true, "source": "return"}
+{"id": 185, "question": "内衣类数码可以无理由退货吗", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 186, "question": "买错了，定制签收25天要退货", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 187, "question": "2件定制要退，怎么操作", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "return"}
+{"id": 188, "question": "化妆品吊牌完好能退货吗", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 189, "question": "退货超时会自动关闭", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 190, "question": "8件衣服要退，怎么操作", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "return"}
+{"id": 191, "question": "30天内退货内衣吊牌完好可以吗", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 192, "question": "生鲜不想要了，要退", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "return"}
+{"id": 193, "question": "内衣质量问题，要退", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "return"}
+{"id": 194, "question": "8件食品要退，怎么操作", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "return"}
+{"id": 195, "question": "已签收，要退定制", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "return"}
+{"id": 196, "question": "三天前买的，要退食品", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "return"}
+{"id": 197, "question": "9件内衣要退，怎么操作", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "return"}
+{"id": 198, "question": "刚收到，要退生鲜", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "return"}
+{"id": 199, "question": "三天前买的，要退内衣", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "return"}
+{"id": 200, "question": "质量问题，食品签收19天要退货", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 201, "question": "4件家居要退，怎么操作", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "return"}
+{"id": 202, "question": "食品买错了，申请退", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "return"}
+{"id": 203, "question": "买错了，化妆品签收4天要退货", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 204, "question": "买错了，鞋子签收24天要退货", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 205, "question": "30天内退货内衣未拆封可以吗", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 206, "question": "买错了，数码签收19天要退货", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 207, "question": "14天内退货内衣已拆封可以吗", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 208, "question": "鞋子未拆封能退货吗", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 209, "question": "化妆品吊牌剪了能退货吗", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 210, "question": "内衣类食品可以无理由退货吗", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 211, "question": "食品已拆封能退货吗", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 212, "question": "食品退货地址是什么", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 213, "question": "14天内退货食品洗过可以吗", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 214, "question": "内衣类家居可以无理由退货吗", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 215, "question": "定制类鞋子可以无理由退货吗", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 216, "question": "7件家居要退，怎么操作", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "return"}
+{"id": 217, "question": "已签收，要退数码", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "return"}
+{"id": 218, "question": "食品尺寸不对，想退", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "return"}
+{"id": 219, "question": "化妆品买错了，申请退", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "return"}
+{"id": 220, "question": "定制类生鲜可以无理由退货吗", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 221, "question": "1件食品要退，怎么操作", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "return"}
+{"id": 222, "question": "质量问题，生鲜签收17天要退货", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 223, "question": "生鲜退货地址是什么", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 224, "question": "鞋子买错了，申请退", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "return"}
+{"id": 225, "question": "10件食品要退，怎么操作", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "return"}
+{"id": 226, "question": "衣服不想要了，要退", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "return"}
+{"id": 227, "question": "14天内退货衣服穿过可以吗", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 228, "question": "鞋子质量问题，想退", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "return"}
+{"id": 229, "question": "刚收到，要退化妆品", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "return"}
+{"id": 230, "question": "颜色不对，家居签收30天要退货", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 231, "question": "30天内退货食品未拆封可以吗", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 232, "question": "10件家居要退，怎么操作", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "return"}
+{"id": 233, "question": "30天内退货数码已拆封可以吗", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 234, "question": "不想要了，鞋子签收17天要退货", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 235, "question": "内衣类内衣可以无理由退货吗", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 236, "question": "30天内退货生鲜吊牌剪了可以吗", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 237, "question": "7天内退货数码洗过可以吗", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 238, "question": "生鲜类定制可以无理由退货吗", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 239, "question": "生鲜类化妆品可以无理由退货吗", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 240, "question": "家居退货地址是什么", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "return"}
+{"id": 241, "question": "缺件5件商品，怎么处理", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "reship"}
+{"id": 242, "question": "补发免费吗", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 243, "question": "同一订单补发3次了还能补吗", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 244, "question": "订单55957少发了说明书，什么时候能补发", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 245, "question": "快递丢了", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "reship"}
+{"id": 246, "question": "食品漏发24小时内能补", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 247, "question": "没收到了商品，申请补发", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 248, "question": "订单54270缺件了赠品，几天能补发", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 249, "question": "补发要多久", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 250, "question": "再寄要48小时内", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "reship"}
+{"id": 251, "question": "漏发了袜子，申请补发", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 252, "question": "漏发5件配件，怎么处理", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 253, "question": "生鲜漏发48小时内能补", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 254, "question": "少了2件赠品，怎么处理", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "reship"}
+{"id": 255, "question": "少发4件说明书，怎么处理", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 256, "question": "同一订单补发1次了还能补吗", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 257, "question": "丢件1件袜子，怎么处理", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 258, "question": "重新发要几天", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 259, "question": "补发运费谁承担", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 260, "question": "运输破损", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "reship"}
+{"id": 261, "question": "补发要不要钱", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 262, "question": "订单17589丢件了说明书，48小时内能补发", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 263, "question": "订单44465缺件了帽子，24小时内能补发", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 264, "question": "订单31873少了了说明书，什么时候能补发", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 265, "question": "订单64559少发了赠品，48小时内能补发", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 266, "question": "少发了配件，申请补发", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 267, "question": "漏发了赠品，怎么补", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 268, "question": "同一订单补发4次了还能补吗", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 269, "question": "少了了袜子，要补发", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 270, "question": "补发要什么时候", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 271, "question": "少发4件赠品，怎么处理", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 272, "question": "少发2件配件，怎么处理", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 273, "question": "订单15286空包了配件，什么时候能补发", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 274, "question": "丢件1件赠品，怎么处理", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 275, "question": "空包1件说明书，怎么处理", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "reship"}
+{"id": 276, "question": "食品漏发几天能补", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 277, "question": "少发了配件，怎么补", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 278, "question": "订单52153缺件了帽子，什么时候能补发", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 279, "question": "同一订单补发5次了还能补吗", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 280, "question": "没收到了赠品，申请补发", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 281, "question": "没收到了赠品，怎么补", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 282, "question": "重新发要什么时候", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 283, "question": "生鲜漏发什么时候能补", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 284, "question": "再寄要多久", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "reship"}
+{"id": 285, "question": "再寄要几天", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "reship"}
+{"id": 286, "question": "补发要24小时内", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 287, "question": "没收到4件商品，怎么处理", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 288, "question": "再寄要24小时内", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "reship"}
+{"id": 289, "question": "重新发要48小时内", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 290, "question": "快递显示签收但没收到", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 291, "question": "没收到5件袜子，怎么处理", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 292, "question": "漏发了帽子，要补发", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 293, "question": "丢件了配件，要补发", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 294, "question": "空包2件配件，怎么处理", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "reship"}
+{"id": 295, "question": "少发了说明书，申请补发", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 296, "question": "订单71171少了了赠品，48小时内能补发", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 297, "question": "生鲜漏发几天能补", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 298, "question": "订单46291缺件了配件，几天能补发", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 299, "question": "丢件了帽子，申请补发", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 300, "question": "丢件了说明书，申请补发", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 301, "question": "重新发要多久", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 302, "question": "没收到了说明书，要补发", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 303, "question": "订单79963少了了商品，24小时内能补发", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 304, "question": "重新发要24小时内", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 305, "question": "空包5件帽子，怎么处理", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "reship"}
+{"id": 306, "question": "订单26199少了了袜子，多久能补发", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 307, "question": "缺件5件袜子，怎么处理", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "reship"}
+{"id": 308, "question": "缺件4件配件，怎么处理", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "reship"}
+{"id": 309, "question": "漏发4件说明书，怎么处理", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 310, "question": "补发要几天", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 311, "question": "订单60556少了了袜子，几天能补发", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 312, "question": "空包2件赠品，怎么处理", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "reship"}
+{"id": 313, "question": "缺件5件配件，怎么处理", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "reship"}
+{"id": 314, "question": "订单74990没收到了说明书，多久能补发", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 315, "question": "没收到了配件，怎么补", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 316, "question": "丢件了配件，怎么补", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 317, "question": "少发4件商品，怎么处理", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 318, "question": "订单96305空包了袜子，多久能补发", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 319, "question": "食品漏发48小时内能补", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 320, "question": "没收到4件袜子，怎么处理", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 321, "question": "补发要48小时内", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "reship"}
+{"id": 322, "question": "空包2件帽子，怎么处理", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "reship"}
+{"id": 323, "question": "少了3件说明书，怎么处理", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "reship"}
+{"id": 324, "question": "质量问题反馈", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "compensate"}
+{"id": 325, "question": "瑕疵反馈", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "compensate"}
+{"id": 326, "question": "质量问题轻微，怎么办", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "compensate"}
+{"id": 327, "question": "变质举报", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "compensate"}
+{"id": 328, "question": "过期轻微，退款还是赔偿", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "compensate"}
+{"id": 329, "question": "商品价值1102元，假货赔多少", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "compensate"}
+{"id": 330, "question": "处理时限", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "compensate"}
+{"id": 331, "question": "瑕疵投诉", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "compensate"}
+{"id": 332, "question": "超时发货要赔吗", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "compensate"}
+{"id": 333, "question": "多久出结果", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "compensate"}
+{"id": 334, "question": "假货投诉怎么赔", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "compensate"}
+{"id": 335, "question": "假货轻微，怎么办", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "compensate"}
+{"id": 336, "question": "商品价值1102元，划伤赔多少", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "compensate"}
+{"id": 337, "question": "破损轻微，退款还是赔偿", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "compensate"}
+{"id": 338, "question": "开裂严重，退款还是赔偿", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "compensate"}
+{"id": 339, "question": "划伤轻微，怎么办", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "compensate"}
+{"id": 340, "question": "假货轻微，退款还是赔偿", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "compensate"}
+{"id": 341, "question": "要不要准备质检报告吗", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "compensate"}
+{"id": 342, "question": "需要提交质检报告吗", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "compensate"}
+{"id": 343, "question": "收到的东西假货，怎么处理", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "compensate"}
+{"id": 344, "question": "未按时发货要赔吗", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "compensate"}
+{"id": 345, "question": "划伤反馈", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "compensate"}
+{"id": 346, "question": "商品价值1102元，开裂赔多少", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "compensate"}
+{"id": 347, "question": "假货举报怎么赔", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "compensate"}
+{"id": 348, "question": "得准备质检报告吗", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "compensate"}
+{"id": 349, "question": "破损举报", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "compensate"}
+{"id": 350, "question": "破损反馈", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "compensate"}
+{"id": 351, "question": "开裂严重，怎么办", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "compensate"}
+{"id": 352, "question": "商品价值1102元，过期赔多少", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "compensate"}
+{"id": 353, "question": "收到的货物划伤，要赔偿", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "compensate"}
+{"id": 354, "question": "收到的东西开裂，怎么处理", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "compensate"}
+{"id": 355, "question": "收到的货物货不对板，怎么赔", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "compensate"}
+{"id": 356, "question": "假货维权怎么赔", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "compensate"}
+{"id": 357, "question": "货不对板轻微，怎么办", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "compensate"}
+{"id": 358, "question": "收到的商品划伤，要赔偿", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "compensate"}
+{"id": 359, "question": "商品价值1102元，货不对板赔多少", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "compensate"}
+{"id": 360, "question": "变质轻微，怎么办", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "compensate"}
+{"id": 361, "question": "瑕疵轻微，退款还是赔偿", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "compensate"}
+{"id": 362, "question": "货不对板严重，退款还是赔偿", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "compensate"}
+{"id": 363, "question": "赔付要等", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "compensate"}
+{"id": 364, "question": "质量问题投诉", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "compensate"}
+{"id": 365, "question": "收到的东西货不对板，怎么赔", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "compensate"}
+{"id": 366, "question": "划伤举报", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "compensate"}
+{"id": 367, "question": "收到的货物变质，怎么赔", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "compensate"}
+{"id": 368, "question": "收到的商品变质，要赔偿", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "compensate"}
+{"id": 369, "question": "收到的东西货不对板，怎么处理", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "compensate"}
+{"id": 370, "question": "商品价值1102元，变质赔多少", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "compensate"}
+{"id": 371, "question": "商品价值1102元，破损赔多少", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "compensate"}
+{"id": 372, "question": "收到的货物瑕疵，要赔偿", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "compensate"}
+{"id": 373, "question": "货不对板严重，怎么办", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "compensate"}
+{"id": 374, "question": "变质严重，怎么办", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "compensate"}
+{"id": 375, "question": "商品价值1102元，质量问题赔多少", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "compensate"}
+{"id": 376, "question": "货不对板轻微，退款还是赔偿", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "compensate"}
+{"id": 377, "question": "假货投诉", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "compensate"}
+{"id": 378, "question": "破损严重，怎么办", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "compensate"}
+{"id": 379, "question": "假货举报", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "compensate"}
+{"id": 380, "question": "收到的东西划伤，怎么赔", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "compensate"}
+{"id": 381, "question": "收到的货物划伤，怎么赔", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "compensate"}
+{"id": 382, "question": "过期轻微，怎么办", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "compensate"}
+{"id": 383, "question": "过期严重，怎么办", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "compensate"}
+{"id": 384, "question": "开裂投诉", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "compensate"}
+{"id": 385, "question": "收到的商品破损，怎么处理", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "compensate"}
+{"id": 386, "question": "满737减153的活动有哪些", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 387, "question": "满687减72的活动有哪些", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 388, "question": "满减怎么用", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 389, "question": "满706减171的活动有哪些", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 390, "question": "店铺券怎么用", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 391, "question": "生鲜商品能参加满减吗", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 392, "question": "满501减56的活动有哪些", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 393, "question": "周末特惠期间平台券怎么算", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 394, "question": "折扣门槛", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "promo"}
+{"id": 395, "question": "折扣和积分能一起用吗", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "promo"}
+{"id": 396, "question": "满828减156的活动有哪些", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 397, "question": "满515减27的活动有哪些", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 398, "question": "秒杀可以叠加吗", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "promo"}
+{"id": 399, "question": "满730减157的活动有哪些", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 400, "question": "折扣有效期", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "promo"}
+{"id": 401, "question": "团购使用条件", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "promo"}
+{"id": 402, "question": "团购使用时间", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "promo"}
+{"id": 403, "question": "平台券使用时间", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 404, "question": "优惠券和积分冲突吗", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 405, "question": "生鲜商品能参加折扣吗", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "promo"}
+{"id": 406, "question": "平台券有效期", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 407, "question": "定制商品能参加秒杀吗", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "promo"}
+{"id": 408, "question": "周末特惠秒杀规则是什么", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "promo"}
+{"id": 409, "question": "折扣什么时间用", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "promo"}
+{"id": 410, "question": "黑五期间团购怎么算", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "promo"}
+{"id": 411, "question": "双11期间秒杀怎么算", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 412, "question": "周末特惠期间满减怎么算", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 413, "question": "满278减161的活动有哪些", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 414, "question": "店铺券可以叠加吗", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 415, "question": "定制商品能参加团购吗", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "promo"}
+{"id": 416, "question": "黑五期间满减怎么算", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 417, "question": "满减使用条件", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 418, "question": "满891减182的活动有哪些", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 419, "question": "店铺券门槛", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 420, "question": "周末特惠店铺券规则是什么", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 421, "question": "折扣可以叠加吗", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "promo"}
+{"id": 422, "question": "618期间秒杀怎么算", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 423, "question": "秒杀使用时间", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "promo"}
+{"id": 424, "question": "满减可以一起用吗", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 425, "question": "满减可以叠加吗", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 426, "question": "满减和红包能一起用吗", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 427, "question": "平台券使用条件", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 428, "question": "满156减171的活动有哪些", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 429, "question": "生鲜商品能参加团购吗", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "promo"}
+{"id": 430, "question": "生鲜商品能参加秒杀吗", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "promo"}
+{"id": 431, "question": "年货节期间满减怎么算", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 432, "question": "折扣使用时间", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "promo"}
+{"id": 433, "question": "优惠券门槛", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 434, "question": "秒杀可以一起用吗", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "promo"}
+{"id": 435, "question": "满减有效期", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 436, "question": "满240减92的活动有哪些", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 437, "question": "满减和余额能一起用吗", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 438, "question": "新品日折扣规则是什么", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "promo"}
+{"id": 439, "question": "满减什么时间用", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 440, "question": "预售商品能参加秒杀吗", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "promo"}
+{"id": 441, "question": "年货节期间折扣怎么算", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 442, "question": "预售商品能参加平台券吗", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 443, "question": "团购和积分能一起用吗", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "promo"}
+{"id": 444, "question": "优惠券使用时间", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 445, "question": "店铺券可以一起用吗", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 446, "question": "团购什么时间用", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "promo"}
+{"id": 447, "question": "满496减105的活动有哪些", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 448, "question": "优惠券使用条件", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 449, "question": "定制商品能参加平台券吗", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 450, "question": "优惠券有效期", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 451, "question": "生鲜商品能参加平台券吗", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 452, "question": "团购可以同时用吗", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "promo"}
+{"id": 453, "question": "黑五秒杀规则是什么", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "promo"}
+{"id": 454, "question": "满655减157的活动有哪些", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 455, "question": "满213减108的活动有哪些", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 456, "question": "满168减153的活动有哪些", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 457, "question": "满855减158的活动有哪些", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 458, "question": "店铺券和红包冲突吗", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 459, "question": "折扣和余额冲突吗", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "promo"}
+{"id": 460, "question": "定制商品能参加满减吗", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 461, "question": "双11店铺券规则是什么", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 462, "question": "满954减143的活动有哪些", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 463, "question": "平台券可以同时用吗", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 464, "question": "情人节期间优惠券怎么算", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 465, "question": "优惠券可以叠加吗", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 466, "question": "秒杀使用条件", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "promo"}
+{"id": 467, "question": "双11期间平台券怎么算", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 468, "question": "店铺券使用时间", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 469, "question": "优惠券怎么用", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 470, "question": "团购和余额冲突吗", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "promo"}
+{"id": 471, "question": "平台券和积分冲突吗", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 472, "question": "折扣可以同时用吗", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "promo"}
+{"id": 473, "question": "满267减23的活动有哪些", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 474, "question": "店铺券使用条件", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 475, "question": "折扣使用条件", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "promo"}
+{"id": 476, "question": "满630减82的活动有哪些", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 477, "question": "预售商品能参加折扣吗", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "promo"}
+{"id": 478, "question": "团购门槛", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "promo"}
+{"id": 479, "question": "秒杀怎么用", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "promo"}
+{"id": 480, "question": "满716减62的活动有哪些", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 481, "question": "618团购规则是什么", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 482, "question": "满319减141的活动有哪些", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 483, "question": "平台券怎么用", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 484, "question": "店庆店铺券规则是什么", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 485, "question": "满859减53的活动有哪些", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 486, "question": "新品日期间折扣怎么算", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "promo"}
+{"id": 487, "question": "店铺券和红包能一起用吗", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 488, "question": "618满减规则是什么", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 489, "question": "618期间平台券怎么算", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 490, "question": "团购和积分冲突吗", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "promo"}
+{"id": 491, "question": "满500减77的活动有哪些", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 492, "question": "满146减42的活动有哪些", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "promo"}
+{"id": 493, "question": "秒杀可以同时用吗", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "promo"}
+{"id": 494, "question": "生气，要找负责人", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 495, "question": "平台太差了，投诉", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 496, "question": "找不到客服", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 497, "question": "开工单", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 498, "question": "反复机器人回答没用，转人工", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 499, "question": "联系不上你们", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 500, "question": "联系不上客服", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 501, "question": "让你们负责人来", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 502, "question": "一直机器人回答没用，让人来处理", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 503, "question": "找不到你们", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 504, "question": "人工电话", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 505, "question": "请找个客服", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 506, "question": "没法接受，必须投诉", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 507, "question": "建单", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 508, "question": "平台太差了，换人处理", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 509, "question": "你们这太差了，换人处理", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 510, "question": "非常生气，要找负责人", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 511, "question": "生气，我要投诉", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 512, "question": "没人理你们", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 513, "question": "真人联系方式", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 514, "question": "人工呢？在哪", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 515, "question": "你们这太差了，投诉", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 516, "question": "反复自动回复没用，转人工", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 517, "question": "帮找个客服", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 518, "question": "提交反馈", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 519, "question": "解决不了，要升级", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 520, "question": "多次机器人回答没用，让人来处理", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 521, "question": "叫你们负责人来", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 522, "question": "解决不了，必须转人工", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 523, "question": "真人电话", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 524, "question": "帮我联系人工", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 525, "question": "请联系人工", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 526, "question": "专员在哪", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 527, "question": "让你们领导来", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 528, "question": "请转人工", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 529, "question": "这服务太差了，投诉", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 530, "question": "没人理客服", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 531, "question": "人工呢？出来", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 532, "question": "多次机器人回答没用，转人工", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 533, "question": "这服务太差了，换人处理", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 534, "question": "多次自动回复没用，转人工", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 535, "question": "没法接受，必须转人工", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 536, "question": "没法接受，要升级", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 537, "question": "让你们主管来", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 538, "question": "无法忍受，要升级", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 539, "question": "真人怎么找", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 540, "question": "叫你们领导来", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 541, "question": "记录问题", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 542, "question": "一直自动回复没用，转人工", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 543, "question": "无法忍受，必须转人工", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 544, "question": "真人在哪", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 545, "question": "生气，要升级", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 546, "question": "无法忍受，必须投诉", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 547, "question": "特别生气，要升级", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 548, "question": "实在生气，要找负责人", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 549, "question": "非常生气，我要投诉", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 550, "question": "特别生气，我要投诉", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 551, "question": "实在生气，我要投诉", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 552, "question": "非常生气，要升级", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 553, "question": "人工在哪", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 554, "question": "帮转人工", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 555, "question": "专员电话", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 556, "question": "帮我找个客服", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 557, "question": "人工怎么找", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 558, "question": "帮我转人工", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 559, "question": "帮联系人工", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "ticket"}
+{"id": 560, "question": "行", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 561, "question": " ", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 562, "question": "你是什机器人", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 563, "question": "1", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 564, "question": "谁先有鸡还是蛋", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 565, "question": "你能做什么", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 566, "question": "好", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 567, "question": "帮我唱首歌", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 568, "question": "你好", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 569, "question": "你怎么看AI", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 570, "question": "帮我算个数", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 571, "question": "。。。。", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 572, "question": "？？？", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 573, "question": "你干嘛的", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 574, "question": "平台叫什么名字", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 575, "question": "有客服在吗", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 576, "question": "1+1等于几", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 577, "question": "嗨", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 578, "question": "hello", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 579, "question": "你们公司叫什么名字", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 580, "question": "有活人在吗", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 581, "question": "在吗", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 582, "question": "刚才那个不算：abc", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 583, "question": "不管了：test", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 584, "question": "重来：2", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 585, "question": "。", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 586, "question": "帮我编故事", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 587, "question": "你聪明吗", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 588, "question": "有真人在吗", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 589, "question": "！？", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 590, "question": "帮我解方程", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 591, "question": "不管了：ok", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 592, "question": "喂", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 593, "question": "不管了：哦", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 594, "question": "你是谁", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 595, "question": "test", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 596, "question": "2", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 597, "question": "推荐部电影", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 598, "question": "……", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 599, "question": "刚才那个不算：test", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 600, "question": "帮我写首诗", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 601, "question": "刚才那个不算：好", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 602, "question": "abc", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 603, "question": "讲个笑话", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 604, "question": "请问", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 605, "question": "", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 606, "question": "换个说法：abc", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 607, "question": "...", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 608, "question": "啊", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 609, "question": "换个说法：好", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 610, "question": "今天天气怎么样", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 611, "question": "重来：test", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 612, "question": "帮我画个图", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 613, "question": "ok", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 614, "question": "重来：好", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 615, "question": "hey", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 616, "question": "刚才那个不算：行", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 617, "question": "刚才那个不算：2", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "clarify"}
+{"id": 618, "question": "签收5天了能退款吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "boundary"}
+{"id": 619, "question": "签收6天了能退款吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "boundary"}
+{"id": 620, "question": "签收7天了能退款吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "boundary"}
+{"id": 621, "question": "签收8天了能退款吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "boundary"}
+{"id": 622, "question": "签收9天了能退款吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "boundary"}
+{"id": 623, "question": "签收10天了能退款吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "boundary"}
+{"id": 624, "question": "签收11天了能退款吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "boundary"}
+{"id": 625, "question": "签收12天了能退款吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "boundary"}
+{"id": 626, "question": "签收13天了能退款吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "boundary"}
+{"id": 627, "question": "签收14天了能退款吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "boundary"}
+{"id": 628, "question": "签收15天了能退款吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "boundary"}
+{"id": 629, "question": "签收16天了能退款吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "boundary"}
+{"id": 630, "question": "签收17天了能退款吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "boundary"}
+{"id": 631, "question": "签收18天了能退款吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "boundary"}
+{"id": 632, "question": "签收19天了能退款吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "boundary"}
+{"id": 633, "question": "签收20天了能退款吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "boundary"}
+{"id": 634, "question": "签收30天了能退款吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "boundary"}
+{"id": 635, "question": "签收60天了能退款吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "boundary"}
+{"id": 636, "question": "买了13天有质量问题能退吗", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "boundary"}
+{"id": 637, "question": "买了14天有质量问题能退吗", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "boundary"}
+{"id": 638, "question": "买了15天有质量问题能退吗", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "boundary"}
+{"id": 639, "question": "买了16天有质量问题能退吗", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "boundary"}
+{"id": 640, "question": "买了17天有质量问题能退吗", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "boundary"}
+{"id": 641, "question": "买了18天有质量问题能退吗", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "boundary"}
+{"id": 642, "question": "买了19天有质量问题能退吗", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "boundary"}
+{"id": 643, "question": "买了20天有质量问题能退吗", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "boundary"}
+{"id": 644, "question": "同一订单补发了1次还能再补吗", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "boundary"}
+{"id": 645, "question": "同一订单补发了2次还能再补吗", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "boundary"}
+{"id": 646, "question": "同一订单补发了3次还能再补吗", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "boundary"}
+{"id": 647, "question": "同一订单补发了4次还能再补吗", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "boundary"}
+{"id": 648, "question": "同一订单补发了5次还能再补吗", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "boundary"}
+{"id": 649, "question": "退款和退货有什么区别", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "boundary"}
+{"id": 650, "question": "买了破损的东西是退款还是补发", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "boundary"}
+{"id": 651, "question": "质量问题能退还能赔吗", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "boundary"}
+{"id": 652, "question": "活动商品有问题怎么处理", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "boundary"}
+{"id": 653, "question": "优惠券买了的东西能退吗", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "boundary"}
+{"id": 654, "question": "补发和退货哪个划算", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "boundary"}
+{"id": 655, "question": "退kuan", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "adversarial"}
+{"id": 656, "question": "腿款", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 657, "question": "退活", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 658, "question": "补伐", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 659, "question": "头诉", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 660, "question": "人功", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 661, "question": "补尝", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 662, "question": "陪付", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 663, "question": "质 liang", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 664, "question": "破sen", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 665, "question": "manjian", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 666, "question": "refund my order", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 667, "question": "i want to return", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 668, "question": "转 ren gong", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 669, "question": "怎么 tui kuan", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 670, "question": "help me complaint", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 671, "question": "I need a refund ASAP", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 672, "question": "转人工 please", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 673, "question": "can i get money back", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 674, "question": "你好我前天买的收到了发现有问题想要退款但是不知道流程怎么办着急在线等", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "adversarial"}
+{"id": 675, "question": "订单号12345678签收五天商品破损想要申请退款或者换货请问应该走什么流程需要准备哪些材料", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "adversarial"}
+{"id": 676, "question": "r3urmwuecpn", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 677, "question": "uesd", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 678, "question": "ivli77jzc5", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 679, "question": "cu47soc", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 680, "question": "u79x", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 681, "question": "mjm", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 682, "question": "ft0", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 683, "question": "ic8", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 684, "question": "z1b98vwct8jb", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 685, "question": "rim", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 686, "question": "k48ab13t4y", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 687, "question": "tb1", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 688, "question": "ppep6", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 689, "question": "mm7idao1", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 690, "question": "u9az3cegbmx", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 691, "question": "9eoxxc", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 692, "question": "hz364pknt5i", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 693, "question": "ltdmo8r", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 694, "question": "he9i", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 695, "question": "hn3f9zxqerb", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 696, "question": "vk8c4na", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 697, "question": "nbhgpbktm", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 698, "question": "61m", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 699, "question": "3v1m3pp", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 700, "question": "3t8", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 701, "question": "47quusf", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 702, "question": "q9i6kyj91", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 703, "question": "mownx23", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 704, "question": "alx44paabmwu", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 705, "question": "c7jvlcg1j", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 706, "question": "二九二九一", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 707, "question": "九三", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 708, "question": "千八一十一十", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 709, "question": "万一百千", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 710, "question": "十八五二六七", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 711, "question": "三八百", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 712, "question": "一六四一八", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 713, "question": "五六九七", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 714, "question": "九三一万", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 715, "question": "一八百七百七", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 716, "question": "十万五八九二", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 717, "question": "万万", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 718, "question": "八万九", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 719, "question": "八二千百八", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 720, "question": "七五三八千五", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 721, "question": "四五万十", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 722, "question": "十千五五七", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 723, "question": "九八六六", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 724, "question": "百万万四千九", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 725, "question": "八百五", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "adversarial"}
+{"id": 726, "question": "我想退款。那具体怎么操作", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 727, "question": "我想退款。还需要什么材料", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 728, "question": "我想退款。多久能到账", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 729, "question": "我想退款。能不能快点", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 730, "question": "我想退款。换一个方案", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 731, "question": "我想退款。还有其他办法吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 732, "question": "我想退款。你说的对但是", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 733, "question": "我想退款。不行我还有问题", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 734, "question": "我想退款。好的明白了谢谢", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 735, "question": "我想退款。那就这样吧", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 736, "question": "我想退款。然后呢", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 737, "question": "我想退款。下一步是什么", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 738, "question": "我想退款。确认一下", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 739, "question": "我想退款。再问一个", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 740, "question": "我想退款。还有疑问", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 741, "question": "申请退款。那具体怎么操作", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 742, "question": "申请退款。还需要什么材料", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 743, "question": "申请退款。多久能到账", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 744, "question": "申请退款。能不能快点", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 745, "question": "申请退款。换一个方案", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 746, "question": "申请退款。还有其他办法吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 747, "question": "申请退款。你说的对但是", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 748, "question": "申请退款。不行我还有问题", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 749, "question": "申请退款。好的明白了谢谢", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 750, "question": "申请退款。那就这样吧", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 751, "question": "申请退款。然后呢", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 752, "question": "申请退款。下一步是什么", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 753, "question": "申请退款。确认一下", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 754, "question": "申请退款。再问一个", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 755, "question": "申请退款。还有疑问", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 756, "question": "要退钱。那具体怎么操作", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 757, "question": "要退钱。还需要什么材料", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 758, "question": "要退钱。多久能到账", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 759, "question": "要退钱。能不能快点", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 760, "question": "要退钱。换一个方案", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 761, "question": "要退钱。还有其他办法吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 762, "question": "要退钱。你说的对但是", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 763, "question": "要退钱。不行我还有问题", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 764, "question": "要退钱。好的明白了谢谢", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 765, "question": "要退钱。那就这样吧", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 766, "question": "要退钱。然后呢", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 767, "question": "要退钱。下一步是什么", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 768, "question": "要退钱。确认一下", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 769, "question": "要退钱。再问一个", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 770, "question": "要退钱。还有疑问", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 771, "question": "这单退款。那具体怎么操作", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 772, "question": "这单退款。还需要什么材料", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 773, "question": "这单退款。多久能到账", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 774, "question": "这单退款。能不能快点", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 775, "question": "这单退款。换一个方案", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 776, "question": "这单退款。还有其他办法吗", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 777, "question": "这单退款。你说的对但是", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 778, "question": "这单退款。不行我还有问题", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 779, "question": "这单退款。好的明白了谢谢", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 780, "question": "这单退款。那就这样吧", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 781, "question": "这单退款。然后呢", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 782, "question": "这单退款。下一步是什么", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 783, "question": "这单退款。确认一下", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 784, "question": "这单退款。再问一个", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 785, "question": "这单退款。还有疑问", "expected_intent": "refund", "expect_keywords": ["退款"], "should_ticket": true, "source": "multi_turn"}
+{"id": 786, "question": "我要退货。那具体怎么操作", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "multi_turn"}
+{"id": 787, "question": "我要退货。还需要什么材料", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "multi_turn"}
+{"id": 788, "question": "我要退货。多久能到账", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "multi_turn"}
+{"id": 789, "question": "我要退货。能不能快点", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "multi_turn"}
+{"id": 790, "question": "我要退货。换一个方案", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "multi_turn"}
+{"id": 791, "question": "我要退货。还有其他办法吗", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "multi_turn"}
+{"id": 792, "question": "我要退货。你说的对但是", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "multi_turn"}
+{"id": 793, "question": "我要退货。不行我还有问题", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "multi_turn"}
+{"id": 794, "question": "我要退货。好的明白了谢谢", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "multi_turn"}
+{"id": 795, "question": "我要退货。那就这样吧", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "multi_turn"}
+{"id": 796, "question": "我要退货。然后呢", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "multi_turn"}
+{"id": 797, "question": "我要退货。下一步是什么", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "multi_turn"}
+{"id": 798, "question": "我要退货。确认一下", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "multi_turn"}
+{"id": 799, "question": "我要退货。再问一个", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "multi_turn"}
+{"id": 800, "question": "我要退货。还有疑问", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "multi_turn"}
+{"id": 801, "question": "想退回去。那具体怎么操作", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 802, "question": "想退回去。还需要什么材料", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 803, "question": "想退回去。多久能到账", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 804, "question": "想退回去。能不能快点", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 805, "question": "想退回去。换一个方案", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 806, "question": "想退回去。还有其他办法吗", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 807, "question": "想退回去。你说的对但是", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 808, "question": "想退回去。不行我还有问题", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 809, "question": "想退回去。好的明白了谢谢", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 810, "question": "想退回去。那就这样吧", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 811, "question": "想退回去。然后呢", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 812, "question": "想退回去。下一步是什么", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 813, "question": "想退回去。确认一下", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 814, "question": "想退回去。再问一个", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 815, "question": "想退回去。还有疑问", "expected_intent": "clarify", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 816, "question": "申请退货。那具体怎么操作", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "multi_turn"}
+{"id": 817, "question": "申请退货。还需要什么材料", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "multi_turn"}
+{"id": 818, "question": "申请退货。多久能到账", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "multi_turn"}
+{"id": 819, "question": "申请退货。能不能快点", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "multi_turn"}
+{"id": 820, "question": "申请退货。换一个方案", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "multi_turn"}
+{"id": 821, "question": "申请退货。还有其他办法吗", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "multi_turn"}
+{"id": 822, "question": "申请退货。你说的对但是", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "multi_turn"}
+{"id": 823, "question": "申请退货。不行我还有问题", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "multi_turn"}
+{"id": 824, "question": "申请退货。好的明白了谢谢", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "multi_turn"}
+{"id": 825, "question": "申请退货。那就这样吧", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "multi_turn"}
+{"id": 826, "question": "申请退货。然后呢", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "multi_turn"}
+{"id": 827, "question": "申请退货。下一步是什么", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "multi_turn"}
+{"id": 828, "question": "申请退货。确认一下", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "multi_turn"}
+{"id": 829, "question": "申请退货。再问一个", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "multi_turn"}
+{"id": 830, "question": "申请退货。还有疑问", "expected_intent": "return", "expect_keywords": ["退货"], "should_ticket": true, "source": "multi_turn"}
+{"id": 831, "question": "漏发了。那具体怎么操作", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 832, "question": "漏发了。还需要什么材料", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 833, "question": "漏发了。多久能到账", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 834, "question": "漏发了。能不能快点", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 835, "question": "漏发了。换一个方案", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 836, "question": "漏发了。还有其他办法吗", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 837, "question": "漏发了。你说的对但是", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 838, "question": "漏发了。不行我还有问题", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 839, "question": "漏发了。好的明白了谢谢", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 840, "question": "漏发了。那就这样吧", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 841, "question": "漏发了。然后呢", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 842, "question": "漏发了。下一步是什么", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 843, "question": "漏发了。确认一下", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 844, "question": "漏发了。再问一个", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 845, "question": "漏发了。还有疑问", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 846, "question": "少发了。那具体怎么操作", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 847, "question": "少发了。还需要什么材料", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 848, "question": "少发了。多久能到账", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 849, "question": "少发了。能不能快点", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 850, "question": "少发了。换一个方案", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 851, "question": "少发了。还有其他办法吗", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 852, "question": "少发了。你说的对但是", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 853, "question": "少发了。不行我还有问题", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 854, "question": "少发了。好的明白了谢谢", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 855, "question": "少发了。那就这样吧", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 856, "question": "少发了。然后呢", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 857, "question": "少发了。下一步是什么", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 858, "question": "少发了。确认一下", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 859, "question": "少发了。再问一个", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 860, "question": "少发了。还有疑问", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 861, "question": "没收到。那具体怎么操作", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 862, "question": "没收到。还需要什么材料", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 863, "question": "没收到。多久能到账", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 864, "question": "没收到。能不能快点", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 865, "question": "没收到。换一个方案", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 866, "question": "没收到。还有其他办法吗", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 867, "question": "没收到。你说的对但是", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 868, "question": "没收到。不行我还有问题", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 869, "question": "没收到。好的明白了谢谢", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 870, "question": "没收到。那就这样吧", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 871, "question": "没收到。然后呢", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 872, "question": "没收到。下一步是什么", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 873, "question": "没收到。确认一下", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 874, "question": "没收到。再问一个", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 875, "question": "没收到。还有疑问", "expected_intent": "reship", "expect_keywords": ["补发"], "should_ticket": false, "source": "multi_turn"}
+{"id": 876, "question": "东西破损了。那具体怎么操作", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 877, "question": "东西破损了。还需要什么材料", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 878, "question": "东西破损了。多久能到账", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 879, "question": "东西破损了。能不能快点", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 880, "question": "东西破损了。换一个方案", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 881, "question": "东西破损了。还有其他办法吗", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 882, "question": "东西破损了。你说的对但是", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 883, "question": "东西破损了。不行我还有问题", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 884, "question": "东西破损了。好的明白了谢谢", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 885, "question": "东西破损了。那就这样吧", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 886, "question": "东西破损了。然后呢", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 887, "question": "东西破损了。下一步是什么", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 888, "question": "东西破损了。确认一下", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 889, "question": "东西破损了。再问一个", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 890, "question": "东西破损了。还有疑问", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 891, "question": "质量有问题。那具体怎么操作", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 892, "question": "质量有问题。还需要什么材料", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 893, "question": "质量有问题。多久能到账", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 894, "question": "质量有问题。能不能快点", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 895, "question": "质量有问题。换一个方案", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 896, "question": "质量有问题。还有其他办法吗", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 897, "question": "质量有问题。你说的对但是", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 898, "question": "质量有问题。不行我还有问题", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 899, "question": "质量有问题。好的明白了谢谢", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 900, "question": "质量有问题。那就这样吧", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 901, "question": "质量有问题。然后呢", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 902, "question": "质量有问题。下一步是什么", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 903, "question": "质量有问题。确认一下", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 904, "question": "质量有问题。再问一个", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 905, "question": "质量有问题。还有疑问", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 906, "question": "要赔偿。那具体怎么操作", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 907, "question": "要赔偿。还需要什么材料", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 908, "question": "要赔偿。多久能到账", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 909, "question": "要赔偿。能不能快点", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 910, "question": "要赔偿。换一个方案", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 911, "question": "要赔偿。还有其他办法吗", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 912, "question": "要赔偿。你说的对但是", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 913, "question": "要赔偿。不行我还有问题", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 914, "question": "要赔偿。好的明白了谢谢", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 915, "question": "要赔偿。那就这样吧", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 916, "question": "要赔偿。然后呢", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 917, "question": "要赔偿。下一步是什么", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 918, "question": "要赔偿。确认一下", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 919, "question": "要赔偿。再问一个", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 920, "question": "要赔偿。还有疑问", "expected_intent": "compensate", "expect_keywords": ["赔付", "质量"], "should_ticket": true, "source": "multi_turn"}
+{"id": 921, "question": "满减规则是什么。那具体怎么操作", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 922, "question": "满减规则是什么。还需要什么材料", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 923, "question": "满减规则是什么。多久能到账", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 924, "question": "满减规则是什么。能不能快点", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 925, "question": "满减规则是什么。换一个方案", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 926, "question": "满减规则是什么。还有其他办法吗", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 927, "question": "满减规则是什么。你说的对但是", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 928, "question": "满减规则是什么。不行我还有问题", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 929, "question": "满减规则是什么。好的明白了谢谢", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 930, "question": "满减规则是什么。那就这样吧", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 931, "question": "满减规则是什么。然后呢", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 932, "question": "满减规则是什么。下一步是什么", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 933, "question": "满减规则是什么。确认一下", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 934, "question": "满减规则是什么。再问一个", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 935, "question": "满减规则是什么。还有疑问", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 936, "question": "优惠券怎么用。那具体怎么操作", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 937, "question": "优惠券怎么用。还需要什么材料", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 938, "question": "优惠券怎么用。多久能到账", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 939, "question": "优惠券怎么用。能不能快点", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 940, "question": "优惠券怎么用。换一个方案", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 941, "question": "优惠券怎么用。还有其他办法吗", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 942, "question": "优惠券怎么用。你说的对但是", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 943, "question": "优惠券怎么用。不行我还有问题", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 944, "question": "优惠券怎么用。好的明白了谢谢", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 945, "question": "优惠券怎么用。那就这样吧", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 946, "question": "优惠券怎么用。然后呢", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 947, "question": "优惠券怎么用。下一步是什么", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 948, "question": "优惠券怎么用。确认一下", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 949, "question": "优惠券怎么用。再问一个", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 950, "question": "优惠券怎么用。还有疑问", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 951, "question": "活动规则。那具体怎么操作", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 952, "question": "活动规则。还需要什么材料", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 953, "question": "活动规则。多久能到账", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 954, "question": "活动规则。能不能快点", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 955, "question": "活动规则。换一个方案", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 956, "question": "活动规则。还有其他办法吗", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 957, "question": "活动规则。你说的对但是", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 958, "question": "活动规则。不行我还有问题", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 959, "question": "活动规则。好的明白了谢谢", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 960, "question": "活动规则。那就这样吧", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 961, "question": "活动规则。然后呢", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 962, "question": "活动规则。下一步是什么", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 963, "question": "活动规则。确认一下", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 964, "question": "活动规则。再问一个", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 965, "question": "活动规则。还有疑问", "expected_intent": "promo", "expect_keywords": ["满减"], "should_ticket": false, "source": "multi_turn"}
+{"id": 966, "question": "我要投诉。那具体怎么操作", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 967, "question": "我要投诉。还需要什么材料", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 968, "question": "我要投诉。多久能到账", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 969, "question": "我要投诉。能不能快点", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 970, "question": "我要投诉。换一个方案", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 971, "question": "我要投诉。还有其他办法吗", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 972, "question": "我要投诉。你说的对但是", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 973, "question": "我要投诉。不行我还有问题", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 974, "question": "我要投诉。好的明白了谢谢", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 975, "question": "我要投诉。那就这样吧", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 976, "question": "我要投诉。然后呢", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 977, "question": "我要投诉。下一步是什么", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 978, "question": "我要投诉。确认一下", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 979, "question": "我要投诉。再问一个", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 980, "question": "我要投诉。还有疑问", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 981, "question": "转人工。那具体怎么操作", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 982, "question": "转人工。还需要什么材料", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 983, "question": "转人工。多久能到账", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 984, "question": "转人工。能不能快点", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 985, "question": "转人工。换一个方案", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 986, "question": "转人工。还有其他办法吗", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 987, "question": "转人工。你说的对但是", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 988, "question": "转人工。不行我还有问题", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 989, "question": "转人工。好的明白了谢谢", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 990, "question": "转人工。那就这样吧", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 991, "question": "转人工。然后呢", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 992, "question": "转人工。下一步是什么", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 993, "question": "转人工。确认一下", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 994, "question": "转人工。再问一个", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 995, "question": "转人工。还有疑问", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 996, "question": "找客服。那具体怎么操作", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 997, "question": "找客服。还需要什么材料", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 998, "question": "找客服。多久能到账", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 999, "question": "找客服。能不能快点", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}
+{"id": 1000, "question": "找客服。换一个方案", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true, "source": "multi_turn"}

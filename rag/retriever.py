@@ -69,6 +69,7 @@ class Retriever:
             {
                 "source": item.get("source", ""),
                 "char_count": item.get("char_count", len(t)),
+                "doc_type": item.get("doc_type", "debug"),
             }
             for item, t in zip(items, texts)
         ]
@@ -86,10 +87,18 @@ class Retriever:
             log.warning("search_empty_collection collection=%s", self.collection_name)
             return []
         embeddings = self._embed([question])
-        results = self.collection.query(
-            query_embeddings=embeddings,
-            n_results=min(top_k, count),
-        )
+        try:
+            results = self.collection.query(
+                query_embeddings=embeddings,
+                n_results=min(top_k, count),
+                where={"doc_type": "policy"},
+            )
+        except Exception as exc:
+            log.warning("where_filter_failed fallback_unfiltered error=%s", exc)
+            results = self.collection.query(
+                query_embeddings=embeddings,
+                n_results=min(top_k, count),
+            )
         docs = []
         for i in range(len(results["ids"][0])):
             distance = results["distances"][0][i]
