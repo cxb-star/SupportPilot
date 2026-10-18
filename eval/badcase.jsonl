@@ -1,19 +1,724 @@
-{"question": "签收 10 天发现商品有质量问题，能退吗", "observed_intent": "compensate", "expected_intent": "refund", "confidence": 0.3, "type": "intent_mismatch", "source": "run_eval"}
-{"question": "签收 10 天发现商品有质量问题，能退吗", "missing_keywords": ["质量问题", "退款"], "confidence": 0.3, "type": "keyword_miss", "source": "run_eval"}
-{"question": "签收 10 天发现商品有质量问题，能退吗", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
-{"question": "双11 满减规则是什么", "missing_keywords": ["满减"], "confidence": 1.0, "type": "keyword_miss", "source": "run_eval"}
-{"question": "收到的商品有破损，怎么赔", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
-{"question": "退货运费谁承担", "observed_intent": "refund", "expected_intent": "return", "confidence": 1.0, "type": "intent_mismatch", "source": "run_eval"}
-{"question": "双11满减规则是什么", "observed_intent": "promo", "confidence": 0.0, "captured_at": "2026-10-09T13:16:03.781226+00:00", "expected_intent": "promo", "expect_keywords": [], "should_ticket": true}
-{"question": "帮我转人工", "observed_intent": "ticket", "confidence": 1.0, "captured_at": "2026-10-09T11:16:38.433911+00:00", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": false}
-{"question": "订单 12345 能退款吗，买了 3 天", "observed_intent": "refund", "confidence": 0.2, "captured_at": "2026-10-09T10:59:00.237480+00:00", "expected_intent": "refund", "expect_keywords": [], "should_ticket": true}
-{"question": "测试", "observed_intent": "answer", "confidence": 0.0, "captured_at": "2026-10-08T13:55:05.985487+00:00", "expected_intent": "answer", "expect_keywords": [], "should_ticket": true}
-{"question": "差旅报销几天内提交？", "observed_intent": "ticket", "confidence": 0.0, "captured_at": "2026-10-08T13:36:35.568707+00:00", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": true}
-{"question": "string", "observed_intent": "answer", "confidence": 0.0, "captured_at": "2026-10-07T08:59:07.128023+00:00", "expected_intent": "answer", "expect_keywords": [], "should_ticket": true}
-{"question": "帮我转人工处理一下", "observed_intent": "ticket", "confidence": 1.0, "captured_at": "2026-10-06T14:57:21.744401+00:00", "expected_intent": "ticket", "expect_keywords": [], "should_ticket": false}
-{"question": "随便聊聊天气", "observed_intent": "answer", "confidence": 0.0, "captured_at": "2026-10-06T14:57:13.839467+00:00", "expected_intent": "answer", "expect_keywords": [], "should_ticket": true}
-{"question": "你是", "observed_intent": "answer", "confidence": 0.0, "captured_at": "2026-10-06T12:53:09.349455+00:00", "expected_intent": "answer", "expect_keywords": [], "should_ticket": true}
-{"question": "漏发了一个商品，多久能补发", "missing_keywords": ["补发"], "confidence": 0.3, "type": "keyword_miss", "source": "run_eval"}
-{"question": "漏发了一个商品，多久能补发", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
-{"question": "优惠券能和满减一起用吗", "missing_keywords": ["叠加"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
-{"question": "优惠券能和满减一起用吗", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "41天前买的衣服，现在尺寸不合适要退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "在线等我想退款，买了39天家居，未拆封", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "可以吗订单46421签收52天电子产品未拆封能退款吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "鞋子签收6天不喜欢，是否退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "图书破损，签收35天了可以退钱吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "怎么我想退款，买了46天衣服，未拆封", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "30天前买的食品，现在与描述不符要退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "在线等我想退款，买了42天数码，未拆封", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "家居签收60天颜色不对，能不能退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "日用品签收18天不喜欢，是否退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "电子产品签收10天颜色不对，是否退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "电子产品发货太慢，签收24天了可以退钱吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "怎么办我想退款，买了51天图书，洗过", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "鞋子签收36天尺寸不合适，是否退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "想我想退款，买了39天电子产品，已拆封", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "怎么订单41385签收32天鞋子未拆封能退款吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "玩具破损，签收6天了可以退钱吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "要我想退款，买了17天数码，包装破损", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "在线等订单69177签收26天食品洗过能退款吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "要订单10942签收22天数码未拆封能退款吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "定制 食品，破损，58天了能退吗", "missing_keywords": ["赔付", "质量"], "confidence": 0.6, "type": "keyword_miss", "source": "run_eval"}
+{"question": "定制 食品，破损，58天了能退吗", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "要订单71993签收9天数码洗过能退款吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "43天前买的食品，现在买错了要退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "怎么图书与描述不符，部分退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "鞋子签收56天质量问题，能不能退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "请问我想退款，买了32天日用品，已使用", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "化妆品买错了，签收60天了可以退钱吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "可以吗衣服质量问题，原路退回", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "想衣服破损，原路退回", "missing_keywords": ["质量"], "confidence": 0.85, "type": "keyword_miss", "source": "run_eval"}
+{"question": "想衣服破损，原路退回", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "要我想退款，买了37天食品，包装破损", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "家居颜色不对，签收7天了可以退钱吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "怎么我想退款，买了36天鞋子，吊牌在", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "怎么订单76244签收39天食品已拆封能退款吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "41天前买的化妆品，现在质量问题要退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "能订单19862签收29天图书包装破损能退款吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "怎么办数码与描述不符，部分退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "27天前买的电子产品，现在颜色不对要退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "怎么图书颜色不对，部分退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "紧急订单55830签收3天日用品已使用能退款吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "请问我想退款，买了26天家居，洗过", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "衣服签收13天买错了，如何退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "食品签收5天不喜欢，如何退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "21天前买的化妆品，现在与描述不符要退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "数码尺寸不合适，签收58天了可以退钱吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "数码签收28天不喜欢，是否退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "怎么电子产品破损，全额退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "化妆品签收49天颜色不对，能不能退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "玩具买错了，签收40天了可以退钱吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "定制 衣服，破损，42天了能退吗", "missing_keywords": ["赔付", "质量"], "confidence": 0.35, "type": "keyword_miss", "source": "run_eval"}
+{"question": "在线等我想退款，买了53天家居，洗过", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "要我想退款，买了49天化妆品，已拆封", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "食品签收16天不喜欢，能不能退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "怎么办订单63424签收45天日用品已拆封能退款吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "怎么办图书质量问题，部分退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "紧急订单38760签收25天家居已使用能退款吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "怎么办我想退款，买了37天衣服，洗过", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "可以吗我想退款，买了25天日用品，吊牌在", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "在线等订单16826签收54天玩具未拆封能退款吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "衣服质量问题，签收50天了可以退钱吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "44天前买的图书，现在颜色不对要退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "请问我想退款，买了50天数码，吊牌在", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "5天前买的食品，现在质量问题要退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "怎么办玩具发货太慢，全额退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "要订单70910签收60天化妆品未拆封能退款吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "家居签收45天质量问题，能不能退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "日用品发货太慢，签收32天了可以退钱吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "26天前买的日用品，现在尺寸不合适要退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "36天前买的食品，现在发货太慢要退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "13天前买的鞋子，现在与描述不符要退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "数码尺寸不合适，签收38天了可以退钱吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "家居与描述不符，签收20天了可以退钱吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "鞋子质量问题，签收41天了可以退钱吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "4天前买的玩具，现在破损要退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "在线等数码颜色不对，部分退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "38天前买的化妆品，现在质量问题要退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "日用品签收6天与描述不符，能不能退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "日用品尺寸不合适，签收30天了可以退钱吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "请问订单31747签收59天电子产品吊牌在能退款吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "怎么订单75597签收30天化妆品洗过能退款吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "预售 数码，质量问题，56天了能退吗", "missing_keywords": ["赔付", "质量"], "confidence": 0.3, "type": "keyword_miss", "source": "run_eval"}
+{"question": "怎么办我想退款，买了42天化妆品，已使用", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "27天前买的食品，现在破损要退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "能衣服发货太慢，全额退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "玩具签收32天质量问题，如何退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "玩具破损，签收57天了可以退钱吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "20天前买的衣服，现在买错了要退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "玩具尺寸不合适，签收54天了可以退钱吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "要我想退款，买了30天电子产品，包装破损", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "要玩具不喜欢，全额退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "紧急订单59968签收50天衣服已使用能退款吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "9天前买的数码，现在不喜欢要退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "紧急订单44737签收10天电子产品已使用能退款吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "可以吗订单92155签收55天家居吊牌在能退款吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "40天前买的日用品，现在尺寸不合适要退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "怎么我想退款，买了56天玩具，未拆封", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "图书与描述不符，签收23天了可以退钱吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "6天前买的图书，现在颜色不对要退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "化妆品签收17天质量问题，如何退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "怎么化妆品买错了，部分退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "可以吗日用品买错了，全额退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "请问化妆品质量问题，部分退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "请问我想退款，买了47天电子产品，洗过", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "可以吗鞋子尺寸不合适，全额退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "想我想退款，买了22天玩具，未拆封", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "6天前买的衣服，现在尺寸不合适要退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "可以吗订单24201签收44天数码吊牌在能退款吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "食品签收40天颜色不对，是否退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "预售 衣服，质量问题，8天了能退吗", "missing_keywords": ["赔付"], "confidence": 0.9, "type": "keyword_miss", "source": "run_eval"}
+{"question": "预售 衣服，质量问题，8天了能退吗", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "9天前买的玩具，现在不喜欢要退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "数码签收7天买错了，如何退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "食品签收29天破损，如何退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "能鞋子发货太慢，全额退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "能我想退款，买了22天电子产品，已拆封", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "怎么订单28964签收50天数码已拆封能退款吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "电子产品质量问题，签收43天了可以退钱吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "电子产品签收17天买错了，如何退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "紧急家居破损，原路退回", "missing_keywords": ["质量"], "confidence": 0.72, "type": "keyword_miss", "source": "run_eval"}
+{"question": "紧急家居破损，原路退回", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "紧急家居尺寸不合适，部分退款", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "鞋子发货太慢，签收26天了可以退钱吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "买错了，内衣签收20天要退货", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "不想要了，家居签收14天要退货", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "买错了，衣服签收22天要退货", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "买错了，定制签收26天要退货", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "退货运费谁承担", "missing_keywords": ["退货", "运费"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "家居洗过能退货吗", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "尺寸不对，衣服签收15天要退货", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "7天内退货化妆品穿过可以吗", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "数码退货条件是什么", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "衣服质量问题，申请退", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "不想要了，数码签收3天要退货", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "数码吊牌剪了能退货吗", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "质量问题，家居签收10天要退货", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "质量问题，数码签收18天要退货", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "衣服退货地址是什么", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "定制类内衣可以无理由退货吗", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "退货超时还有多久", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "退货超时还来得及", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "定制类家居可以无理由退货吗", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "定制类食品可以无理由退货吗", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "退货运费多少", "missing_keywords": ["退货", "运费"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "退货运费要钱吗", "missing_keywords": ["退货", "运费"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "衣服质量问题，要退", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "家居未拆封能退货吗", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "鞋子穿过能退货吗", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "生鲜退货条件是什么", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "数码质量问题，想退", "missing_keywords": ["赔付"], "confidence": 0.9, "type": "keyword_miss", "source": "run_eval"}
+{"question": "数码质量问题，想退", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "30天内退货鞋子已拆封可以吗", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "内衣类鞋子可以无理由退货吗", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "退货运费怎么算", "missing_keywords": ["退货", "运费"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "内衣类数码可以无理由退货吗", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "买错了，定制签收25天要退货", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "化妆品吊牌完好能退货吗", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "退货超时会自动关闭", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "30天内退货内衣吊牌完好可以吗", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "内衣质量问题，要退", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "质量问题，食品签收19天要退货", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "买错了，化妆品签收4天要退货", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "买错了，鞋子签收24天要退货", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "30天内退货内衣未拆封可以吗", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "买错了，数码签收19天要退货", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "14天内退货内衣已拆封可以吗", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "鞋子未拆封能退货吗", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "化妆品吊牌剪了能退货吗", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "内衣类食品可以无理由退货吗", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "食品已拆封能退货吗", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "食品退货地址是什么", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "14天内退货食品洗过可以吗", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "内衣类家居可以无理由退货吗", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "定制类鞋子可以无理由退货吗", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "定制类生鲜可以无理由退货吗", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "质量问题，生鲜签收17天要退货", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "生鲜退货地址是什么", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "14天内退货衣服穿过可以吗", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "鞋子质量问题，想退", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "颜色不对，家居签收30天要退货", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "30天内退货食品未拆封可以吗", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "30天内退货数码已拆封可以吗", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "不想要了，鞋子签收17天要退货", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "内衣类内衣可以无理由退货吗", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "30天内退货生鲜吊牌剪了可以吗", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "7天内退货数码洗过可以吗", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "生鲜类定制可以无理由退货吗", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "生鲜类化妆品可以无理由退货吗", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "家居退货地址是什么", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "同一订单补发3次了还能补吗", "missing_keywords": ["补发"], "confidence": 0.3, "type": "keyword_miss", "source": "run_eval"}
+{"question": "同一订单补发3次了还能补吗", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "食品漏发24小时内能补", "missing_keywords": ["补发"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "食品漏发24小时内能补", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "没收到了商品，申请补发", "missing_keywords": ["补发"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "没收到了商品，申请补发", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "订单54270缺件了赠品，几天能补发", "missing_keywords": ["补发"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "订单54270缺件了赠品，几天能补发", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "补发要多久", "missing_keywords": ["补发"], "confidence": 0.3, "type": "keyword_miss", "source": "run_eval"}
+{"question": "补发要多久", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "漏发5件配件，怎么处理", "missing_keywords": ["补发"], "confidence": 0.3, "type": "keyword_miss", "source": "run_eval"}
+{"question": "漏发5件配件，怎么处理", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "生鲜漏发48小时内能补", "missing_keywords": ["补发"], "confidence": 0.3, "type": "keyword_miss", "source": "run_eval"}
+{"question": "生鲜漏发48小时内能补", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "少发4件说明书，怎么处理", "missing_keywords": ["补发"], "confidence": 0.35, "type": "keyword_miss", "source": "run_eval"}
+{"question": "少发4件说明书，怎么处理", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "丢件1件袜子，怎么处理", "missing_keywords": ["补发"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "丢件1件袜子，怎么处理", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "重新发要几天", "missing_keywords": ["补发"], "confidence": 0.3, "type": "keyword_miss", "source": "run_eval"}
+{"question": "重新发要几天", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "补发运费谁承担", "missing_keywords": ["补发"], "confidence": 0.3, "type": "keyword_miss", "source": "run_eval"}
+{"question": "补发运费谁承担", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "运输破损", "missing_keywords": ["质量"], "confidence": 0.95, "type": "keyword_miss", "source": "run_eval"}
+{"question": "运输破损", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "订单17589丢件了说明书，48小时内能补发", "missing_keywords": ["补发"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "订单17589丢件了说明书，48小时内能补发", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "订单64559少发了赠品，48小时内能补发", "missing_keywords": ["补发"], "confidence": 0.35, "type": "keyword_miss", "source": "run_eval"}
+{"question": "订单64559少发了赠品，48小时内能补发", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "补发要什么时候", "missing_keywords": ["补发"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "补发要什么时候", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "丢件1件赠品，怎么处理", "missing_keywords": ["补发"], "confidence": 0.35, "type": "keyword_miss", "source": "run_eval"}
+{"question": "丢件1件赠品，怎么处理", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "空包1件说明书，怎么处理", "observed_intent": "reship", "expected_intent": "clarify", "confidence": 0.72, "type": "intent_mismatch", "source": "run_eval"}
+{"question": "空包1件说明书，怎么处理", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "少发了配件，怎么补", "missing_keywords": ["补发"], "confidence": 0.35, "type": "keyword_miss", "source": "run_eval"}
+{"question": "少发了配件，怎么补", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "没收到了赠品，申请补发", "missing_keywords": ["补发"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "没收到了赠品，申请补发", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "没收到了赠品，怎么补", "missing_keywords": ["补发"], "confidence": 0.3, "type": "keyword_miss", "source": "run_eval"}
+{"question": "没收到了赠品，怎么补", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "重新发要48小时内", "missing_keywords": ["补发"], "confidence": 0.35, "type": "keyword_miss", "source": "run_eval"}
+{"question": "重新发要48小时内", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "快递显示签收但没收到", "missing_keywords": ["补发"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "快递显示签收但没收到", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "漏发了帽子，要补发", "missing_keywords": ["补发"], "confidence": 0.3, "type": "keyword_miss", "source": "run_eval"}
+{"question": "漏发了帽子，要补发", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "空包2件配件，怎么处理", "observed_intent": "reship", "expected_intent": "clarify", "confidence": 0.2, "type": "intent_mismatch", "source": "run_eval"}
+{"question": "丢件了帽子，申请补发", "missing_keywords": ["补发"], "confidence": 0.4, "type": "keyword_miss", "source": "run_eval"}
+{"question": "丢件了帽子，申请补发", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "丢件了说明书，申请补发", "missing_keywords": ["补发"], "confidence": 0.3, "type": "keyword_miss", "source": "run_eval"}
+{"question": "丢件了说明书，申请补发", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "订单79963少了了商品，24小时内能补发", "missing_keywords": ["补发"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "订单79963少了了商品，24小时内能补发", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "空包5件帽子，怎么处理", "observed_intent": "reship", "expected_intent": "clarify", "confidence": 0.9, "type": "intent_mismatch", "source": "run_eval"}
+{"question": "空包5件帽子，怎么处理", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "漏发4件说明书，怎么处理", "missing_keywords": ["补发"], "confidence": 0.35, "type": "keyword_miss", "source": "run_eval"}
+{"question": "漏发4件说明书，怎么处理", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "空包2件赠品，怎么处理", "observed_intent": "reship", "expected_intent": "clarify", "confidence": 0.2, "type": "intent_mismatch", "source": "run_eval"}
+{"question": "订单74990没收到了说明书，多久能补发", "missing_keywords": ["补发"], "confidence": 0.35, "type": "keyword_miss", "source": "run_eval"}
+{"question": "订单74990没收到了说明书，多久能补发", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "丢件了配件，怎么补", "missing_keywords": ["补发"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "丢件了配件，怎么补", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "少发4件商品，怎么处理", "missing_keywords": ["补发"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "少发4件商品，怎么处理", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "订单96305空包了袜子，多久能补发", "missing_keywords": ["补发"], "confidence": 0.35, "type": "keyword_miss", "source": "run_eval"}
+{"question": "订单96305空包了袜子，多久能补发", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "没收到4件袜子，怎么处理", "missing_keywords": ["补发"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "没收到4件袜子，怎么处理", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "空包2件帽子，怎么处理", "observed_intent": "reship", "expected_intent": "clarify", "confidence": 0.9, "type": "intent_mismatch", "source": "run_eval"}
+{"question": "空包2件帽子，怎么处理", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "质量问题反馈", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "瑕疵反馈", "observed_intent": "clarify", "expected_intent": "compensate", "confidence": 0.0, "type": "intent_mismatch", "source": "run_eval"}
+{"question": "瑕疵反馈", "missing_keywords": ["赔付", "质量"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "质量问题轻微，怎么办", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "过期轻微，退款还是赔偿", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "商品价值1102元，假货赔多少", "missing_keywords": ["质量"], "confidence": 0.95, "type": "keyword_miss", "source": "run_eval"}
+{"question": "商品价值1102元，假货赔多少", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "超时发货要赔吗", "missing_keywords": ["质量"], "confidence": 0.95, "type": "keyword_miss", "source": "run_eval"}
+{"question": "超时发货要赔吗", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "假货轻微，怎么办", "observed_intent": "clarify", "expected_intent": "compensate", "confidence": 0.0, "type": "intent_mismatch", "source": "run_eval"}
+{"question": "假货轻微，怎么办", "missing_keywords": ["赔付", "质量"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "商品价值1102元，划伤赔多少", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "破损轻微，退款还是赔偿", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "开裂严重，退款还是赔偿", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "假货轻微，退款还是赔偿", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "收到的东西假货，怎么处理", "observed_intent": "clarify", "expected_intent": "compensate", "confidence": 0.0, "type": "intent_mismatch", "source": "run_eval"}
+{"question": "收到的东西假货，怎么处理", "missing_keywords": ["赔付", "质量"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "未按时发货要赔吗", "missing_keywords": ["质量"], "confidence": 0.95, "type": "keyword_miss", "source": "run_eval"}
+{"question": "未按时发货要赔吗", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "商品价值1102元，开裂赔多少", "missing_keywords": ["赔付", "质量"], "confidence": 0.3, "type": "keyword_miss", "source": "run_eval"}
+{"question": "假货举报怎么赔", "missing_keywords": ["质量"], "confidence": 0.95, "type": "keyword_miss", "source": "run_eval"}
+{"question": "假货举报怎么赔", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "破损举报", "missing_keywords": ["质量"], "confidence": 0.9, "type": "keyword_miss", "source": "run_eval"}
+{"question": "破损举报", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "破损反馈", "missing_keywords": ["质量"], "confidence": 0.9, "type": "keyword_miss", "source": "run_eval"}
+{"question": "破损反馈", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "商品价值1102元，过期赔多少", "missing_keywords": ["赔付", "质量"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "收到的货物划伤，要赔偿", "missing_keywords": ["赔付"], "confidence": 0.72, "type": "keyword_miss", "source": "run_eval"}
+{"question": "收到的货物划伤，要赔偿", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "收到的货物货不对板，怎么赔", "missing_keywords": ["赔付", "质量"], "confidence": 0.35, "type": "keyword_miss", "source": "run_eval"}
+{"question": "假货维权怎么赔", "missing_keywords": ["质量"], "confidence": 0.95, "type": "keyword_miss", "source": "run_eval"}
+{"question": "假货维权怎么赔", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "货不对板轻微，怎么办", "observed_intent": "clarify", "expected_intent": "compensate", "confidence": 0.0, "type": "intent_mismatch", "source": "run_eval"}
+{"question": "货不对板轻微，怎么办", "missing_keywords": ["赔付", "质量"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "收到的商品划伤，要赔偿", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "商品价值1102元，货不对板赔多少", "missing_keywords": ["赔付", "质量"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "瑕疵轻微，退款还是赔偿", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "货不对板严重，退款还是赔偿", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "赔付要等", "missing_keywords": ["质量"], "confidence": 0.95, "type": "keyword_miss", "source": "run_eval"}
+{"question": "赔付要等", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "收到的东西货不对板，怎么赔", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "收到的货物变质，怎么赔", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "收到的商品变质，要赔偿", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "收到的东西货不对板，怎么处理", "observed_intent": "clarify", "expected_intent": "compensate", "confidence": 0.0, "type": "intent_mismatch", "source": "run_eval"}
+{"question": "收到的东西货不对板，怎么处理", "missing_keywords": ["赔付", "质量"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "商品价值1102元，变质赔多少", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "商品价值1102元，破损赔多少", "missing_keywords": ["质量"], "confidence": 0.9, "type": "keyword_miss", "source": "run_eval"}
+{"question": "商品价值1102元，破损赔多少", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "收到的货物瑕疵，要赔偿", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "货不对板严重，怎么办", "observed_intent": "clarify", "expected_intent": "compensate", "confidence": 0.0, "type": "intent_mismatch", "source": "run_eval"}
+{"question": "货不对板严重，怎么办", "missing_keywords": ["赔付", "质量"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "商品价值1102元，质量问题赔多少", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "货不对板轻微，退款还是赔偿", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "破损严重，怎么办", "missing_keywords": ["质量"], "confidence": 0.9, "type": "keyword_miss", "source": "run_eval"}
+{"question": "破损严重，怎么办", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "假货举报", "observed_intent": "clarify", "expected_intent": "compensate", "confidence": 0.0, "type": "intent_mismatch", "source": "run_eval"}
+{"question": "假货举报", "missing_keywords": ["赔付", "质量"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "收到的东西划伤，怎么赔", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "收到的货物划伤，怎么赔", "missing_keywords": ["赔付", "质量"], "confidence": 0.9, "type": "keyword_miss", "source": "run_eval"}
+{"question": "收到的货物划伤，怎么赔", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "收到的商品破损，怎么处理", "missing_keywords": ["赔付", "质量"], "confidence": 0.9, "type": "keyword_miss", "source": "run_eval"}
+{"question": "收到的商品破损，怎么处理", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "满737减153的活动有哪些", "missing_keywords": ["满减"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "满737减153的活动有哪些", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "满687减72的活动有哪些", "missing_keywords": ["满减"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "满687减72的活动有哪些", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "满减怎么用", "missing_keywords": ["满减"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "满减怎么用", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "满706减171的活动有哪些", "missing_keywords": ["满减"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "满706减171的活动有哪些", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "店铺券怎么用", "missing_keywords": ["满减"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "店铺券怎么用", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "生鲜商品能参加满减吗", "missing_keywords": ["满减"], "confidence": 0.3, "type": "keyword_miss", "source": "run_eval"}
+{"question": "生鲜商品能参加满减吗", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "满501减56的活动有哪些", "missing_keywords": ["满减"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "满501减56的活动有哪些", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "周末特惠期间平台券怎么算", "missing_keywords": ["满减"], "confidence": 0.35, "type": "keyword_miss", "source": "run_eval"}
+{"question": "周末特惠期间平台券怎么算", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "满828减156的活动有哪些", "missing_keywords": ["满减"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "满828减156的活动有哪些", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "满515减27的活动有哪些", "missing_keywords": ["满减"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "满515减27的活动有哪些", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "满730减157的活动有哪些", "missing_keywords": ["满减"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "满730减157的活动有哪些", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "平台券使用时间", "missing_keywords": ["满减"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "平台券使用时间", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "优惠券和积分冲突吗", "missing_keywords": ["满减"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "优惠券和积分冲突吗", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "平台券有效期", "missing_keywords": ["满减"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "平台券有效期", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "双11期间秒杀怎么算", "observed_intent": "clarify", "expected_intent": "promo", "confidence": 0.0, "type": "intent_mismatch", "source": "run_eval"}
+{"question": "双11期间秒杀怎么算", "missing_keywords": ["满减"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "双11期间秒杀怎么算", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "周末特惠期间满减怎么算", "missing_keywords": ["满减"], "confidence": 0.3, "type": "keyword_miss", "source": "run_eval"}
+{"question": "周末特惠期间满减怎么算", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "满278减161的活动有哪些", "missing_keywords": ["满减"], "confidence": 0.9, "type": "keyword_miss", "source": "run_eval"}
+{"question": "黑五期间满减怎么算", "missing_keywords": ["满减"], "confidence": 0.3, "type": "keyword_miss", "source": "run_eval"}
+{"question": "黑五期间满减怎么算", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "满减使用条件", "missing_keywords": ["满减"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "满减使用条件", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "满891减182的活动有哪些", "missing_keywords": ["满减"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "满891减182的活动有哪些", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "店铺券门槛", "missing_keywords": ["满减"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "店铺券门槛", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "周末特惠店铺券规则是什么", "missing_keywords": ["满减"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "周末特惠店铺券规则是什么", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "618期间秒杀怎么算", "observed_intent": "clarify", "expected_intent": "promo", "confidence": 0.0, "type": "intent_mismatch", "source": "run_eval"}
+{"question": "618期间秒杀怎么算", "missing_keywords": ["满减"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "618期间秒杀怎么算", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "满减可以叠加吗", "missing_keywords": ["满减"], "confidence": 0.95, "type": "keyword_miss", "source": "run_eval"}
+{"question": "满减和红包能一起用吗", "missing_keywords": ["满减"], "confidence": 0.35, "type": "keyword_miss", "source": "run_eval"}
+{"question": "满减和红包能一起用吗", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "平台券使用条件", "missing_keywords": ["满减"], "confidence": 0.95, "type": "keyword_miss", "source": "run_eval"}
+{"question": "满156减171的活动有哪些", "missing_keywords": ["满减"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "满156减171的活动有哪些", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "年货节期间满减怎么算", "missing_keywords": ["满减"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "年货节期间满减怎么算", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "优惠券门槛", "missing_keywords": ["满减"], "confidence": 0.95, "type": "keyword_miss", "source": "run_eval"}
+{"question": "满减有效期", "missing_keywords": ["满减"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "满减有效期", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "满240减92的活动有哪些", "missing_keywords": ["满减"], "confidence": 0.9, "type": "keyword_miss", "source": "run_eval"}
+{"question": "满减和余额能一起用吗", "missing_keywords": ["满减"], "confidence": 0.3, "type": "keyword_miss", "source": "run_eval"}
+{"question": "满减和余额能一起用吗", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "年货节期间折扣怎么算", "observed_intent": "clarify", "expected_intent": "promo", "confidence": 0.0, "type": "intent_mismatch", "source": "run_eval"}
+{"question": "年货节期间折扣怎么算", "missing_keywords": ["满减"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "年货节期间折扣怎么算", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "预售商品能参加平台券吗", "missing_keywords": ["满减"], "confidence": 0.3, "type": "keyword_miss", "source": "run_eval"}
+{"question": "预售商品能参加平台券吗", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "优惠券使用时间", "missing_keywords": ["满减"], "confidence": 0.3, "type": "keyword_miss", "source": "run_eval"}
+{"question": "优惠券使用时间", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "满496减105的活动有哪些", "missing_keywords": ["满减"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "满496减105的活动有哪些", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "优惠券使用条件", "missing_keywords": ["满减"], "confidence": 1.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "定制商品能参加平台券吗", "missing_keywords": ["满减"], "confidence": 0.6, "type": "keyword_miss", "source": "run_eval"}
+{"question": "优惠券有效期", "missing_keywords": ["满减"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "优惠券有效期", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "生鲜商品能参加平台券吗", "missing_keywords": ["满减"], "confidence": 0.6, "type": "keyword_miss", "source": "run_eval"}
+{"question": "满655减157的活动有哪些", "missing_keywords": ["满减"], "confidence": 0.95, "type": "keyword_miss", "source": "run_eval"}
+{"question": "满213减108的活动有哪些", "missing_keywords": ["满减"], "confidence": 0.9, "type": "keyword_miss", "source": "run_eval"}
+{"question": "满168减153的活动有哪些", "missing_keywords": ["满减"], "confidence": 0.9, "type": "keyword_miss", "source": "run_eval"}
+{"question": "满855减158的活动有哪些", "missing_keywords": ["满减"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "满855减158的活动有哪些", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "店铺券和红包冲突吗", "missing_keywords": ["满减"], "confidence": 0.3, "type": "keyword_miss", "source": "run_eval"}
+{"question": "店铺券和红包冲突吗", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "定制商品能参加满减吗", "missing_keywords": ["满减"], "confidence": 0.3, "type": "keyword_miss", "source": "run_eval"}
+{"question": "定制商品能参加满减吗", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "双11店铺券规则是什么", "missing_keywords": ["满减"], "confidence": 0.4, "type": "keyword_miss", "source": "run_eval"}
+{"question": "双11店铺券规则是什么", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "满954减143的活动有哪些", "missing_keywords": ["满减"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "满954减143的活动有哪些", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "平台券可以同时用吗", "missing_keywords": ["满减"], "confidence": 0.3, "type": "keyword_miss", "source": "run_eval"}
+{"question": "平台券可以同时用吗", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "情人节期间优惠券怎么算", "missing_keywords": ["满减"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "情人节期间优惠券怎么算", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "店铺券使用时间", "missing_keywords": ["满减"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "店铺券使用时间", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "优惠券怎么用", "missing_keywords": ["满减"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "优惠券怎么用", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "平台券和积分冲突吗", "missing_keywords": ["满减"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "平台券和积分冲突吗", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "满267减23的活动有哪些", "missing_keywords": ["满减"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "满267减23的活动有哪些", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "店铺券使用条件", "missing_keywords": ["满减"], "confidence": 0.98, "type": "keyword_miss", "source": "run_eval"}
+{"question": "满630减82的活动有哪些", "missing_keywords": ["满减"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "满630减82的活动有哪些", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "满716减62的活动有哪些", "missing_keywords": ["满减"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "满716减62的活动有哪些", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "618团购规则是什么", "observed_intent": "clarify", "expected_intent": "promo", "confidence": 0.0, "type": "intent_mismatch", "source": "run_eval"}
+{"question": "618团购规则是什么", "missing_keywords": ["满减"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "618团购规则是什么", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "满319减141的活动有哪些", "missing_keywords": ["满减"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "满319减141的活动有哪些", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "平台券怎么用", "missing_keywords": ["满减"], "confidence": 0.4, "type": "keyword_miss", "source": "run_eval"}
+{"question": "平台券怎么用", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "店庆店铺券规则是什么", "missing_keywords": ["满减"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "店庆店铺券规则是什么", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "满859减53的活动有哪些", "missing_keywords": ["满减"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "满859减53的活动有哪些", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "店铺券和红包能一起用吗", "missing_keywords": ["满减"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "店铺券和红包能一起用吗", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "618满减规则是什么", "missing_keywords": ["满减"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "618满减规则是什么", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "618期间平台券怎么算", "missing_keywords": ["满减"], "confidence": 0.3, "type": "keyword_miss", "source": "run_eval"}
+{"question": "618期间平台券怎么算", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "满500减77的活动有哪些", "missing_keywords": ["满减"], "confidence": 0.9, "type": "keyword_miss", "source": "run_eval"}
+{"question": "满146减42的活动有哪些", "missing_keywords": ["满减"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "满146减42的活动有哪些", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "建单", "observed_intent": "ticket", "expected_intent": "clarify", "confidence": 1.0, "type": "intent_mismatch", "source": "run_eval"}
+{"question": "签收5天了能退款吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "签收6天了能退款吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "签收7天了能退款吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "签收8天了能退款吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "签收9天了能退款吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "签收10天了能退款吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "签收11天了能退款吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "签收12天了能退款吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "签收13天了能退款吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "签收14天了能退款吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "签收15天了能退款吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "签收16天了能退款吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "签收17天了能退款吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "签收18天了能退款吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "签收19天了能退款吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "签收20天了能退款吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "签收30天了能退款吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "签收60天了能退款吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "买了13天有质量问题能退吗", "missing_keywords": ["赔付", "质量"], "confidence": 0.4, "type": "keyword_miss", "source": "run_eval"}
+{"question": "买了14天有质量问题能退吗", "missing_keywords": ["赔付", "质量"], "confidence": 0.4, "type": "keyword_miss", "source": "run_eval"}
+{"question": "买了15天有质量问题能退吗", "missing_keywords": ["赔付", "质量"], "confidence": 0.4, "type": "keyword_miss", "source": "run_eval"}
+{"question": "买了16天有质量问题能退吗", "missing_keywords": ["赔付"], "confidence": 0.9, "type": "keyword_miss", "source": "run_eval"}
+{"question": "买了16天有质量问题能退吗", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "买了17天有质量问题能退吗", "missing_keywords": ["赔付"], "confidence": 0.9, "type": "keyword_miss", "source": "run_eval"}
+{"question": "买了17天有质量问题能退吗", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "买了18天有质量问题能退吗", "missing_keywords": ["赔付", "质量"], "confidence": 0.35, "type": "keyword_miss", "source": "run_eval"}
+{"question": "买了19天有质量问题能退吗", "missing_keywords": ["赔付"], "confidence": 0.95, "type": "keyword_miss", "source": "run_eval"}
+{"question": "买了19天有质量问题能退吗", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "买了20天有质量问题能退吗", "missing_keywords": ["赔付"], "confidence": 0.9, "type": "keyword_miss", "source": "run_eval"}
+{"question": "买了20天有质量问题能退吗", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "同一订单补发了2次还能再补吗", "missing_keywords": ["补发"], "confidence": 0.3, "type": "keyword_miss", "source": "run_eval"}
+{"question": "同一订单补发了2次还能再补吗", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "同一订单补发了3次还能再补吗", "missing_keywords": ["补发"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "同一订单补发了3次还能再补吗", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "同一订单补发了4次还能再补吗", "missing_keywords": ["补发"], "confidence": 0.3, "type": "keyword_miss", "source": "run_eval"}
+{"question": "同一订单补发了4次还能再补吗", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "退款和退货有什么区别", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "买了破损的东西是退款还是补发", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "质量问题能退还能赔吗", "missing_keywords": ["赔付"], "confidence": 0.8, "type": "keyword_miss", "source": "run_eval"}
+{"question": "质量问题能退还能赔吗", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "活动商品有问题怎么处理", "missing_keywords": ["满减"], "confidence": 0.72, "type": "keyword_miss", "source": "run_eval"}
+{"question": "优惠券买了的东西能退吗", "missing_keywords": ["满减"], "confidence": 0.55, "type": "keyword_miss", "source": "run_eval"}
+{"question": "补发和退货哪个划算", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "退kuan", "observed_intent": "clarify", "expected_intent": "refund", "confidence": 0.0, "type": "intent_mismatch", "source": "run_eval"}
+{"question": "退kuan", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "你好我前天买的收到了发现有问题想要退款但是不知道流程怎么办着急在线等", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "订单号12345678签收五天商品破损想要申请退款或者换货请问应该走什么流程需要准备哪些材料", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "我想退款。那具体怎么操作", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "我想退款。还需要什么材料", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "我想退款。多久能到账", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "我想退款。能不能快点", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "我想退款。换一个方案", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "我想退款。还有其他办法吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "我想退款。你说的对但是", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "我想退款。不行我还有问题", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "我想退款。好的明白了谢谢", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "我想退款。那就这样吧", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "我想退款。然后呢", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "我想退款。下一步是什么", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "我想退款。确认一下", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "我想退款。再问一个", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "我想退款。还有疑问", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "申请退款。那具体怎么操作", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "申请退款。还需要什么材料", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "申请退款。多久能到账", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "申请退款。能不能快点", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "申请退款。换一个方案", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "申请退款。还有其他办法吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "申请退款。你说的对但是", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "申请退款。不行我还有问题", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "申请退款。好的明白了谢谢", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "申请退款。那就这样吧", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "申请退款。然后呢", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "申请退款。下一步是什么", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "申请退款。确认一下", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "申请退款。再问一个", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "申请退款。还有疑问", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "要退钱。那具体怎么操作", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "要退钱。还需要什么材料", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "要退钱。多久能到账", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "要退钱。能不能快点", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "要退钱。换一个方案", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "要退钱。还有其他办法吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "要退钱。你说的对但是", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "要退钱。不行我还有问题", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "要退钱。好的明白了谢谢", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "要退钱。那就这样吧", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "要退钱。然后呢", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "要退钱。下一步是什么", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "要退钱。确认一下", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "要退钱。再问一个", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "要退钱。还有疑问", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "这单退款。那具体怎么操作", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "这单退款。还需要什么材料", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "这单退款。多久能到账", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "这单退款。能不能快点", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "这单退款。换一个方案", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "这单退款。还有其他办法吗", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "这单退款。你说的对但是", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "这单退款。不行我还有问题", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "这单退款。好的明白了谢谢", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "这单退款。那就这样吧", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "这单退款。然后呢", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "这单退款。下一步是什么", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "这单退款。确认一下", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "这单退款。再问一个", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "这单退款。还有疑问", "missing_keywords": ["退款"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "我要退货。那具体怎么操作", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "我要退货。还需要什么材料", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "我要退货。多久能到账", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "我要退货。能不能快点", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "我要退货。换一个方案", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "我要退货。还有其他办法吗", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "我要退货。你说的对但是", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "我要退货。不行我还有问题", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "我要退货。好的明白了谢谢", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "我要退货。那就这样吧", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "我要退货。然后呢", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "我要退货。下一步是什么", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "我要退货。确认一下", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "我要退货。再问一个", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "我要退货。还有疑问", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "申请退货。那具体怎么操作", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "申请退货。还需要什么材料", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "申请退货。多久能到账", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "申请退货。能不能快点", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "申请退货。换一个方案", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "申请退货。还有其他办法吗", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "申请退货。你说的对但是", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "申请退货。不行我还有问题", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "申请退货。好的明白了谢谢", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "申请退货。那就这样吧", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "申请退货。然后呢", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "申请退货。下一步是什么", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "申请退货。确认一下", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "申请退货。再问一个", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "申请退货。还有疑问", "missing_keywords": ["退货"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "漏发了。那具体怎么操作", "missing_keywords": ["补发"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "漏发了。那具体怎么操作", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "漏发了。还需要什么材料", "missing_keywords": ["补发"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "漏发了。还需要什么材料", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "漏发了。换一个方案", "missing_keywords": ["补发"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "漏发了。换一个方案", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "漏发了。那就这样吧", "missing_keywords": ["补发"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "漏发了。那就这样吧", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "漏发了。下一步是什么", "missing_keywords": ["补发"], "confidence": 0.3, "type": "keyword_miss", "source": "run_eval"}
+{"question": "漏发了。下一步是什么", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "漏发了。确认一下", "missing_keywords": ["补发"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "漏发了。确认一下", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "漏发了。再问一个", "missing_keywords": ["补发"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "漏发了。再问一个", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "漏发了。还有疑问", "missing_keywords": ["补发"], "confidence": 0.3, "type": "keyword_miss", "source": "run_eval"}
+{"question": "漏发了。还有疑问", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "少发了。多久能到账", "missing_keywords": ["补发"], "confidence": 0.3, "type": "keyword_miss", "source": "run_eval"}
+{"question": "少发了。多久能到账", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "少发了。能不能快点", "missing_keywords": ["补发"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "少发了。能不能快点", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "少发了。还有其他办法吗", "missing_keywords": ["补发"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "少发了。还有其他办法吗", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "少发了。好的明白了谢谢", "missing_keywords": ["补发"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "少发了。好的明白了谢谢", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "没收到。还需要什么材料", "missing_keywords": ["补发"], "confidence": 0.7, "type": "keyword_miss", "source": "run_eval"}
+{"question": "没收到。多久能到账", "missing_keywords": ["补发"], "confidence": 0.4, "type": "keyword_miss", "source": "run_eval"}
+{"question": "没收到。多久能到账", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "没收到。换一个方案", "missing_keywords": ["补发"], "confidence": 0.3, "type": "keyword_miss", "source": "run_eval"}
+{"question": "没收到。换一个方案", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "没收到。还有其他办法吗", "missing_keywords": ["补发"], "confidence": 0.35, "type": "keyword_miss", "source": "run_eval"}
+{"question": "没收到。还有其他办法吗", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "没收到。你说的对但是", "missing_keywords": ["补发"], "confidence": 0.35, "type": "keyword_miss", "source": "run_eval"}
+{"question": "没收到。你说的对但是", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "没收到。不行我还有问题", "missing_keywords": ["补发"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "没收到。不行我还有问题", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "没收到。好的明白了谢谢", "missing_keywords": ["补发"], "confidence": 0.3, "type": "keyword_miss", "source": "run_eval"}
+{"question": "没收到。好的明白了谢谢", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "没收到。那就这样吧", "missing_keywords": ["补发"], "confidence": 0.35, "type": "keyword_miss", "source": "run_eval"}
+{"question": "没收到。那就这样吧", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "没收到。然后呢", "missing_keywords": ["补发"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "没收到。然后呢", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "没收到。确认一下", "missing_keywords": ["补发"], "confidence": 0.3, "type": "keyword_miss", "source": "run_eval"}
+{"question": "没收到。确认一下", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "没收到。再问一个", "missing_keywords": ["补发"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "没收到。再问一个", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "没收到。还有疑问", "missing_keywords": ["补发"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "没收到。还有疑问", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "东西破损了。那具体怎么操作", "missing_keywords": ["质量"], "confidence": 0.9, "type": "keyword_miss", "source": "run_eval"}
+{"question": "东西破损了。那具体怎么操作", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "东西破损了。还需要什么材料", "missing_keywords": ["赔付", "质量"], "confidence": 0.6, "type": "keyword_miss", "source": "run_eval"}
+{"question": "东西破损了。还需要什么材料", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "东西破损了。多久能到账", "missing_keywords": ["质量"], "confidence": 0.6, "type": "keyword_miss", "source": "run_eval"}
+{"question": "东西破损了。多久能到账", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "东西破损了。能不能快点", "missing_keywords": ["质量"], "confidence": 0.9, "type": "keyword_miss", "source": "run_eval"}
+{"question": "东西破损了。能不能快点", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "东西破损了。换一个方案", "missing_keywords": ["赔付", "质量"], "confidence": 0.95, "type": "keyword_miss", "source": "run_eval"}
+{"question": "东西破损了。换一个方案", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "东西破损了。还有其他办法吗", "missing_keywords": ["赔付"], "confidence": 0.86, "type": "keyword_miss", "source": "run_eval"}
+{"question": "东西破损了。还有其他办法吗", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "东西破损了。你说的对但是", "missing_keywords": ["赔付", "质量"], "confidence": 0.9, "type": "keyword_miss", "source": "run_eval"}
+{"question": "东西破损了。你说的对但是", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "东西破损了。不行我还有问题", "missing_keywords": ["赔付", "质量"], "confidence": 0.9, "type": "keyword_miss", "source": "run_eval"}
+{"question": "东西破损了。不行我还有问题", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "东西破损了。好的明白了谢谢", "missing_keywords": ["质量"], "confidence": 0.9, "type": "keyword_miss", "source": "run_eval"}
+{"question": "东西破损了。好的明白了谢谢", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "东西破损了。那就这样吧", "missing_keywords": ["赔付"], "confidence": 0.55, "type": "keyword_miss", "source": "run_eval"}
+{"question": "东西破损了。那就这样吧", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "东西破损了。然后呢", "missing_keywords": ["赔付"], "confidence": 0.9, "type": "keyword_miss", "source": "run_eval"}
+{"question": "东西破损了。然后呢", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "东西破损了。下一步是什么", "missing_keywords": ["赔付", "质量"], "confidence": 0.95, "type": "keyword_miss", "source": "run_eval"}
+{"question": "东西破损了。下一步是什么", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "东西破损了。确认一下", "missing_keywords": ["质量"], "confidence": 0.95, "type": "keyword_miss", "source": "run_eval"}
+{"question": "东西破损了。确认一下", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "东西破损了。再问一个", "missing_keywords": ["赔付", "质量"], "confidence": 0.9, "type": "keyword_miss", "source": "run_eval"}
+{"question": "东西破损了。再问一个", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "东西破损了。还有疑问", "missing_keywords": ["赔付", "质量"], "confidence": 0.9, "type": "keyword_miss", "source": "run_eval"}
+{"question": "东西破损了。还有疑问", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "质量有问题。那具体怎么操作", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "质量有问题。还需要什么材料", "missing_keywords": ["赔付"], "confidence": 0.6, "type": "keyword_miss", "source": "run_eval"}
+{"question": "质量有问题。还需要什么材料", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "质量有问题。多久能到账", "missing_keywords": ["赔付", "质量"], "confidence": 0.95, "type": "keyword_miss", "source": "run_eval"}
+{"question": "质量有问题。多久能到账", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "质量有问题。能不能快点", "missing_keywords": ["赔付"], "confidence": 0.6, "type": "keyword_miss", "source": "run_eval"}
+{"question": "质量有问题。能不能快点", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "质量有问题。换一个方案", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "质量有问题。还有其他办法吗", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "质量有问题。你说的对但是", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "质量有问题。不行我还有问题", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "质量有问题。好的明白了谢谢", "missing_keywords": ["赔付"], "confidence": 0.9, "type": "keyword_miss", "source": "run_eval"}
+{"question": "质量有问题。好的明白了谢谢", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "质量有问题。那就这样吧", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "质量有问题。然后呢", "missing_keywords": ["赔付"], "confidence": 0.9, "type": "keyword_miss", "source": "run_eval"}
+{"question": "质量有问题。然后呢", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "质量有问题。下一步是什么", "missing_keywords": ["赔付", "质量"], "confidence": 0.35, "type": "keyword_miss", "source": "run_eval"}
+{"question": "质量有问题。确认一下", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "质量有问题。再问一个", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "质量有问题。还有疑问", "missing_keywords": ["赔付"], "confidence": 0.6, "type": "keyword_miss", "source": "run_eval"}
+{"question": "质量有问题。还有疑问", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "要赔偿。那具体怎么操作", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "要赔偿。还需要什么材料", "missing_keywords": ["赔付", "质量"], "confidence": 0.35, "type": "keyword_miss", "source": "run_eval"}
+{"question": "要赔偿。多久能到账", "missing_keywords": ["质量"], "confidence": 0.7, "type": "keyword_miss", "source": "run_eval"}
+{"question": "要赔偿。多久能到账", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "要赔偿。能不能快点", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "要赔偿。换一个方案", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "要赔偿。还有其他办法吗", "missing_keywords": ["赔付", "质量"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "要赔偿。你说的对但是", "missing_keywords": ["赔付", "质量"], "confidence": 0.3, "type": "keyword_miss", "source": "run_eval"}
+{"question": "要赔偿。不行我还有问题", "missing_keywords": ["赔付", "质量"], "confidence": 0.3, "type": "keyword_miss", "source": "run_eval"}
+{"question": "要赔偿。好的明白了谢谢", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "要赔偿。那就这样吧", "missing_keywords": ["赔付", "质量"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "要赔偿。然后呢", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "要赔偿。下一步是什么", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "要赔偿。确认一下", "missing_keywords": ["赔付", "质量"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "要赔偿。再问一个", "missing_keywords": ["赔付", "质量"], "confidence": 0.3, "type": "keyword_miss", "source": "run_eval"}
+{"question": "要赔偿。还有疑问", "expected_ticket": true, "actual_ticket": false, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "满减规则是什么。能不能快点", "missing_keywords": ["满减"], "confidence": 0.95, "type": "keyword_miss", "source": "run_eval"}
+{"question": "满减规则是什么。还有其他办法吗", "missing_keywords": ["满减"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "满减规则是什么。还有其他办法吗", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "满减规则是什么。不行我还有问题", "missing_keywords": ["满减"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "满减规则是什么。不行我还有问题", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "满减规则是什么。好的明白了谢谢", "missing_keywords": ["满减"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "满减规则是什么。好的明白了谢谢", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "优惠券怎么用。那具体怎么操作", "missing_keywords": ["满减"], "confidence": 0.0, "type": "keyword_miss", "source": "run_eval"}
+{"question": "优惠券怎么用。那具体怎么操作", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "优惠券怎么用。还需要什么材料", "missing_keywords": ["满减"], "confidence": 0.9, "type": "keyword_miss", "source": "run_eval"}
+{"question": "优惠券怎么用。多久能到账", "missing_keywords": ["满减"], "confidence": 0.8, "type": "keyword_miss", "source": "run_eval"}
+{"question": "优惠券怎么用。能不能快点", "missing_keywords": ["满减"], "confidence": 0.3, "type": "keyword_miss", "source": "run_eval"}
+{"question": "优惠券怎么用。能不能快点", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "优惠券怎么用。好的明白了谢谢", "missing_keywords": ["满减"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "优惠券怎么用。好的明白了谢谢", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "优惠券怎么用。确认一下", "missing_keywords": ["满减"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "优惠券怎么用。确认一下", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "活动规则。还有其他办法吗", "missing_keywords": ["满减"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "活动规则。还有其他办法吗", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "活动规则。你说的对但是", "missing_keywords": ["满减"], "confidence": 0.2, "type": "keyword_miss", "source": "run_eval"}
+{"question": "活动规则。你说的对但是", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "活动规则。不行我还有问题", "missing_keywords": ["满减"], "confidence": 0.95, "type": "keyword_miss", "source": "run_eval"}
+{"question": "活动规则。下一步是什么", "missing_keywords": ["满减"], "confidence": 0.3, "type": "keyword_miss", "source": "run_eval"}
+{"question": "活动规则。下一步是什么", "expected_ticket": false, "actual_ticket": true, "type": "fallback_mismatch", "source": "run_eval"}
+{"question": "活动规则。确认一下", "missing_keywords": ["满减"], "confidence": 0.95, "type": "keyword_miss", "source": "run_eval"}
+{"question": "活动规则。再问一个", "missing_keywords": ["满减"], "confidence": 0.95, "type": "keyword_miss", "source": "run_eval"}
